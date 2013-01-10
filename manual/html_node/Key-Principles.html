@@ -1,158 +1,181 @@
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for GNU remotecontrol (version 1.0, 7 January 2013), which is an example in the Texinfo documentation.
+
+Copyright (C) 2013 GNU remotecontrol authors.
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
+
+(a) The FSF's Back-Cover Text is: "You have the freedom to copy and modify this GNU manual. Buying copies from the FSF supports it in developing GNU and promoting software freedom." -->
+<!-- Created by Texinfo 4.13.93+dev, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Key Principles - GNU remotecontrol 1.00</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="GNU remotecontrol 1.00">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="Scope.html#Scope" title="Scope">
-<link rel="next" href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet" title="GNU remotecontrol &amp; BACnet">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<title>GNU remotecontrol: Key Principles</title>
+
+<meta name="description" content="GNU remotecontrol: Key Principles">
+<meta name="keywords" content="GNU remotecontrol: Key Principles">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html#Top" rel="up" title="Top">
+<link href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet" rel="next" title="GNU remotecontrol &amp; BACnet">
+<link href="Scope.html#Scope" rel="previous" title="Scope">
+<style type="text/css">
 <!--
-This manual is for GNU remotecontrol (version 1.00, 17 December 2012), which is an example in the Texinfo documentation.
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
 
-Copyright (C) 2012 GNU remotecontrol authors.
 
-     Permission is granted to copy, distribute and/or modify this
-     document under the terms of the GNU Free Documentation License,
-     Version 1.3 or any later version published by the Free Software
-     Foundation; with no Invariant Sections, with the Front-Cover Texts
-     being ``A GNU Manual,'' and with the Back-Cover Texts as in (a)
-     below. A copy of the license is included in the section entitled
-     ``GNU Free Documentation License.''
-
-     (a) The FSF's Back-Cover Text is: ``You have the freedom to copy
-     and modify this GNU manual. Buying copies from the FSF supports it
-     in developing GNU and promoting software freedom.''
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
 </head>
-<body>
-<div class="node">
-<a name="Key-Principles"></a>
-<p>
-Next:&nbsp;<a rel="next" accesskey="n" href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">GNU remotecontrol &amp; BACnet</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Scope.html#Scope">Scope</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
-<hr>
-</div>
 
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+<a name="Key-Principles"></a>
+<div class="header">
+<p>
+Next: <a href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet" accesskey="n" rel="next">GNU remotecontrol &amp; BACnet</a>, Previous: <a href="Scope.html#Scope" accesskey="p" rel="previous">Scope</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<a name="Key-Principles-1"></a>
 <h2 class="chapter">3 Key Principles</h2>
 
+<a name="Present-Capabilities"></a>
 <h3 class="section">3.1 Present Capabilities</h3>
-
 <p>GNU remotecontrol is designed to substantially reduce the time &amp; effort necessary to remotely manage multiple IP thermostats, while significantly increasing your productivity through its many useful and time saving features. The User Interface is no more difficult than using any other web application involving simple check boxes and pull-down menus. GNU remotecontrol, combined with the Remote Monitoring Server, work together as a complete HVAC energy management system. GNU remotecontrol more than pays for itself by saving time/effort in manual labor for managing all resources individually.....and then some.
-
+</p>
+<a name="HVAC-Thermostat"></a>
 <h3 class="section">3.2 HVAC Thermostat</h3>
-
 <p>It is necessary to understand the design and usage intent of the HVAC thermostat to fully grasp the design and usage intent of GNU remotecontrol.
-
-   <p>The <a href="http://en.wikipedia.org/wiki/thermostat">HVAC thermostat</a> is often a combination of either a <a href="http://en.wikipedia.org/wiki/Relay">relay</a> or a <a href="http://en.wikipedia.org/wiki/Semiconductor_device">semiconductor device</a> to have circuits either opened or closed, off or on. Examples of this include heating, cooling, or a fan. The addition of a scheduling option to turn any of these items off or on at a certain date/time does make it more practical of a device in terms of managing day-to-day operation of a HVAC system. Adding in the ability to track run time duration for heating, cooling, or a fan help energy efficiency measurements. The final addition of remote access, through the traditional IP enabled data network, takes the HVAC thermostat to an interconnected device capable of multiple read/write techniques. The cable from the thermostat to the HVAC equipment is solid core 18-<a href="http://en.wikipedia.org/wiki/American_wire_gauge">AWG</a>, either 4 or 8 separately jacketed wires, depending on system capability, all contained within a protective jacket.
-
+</p>
+<p>The <a href="http://en.wikipedia.org/wiki/thermostat">HVAC thermostat</a> is often a combination of either a <a href="http://en.wikipedia.org/wiki/Relay">relay</a> or a <a href="http://en.wikipedia.org/wiki/Semiconductor_device">semiconductor device</a> to have circuits either opened or closed, off or on. Examples of this include heating, cooling, or a fan. The addition of a scheduling option to turn any of these items off or on at a certain date/time does make it more practical of a device in terms of managing day-to-day operation of a HVAC system. Adding in the ability to track run time duration for heating, cooling, or a fan help energy efficiency measurements. The final addition of remote access, through the traditional IP enabled data network, takes the HVAC thermostat to an interconnected device capable of multiple read/write techniques. The cable from the thermostat to the HVAC equipment is solid core 18-<a href="http://en.wikipedia.org/wiki/American_wire_gauge">AWG</a>, either 4 or 8 separately jacketed wires, depending on system capability, all contained within a protective jacket.
+</p>
+<a name="Choosing-Decision-Makers"></a>
 <h3 class="section">3.3 Choosing Decision Makers</h3>
-
 <p>You will most likely need to work with others who have a different skill set than you do to achieve an effective energy management strategy. It is necessary to carefully plan for your selection of the decision makers you choose to work with. Choosing decision makers that are capable to run your HVAC and IT systems is paramount to the success of your system performance.
-
+</p>
+<a name="HVAC"></a>
 <h4 class="subsection">3.3.1 HVAC</h4>
-
-<p>Being a licensed <a href="http://en.wikipedia.org/wiki/Professional_engineer">Professional Engineer</a> does not make that person a <a href="http://en.wikipedia.org/wiki/Certified_Energy_Manager">Certified Energy Manager</a> (CEM). They are separate qualifications, each with their own requirements. Go with a Certified Energy Manager to help you determine if you qualify for any tax benefit for commercial building being rated as energy efficient. Even if you don't qualify for a tax benefit, you will most likely find a very beneficial set of methods to increase your energy management strategies that makes paying the Certified Energy Manger well worth the expense.
-
+<p>Being a licensed <a href="http://en.wikipedia.org/wiki/Professional_engineer">Professional Engineer</a> does not make that person a <a href="http://en.wikipedia.org/wiki/Certified_Energy_Manager">Certified Energy Manager</a> (CEM). They are separate qualifications, each with their own requirements. Go with a Certified Energy Manager to help you determine if you qualify for any tax benefit for commercial building being rated as energy efficient. Even if you don&rsquo;t qualify for a tax benefit, you will most likely find a very beneficial set of methods to increase your energy management strategies that makes paying the Certified Energy Manger well worth the expense.
+</p>
+<a name="Information-Technology-1"></a>
 <h4 class="subsection">3.3.2 Information Technology</h4>
-
 <p>Being in an IT role does not make one qualified do an end-to-end design of an IT system. Relevant certifications help to know if one is really capable to do what they say they can do. Experience is probably the strongest credential one can have for being capable to run an IT system. Simply put, operation does not equal design. They are separate qualifications, each with their own requirements.
-
+</p>
+<a name="Conclusion"></a>
 <h4 class="subsection">3.3.3 Conclusion</h4>
-
 <p>Look to your <strong>Cost Benefit Analysis</strong> for decision making on how you need to design and operate your energy management strategy.
-
+</p>
+<a name="Security-Considerations"></a>
 <h3 class="section">3.4 Security Considerations</h3>
-
 <p>The following is a list of information that will greatly help you plan for the network implementation and configuration of your energy management strategy.
-
+</p>
+<a name="Supervisory-Control-And-Data-Acquisition"></a>
 <h4 class="subsection">3.4.1 Supervisory Control And Data Acquisition</h4>
-
 <p><a href="http://en.wikipedia.org/wiki/SCADA">SCADA</a> speaks to the industrial side of HVAC automation.
-
+</p>
+<a name="Industrial-Control-System"></a>
 <h4 class="subsection">3.4.2 Industrial Control System</h4>
-
 <p><a href="http://en.wikipedia.org/wiki/Industrial_Control_Systems">ICS</a> speaks to industrial production facilities.
-
+</p>
+<a name="System-Administration_002dAudit_002dNetwork-Security"></a>
 <h4 class="subsection">3.4.3 System Administration-Audit-Network Security</h4>
-
 <p><a href="http://www.sans.org/">SANS</a> specializes in Internet Security training.
-
+</p>
+<a name="Frequently-Asked-Questions"></a>
 <h3 class="section">3.5 Frequently Asked Questions</h3>
 
+<a name="Why-do-we-call-it-GNU-remotecontrol_003f"></a>
 <h4 class="subsection">3.5.1 Why do we call it GNU remotecontrol?</h4>
-
 <p>This code was originally called <strong>JUT</strong>.....&ldquo;<strong>J</strong>ust <strong>U</strong>se <strong>T</strong>his&rdquo; to represent the intention of this software automation to take the complicated and make it very, very simple, from a user perspective. The name changed to GNU remotecontrol, when code was released under the GNU license.
-
+</p>
+<a name="Why-do-I-need-GNU-remotecontrol_003f"></a>
 <h4 class="subsection">3.5.2 Why do I need GNU remotecontrol?</h4>
-
 <p>If you have IP thermostats, you know that it takes time/effort to keep your energy usage down and control your climate for your comfort. This time and effort is increased with each remote device or HVAC unit that you want to administrate. GNU remotecontrol helps you spend less time/effort administrating your IP thermostats, provides automated record keeping of what changed, who changed it, and when it was changed. GNU remotecontrol deployment helps keep your energy usage as low as possible.
-
+</p>
+<a name="How-do-I-know-who-changed-what_003f"></a>
 <h4 class="subsection">3.5.3 How do I know who changed what?</h4>
-
 <p>The access logs of your Web Server, your Operating System, and all of the other technologies that achieve user validation of a web application. Technologies that are time tested, tried and true, that you can count on. No need to reinvent the wheel, use what works very well when possible.
-
+</p>
+<a name="What-will-GNU-remotecontrol-do-for-me_003f"></a>
 <h4 class="subsection">3.5.4 What will GNU remotecontrol do for me?</h4>
-
 <p>Free up your time/effort for starters. Also, enable you to know who did what to your IP thermostats when GNU remotecontrol was used to change your IP thermostats. Finally, your GNU remotecontrol application can help you minimize your energy costs.
-
+</p>
+<a name="Can-I-figure-my-energy-usage-for-my-HVAC-units_003f"></a>
 <h4 class="subsection">3.5.5 Can I figure my energy usage for my HVAC units?</h4>
-
 <p>The IP thermostat will very much help with that measurement.
-
+</p>
+<a name="How-do-I-use-GNU-remotecontrol_003f"></a>
 <h4 class="subsection">3.5.6 How do I use GNU remotecontrol?</h4>
-
-<p>Pretty easy, actually. Select the IP thermostats you want to change the settings of.....make the change.....and that's it. You can easily see the time/effort you save changing the air conditioning from 75&deg;F to 73&deg;F for several IP thermostats, all at once!  Then, imagine changing your setback schedule somehow on top of that, for say 30 different IP thermostats, all at once!
-
+<p>Pretty easy, actually. Select the IP thermostats you want to change the settings of.....make the change.....and that&rsquo;s it. You can easily see the time/effort you save changing the air conditioning from 75&deg;F to 73&deg;F for several IP thermostats, all at once!  Then, imagine changing your setback schedule somehow on top of that, for say 30 different IP thermostats, all at once!
+</p>
+<a name="Can-I-use-GNU-remotecontrol-and-Remote-Monitoring-Server-together_003f"></a>
 <h4 class="subsection">3.5.7 Can I use GNU remotecontrol and Remote Monitoring Server together?</h4>
-
 <p>Oh, yes. Think of GNU remotecontrol as writing to your IP thermostats, and Remote Monitoring Server reading information about your IP thermostats. The two go hand in hand. They are intended to work together.
-
+</p>
+<a name="What-about-the-weather_002c-can-I-tie-weather-related-data-into-GNU-remotecontrol-and-Remote-Monitoring-Server_003f"></a>
 <h4 class="subsection">3.5.8 What about the weather, can I tie weather related data into GNU remotecontrol and Remote Monitoring Server?</h4>
-
 <p>Yes. Use your Remote Monitoring Server to collect information about the weather from International Weather Services for the location of your IP thermostat. That will tell you a great deal about the quality of your energy management strategy.
-
+</p>
+<a name="Mobile-access-for-GNU-remotecontrol_003f"></a>
 <h4 class="subsection">3.5.9 Mobile access for GNU remotecontrol?</h4>
-
 <p>Yes, but that depends on who you have for cell phone service, the type of cell phone you have, and the Internet browser on that phone.
-
+</p>
+<a name="Do-I-need-to-install-anything-to-my-computer_003f"></a>
 <h4 class="subsection">3.5.10 Do I need to install anything to my computer?</h4>
-
 <p>No. GNU remotecontrol is a <a href="http://www.w3.org/standards/">WC3</a> compliant web application. More times than not, your network is ready to go as-is.
-
+</p>
+<a name="How-many-different-users-will-be-able-to-use-GNU-remotecontrol_003f"></a>
 <h4 class="subsection">3.5.11 How many different users will be able to use GNU remotecontrol?</h4>
-
 <p>You can set up different user accounts, but the nature of an IP thermostat means the people touching it be very clear with each other as to how they want to set the IP thermostat.
-
+</p>
+<a name="Encryption_002e_002e_002e_002e_002eis-GNU-remotecontrol-safe-to-use-with-my-network_003f"></a>
 <h4 class="subsection">3.5.12 Encryption.....is GNU remotecontrol safe to use with my network?</h4>
-
 <p>We recommend you use a High Grade (AES-256 bit) encryption to secure the connection from your computer to your GNU remotecontrol server and verify the identity of your server with your own signed SSL Certificate. The connection from your computer to your IP thermostat is not changed from your normal connection to your Proliphix IP thermostat.
-
+</p>
+<a name="Is-GNU-remotecontrol-compatible-with-BACnet_003f"></a>
 <h4 class="subsection">3.5.13 Is GNU remotecontrol compatible with BACnet?</h4>
-
 <p>Yes. See <a href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">GNU remotecontrol &amp; BACnet</a>.
-
+</p>
+<a name="Can-I-use-GNU-remotecontrol-to-help-Test-_0026-Balance-my-HVAC-system_003f"></a>
 <h4 class="subsection">3.5.14 Can I use GNU remotecontrol to help Test &amp; Balance my HVAC system?</h4>
-
-<p>Yes. Remote Monitoring Server &amp; GNU remotecontrol work together to help you do just this. Recorded data of your HVAC system's usage and outdoor weather information is priceless for testing &amp; balancing. The review of recorded data offers considerable cost savings, in both time and effort, to when optimizing your system setup. Additionally, you can reduce the number of people necessary to do the testing and balancing down to 1 person.
-
+<p>Yes. Remote Monitoring Server &amp; GNU remotecontrol work together to help you do just this. Recorded data of your HVAC system&rsquo;s usage and outdoor weather information is priceless for testing &amp; balancing. The review of recorded data offers considerable cost savings, in both time and effort, to when optimizing your system setup. Additionally, you can reduce the number of people necessary to do the testing and balancing down to 1 person.
+</p>
+<a name="Future-Capabilities"></a>
 <h3 class="section">3.6 Future Capabilities</h3>
-
 <p>The next logical step is to expand GNU remotecontrol and become certified with industrial HVAC, lighting control, access control, and fire detection technologies. The BACnet communication protocol is an excellent candidate for connection to the GNU remotecontrol framework. See <a href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">GNU remotecontrol &amp; BACnet</a>. The <a href="http://en.wikipedia.org/wiki/Modbus">MODBUS</a> communication protocol may also be implemented at a future date, but demand for this capability enhancement is not clearly understood.
+</p>
+<hr>
+<div class="header">
+<p>
+Next: <a href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet" accesskey="n" rel="next">GNU remotecontrol &amp; BACnet</a>, Previous: <a href="Scope.html#Scope" accesskey="p" rel="previous">Scope</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
 
-   </body></html>
 
+
+</body>
+</html>

@@ -1,285 +1,325 @@
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for GNU remotecontrol (version 1.0, 7 January 2013), which is an example in the Texinfo documentation.
+
+Copyright (C) 2013 GNU remotecontrol authors.
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
+
+(a) The FSF's Back-Cover Text is: "You have the freedom to copy and modify this GNU manual. Buying copies from the FSF supports it in developing GNU and promoting software freedom." -->
+<!-- Created by Texinfo 4.13.93+dev, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GNU remotecontrol 1.00</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="GNU remotecontrol 1.00">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="#Top">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<title>GNU remotecontrol: Top</title>
+
+<meta name="description" content="GNU remotecontrol: Top">
+<meta name="keywords" content="GNU remotecontrol: Top">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="#Top" rel="start" title="Top">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="../dir/index.html" rel="up" title="(dir)">
+<link href="Overview.html#Overview" rel="next" title="Overview">
+<style type="text/css">
 <!--
-This manual is for GNU remotecontrol (version 1.00, 17 December 2012), which is an example in the Texinfo documentation.
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
 
-Copyright (C) 2012 GNU remotecontrol authors.
 
-     Permission is granted to copy, distribute and/or modify this
-     document under the terms of the GNU Free Documentation License,
-     Version 1.3 or any later version published by the Free Software
-     Foundation; with no Invariant Sections, with the Front-Cover Texts
-     being "A GNU Manual," and with the Back-Cover Texts as in (a)
-     below. A copy of the license is included in the section entitled
-     "GNU Free Documentation License."
-
-     (a) The FSF's Back-Cover Text is: "You have the freedom to copy
-     and modify this GNU manual. Buying copies from the FSF supports it
-     in developing GNU and promoting software freedom."
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
 </head>
-<body>
-<h1 class="settitle">GNU remotecontrol 1.00</h1>
-   <div class="contents">
-<h2>Table of Contents</h2>
-<ul>
-<li><a name="toc_Top" href="index.html#Top">GNU remotecontrol</a>
-<li><a name="toc_Overview" href="Overview.html#Overview">1 Overview</a>
-<li><a name="toc_Scope" href="Scope.html#Scope">2 Scope</a>
-<ul>
-<li><a href="Scope.html#Scope">2.1 Information Technology</a>
-<li><a href="Scope.html#Scope">2.2 Energy Management</a>
-<li><a href="Scope.html#Scope">2.3 End User</a>
-<li><a href="Scope.html#Scope">2.4 Financial Management</a>
-</li></ul>
-<li><a name="toc_Key-Principles" href="Key-Principles.html#Key-Principles">3 Key Principles</a>
-<ul>
-<li><a href="Key-Principles.html#Key-Principles">3.1 Present Capabilities</a>
-<li><a href="Key-Principles.html#Key-Principles">3.2 HVAC Thermostat</a>
-<li><a href="Key-Principles.html#Key-Principles">3.3 Choosing Decision Makers</a>
-<ul>
-<li><a href="Key-Principles.html#Key-Principles">3.3.1 HVAC</a>
-<li><a href="Key-Principles.html#Key-Principles">3.3.2 Information Technology</a>
-<li><a href="Key-Principles.html#Key-Principles">3.3.3 Conclusion</a>
-</li></ul>
-<li><a href="Key-Principles.html#Key-Principles">3.4 Security Considerations</a>
-<ul>
-<li><a href="Key-Principles.html#Key-Principles">3.4.1 Supervisory Control And Data Acquisition</a>
-<li><a href="Key-Principles.html#Key-Principles">3.4.2 Industrial Control System</a>
-<li><a href="Key-Principles.html#Key-Principles">3.4.3 System Administration-Audit-Network Security</a>
-</li></ul>
-<li><a href="Key-Principles.html#Key-Principles">3.5 Frequently Asked Questions</a>
-<ul>
-<li><a href="Key-Principles.html#Key-Principles">3.5.1 Why do we call it GNU remotecontrol?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.2 Why do I need GNU remotecontrol?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.3 How do I know who changed what?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.4 What will GNU remotecontrol do for me?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.5 Can I figure my energy usage for my HVAC units?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.6 How do I use GNU remotecontrol?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.7 Can I use GNU remotecontrol and Remote Monitoring Server together?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.8 What about the weather, can I tie weather related data into GNU remotecontrol and Remote Monitoring Server?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.9 Mobile access for GNU remotecontrol?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.10 Do I need to install anything to my computer?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.11 How many different users will be able to use GNU remotecontrol?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.12 Encryption.....is GNU remotecontrol safe to use with my network?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.13 Is GNU remotecontrol compatible with BACnet?</a>
-<li><a href="Key-Principles.html#Key-Principles">3.5.14 Can I use GNU remotecontrol to help Test &amp; Balance my HVAC system?</a>
-</li></ul>
-<li><a href="Key-Principles.html#Key-Principles">3.6 Future Capabilities</a>
-</li></ul>
-<li><a name="toc_GNU-remotecontrol-_0026-BACnet" href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">4 GNU remotecontrol &amp; BACnet</a>
-<ul>
-<li><a href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">4.1 Introduction</a>
-<li><a href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">4.2 Associated Specifications</a>
-<li><a href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">4.3 Going Forward</a>
-</li></ul>
-<li><a name="toc_Tax-Benefit" href="Tax-Benefit.html#Tax-Benefit">5 Tax Benefit</a>
-<li><a name="toc_System-Architecture-and-Concepts" href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6 System Architecture and Concepts</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.1 Web Server</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.1.1 Security Model</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.1.2 Requirements</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.1.3 Configuration</a>
-</li></ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.2 Database Server</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.2.1 Security Model</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.2.2 Requirements</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.2.3 Configuration</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.2.4 Translations</a>
-</li></ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.3 Remote Monitoring Server</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.3.1 Security Model</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.3.2 Options</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.3.3 Requirements</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.3.4 Configuration</a>
-</li></ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4 Nagios Plugins</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.1 Proliphix Alarms</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.2 Thermostat Plugin - check_ubicom</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.2.1 Syntax Example - IMPERIAL</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.2.2 Result Example - IMPERIAL</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.2.3 Syntax Example - METRIC</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.2.4 Result Example - METRIC</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.2.5 Syntax Example - Macro</a>
-</li></ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.3 Weather Plugin - check_weather</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.3.1 Syntax Example - IMPERIAL</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.3.2 Result Example - IMPERIAL</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.3.3 Syntax Example - METRIC</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.3.4 Result Example - METRIC</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.4.3.5 Syntax Example - Macro</a>
-</li></ul>
-</li></ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.5 Email Server</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.5.1 Security Model</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.5.2 Options</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.5.3 Requirements</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.5.4 Configuration</a>
-</li></ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6 Frequently Asked Questions</a>
-<ul>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.1 What is RMS?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.2 What is Remote Monitoring Server?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.3 Why do I need RMS?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.4 What will RMS do for me?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.5 How do I use RMS?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.6 Does a Remote Monitoring Server do graphing?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.7 Mobile access for RMS?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.8 Is it difficult to use RMS?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.9 How many emails/SMS messages will I get?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.10 How many different email addresses will you send me notifications to?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.11 Can I use RMS to help Test &amp; Balance my HVAC system?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.12 Do I need RMS?</a>
-<li><a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6.6.13 Really, how do I know that I need RMS?</a>
-</li></ul>
-</li></ul>
-<li><a name="toc_Usage-Instructions" href="Usage-Instructions.html#Usage-Instructions">7 Usage Instructions</a>
-<ul>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.1 Browser Selection</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.2 Time</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.3 admin.php</a>
-<ul>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.3.1 Purpose</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.3.2 Fields</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.3.3 Usage</a>
-</li></ul>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4 index.php</a>
-<ul>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4.1 Purpose</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4.2 Fields</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4.3 Usage</a>
-<ul>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4.3.1 Adding a Thermostat</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4.3.2 View Settings</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4.3.3 Write to a Thermostat - Date and Time</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4.3.4 Write to a Thermostat - HVAC Settings</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.4.3.5 Object Parameters</a>
-</li></ul>
-</li></ul>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.5 transactionhistory.php</a>
-<ul>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.5.1 Purpose</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.5.2 Fields</a>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.5.3 Usage</a>
-</li></ul>
-<li><a href="Usage-Instructions.html#Usage-Instructions">7.6 Troubleshooting</a>
-</li></ul>
-<li><a name="toc_Usage-Recommendations" href="Usage-Recommendations.html#Usage-Recommendations">8 Usage Recommendations</a>
-<ul>
-<li><a href="Usage-Recommendations.html#Usage-Recommendations">8.1 Start Small</a>
-<li><a href="Usage-Recommendations.html#Usage-Recommendations">8.2 Strongly Encouraged</a>
-<li><a href="Usage-Recommendations.html#Usage-Recommendations">8.3 Food for Thought</a>
-</li></ul>
-<li><a name="toc_Use-Case-Scenarios" href="Use-Case-Scenarios.html#Use-Case-Scenarios">9 Use Case Scenarios</a>
-<ul>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.1 Scenario 1 - Building Maintenance</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.2 Scenario 2 - Office Worker</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.3 Scenario 3 - Property Manager</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.4 Scenario 4 - Restaurant Operations</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.5 Scenario 5 - Certified Energy Manager</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.6 Scenario 6 - Industrial Manufacturing Facility</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.7 Scenario 7 - Facility Manager</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.8 Scenario 8 - External Information</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.9 Scenario 9 - Financial Manager</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.10 Scenario 10 - Automated Meter Reading</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.11 Scenario 11 - Smart Metering</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.12 Scenario 12 - Utility Providers</a>
-<li><a href="Use-Case-Scenarios.html#Use-Case-Scenarios">9.13 Summary</a>
-</li></ul>
-<li><a name="toc_Implementation-Cost" href="Implementation-Cost.html#Implementation-Cost">10 Implementation Cost</a>
-<li><a name="toc_Roadmap" href="Roadmap.html#Roadmap">11 Roadmap</a>
-<ul>
-<li><a href="Roadmap.html#Roadmap">11.1 Interoperability</a>
-<li><a href="Roadmap.html#Roadmap">11.2 HVAC Original Equipment Manufacturer - Feature Addition</a>
-<li><a href="Roadmap.html#Roadmap">11.3 HVAC Aftermarket Equipment Manufacturer - Feature Addition</a>
-<li><a href="Roadmap.html#Roadmap">11.4 Cost Benefit Analysis</a>
-</li></ul>
-<li><a name="toc_REFERENCE" href="REFERENCE.html#REFERENCE">12 REFERENCE</a>
-<ul>
-<li><a href="REFERENCE.html#REFERENCE">12.1 Cabling 101</a>
-<ul>
-<li><a href="REFERENCE.html#REFERENCE">12.1.1 Introduction</a>
-<li><a href="REFERENCE.html#REFERENCE">12.1.2 Cable</a>
-<li><a href="REFERENCE.html#REFERENCE">12.1.3 Grounding</a>
-<li><a href="REFERENCE.html#REFERENCE">12.1.4 Installation</a>
-<li><a href="REFERENCE.html#REFERENCE">12.1.5 Termination</a>
-<li><a href="REFERENCE.html#REFERENCE">12.1.6 Testing</a>
-<li><a href="REFERENCE.html#REFERENCE">12.1.7 Usage Notes</a>
-<li><a href="REFERENCE.html#REFERENCE">12.1.8 Cautionary</a>
-</li></ul>
-<li><a href="REFERENCE.html#REFERENCE">12.2 Power over Ethernet (PoE) 101</a>
-<ul>
-<li><a href="REFERENCE.html#REFERENCE">12.2.1 Introduction</a>
-<li><a href="REFERENCE.html#REFERENCE">12.2.2 Power Sourcing Equipment (PSE)</a>
-<li><a href="REFERENCE.html#REFERENCE">12.2.3 Powered Device (PD)</a>
-<li><a href="REFERENCE.html#REFERENCE">12.2.4 Midspan</a>
-<li><a href="REFERENCE.html#REFERENCE">12.2.5 Endspan</a>
-<li><a href="REFERENCE.html#REFERENCE">12.2.6 Usage Notes</a>
-<li><a href="REFERENCE.html#REFERENCE">12.2.7 Cautionary</a>
-</li></ul>
-</li></ul>
-<li><a name="toc_Contributors" href="Contributors.html#Contributors">13 Contributors</a>
-<li><a name="toc_GNU-Free-Documentation-License" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">14 GNU Free Documentation License</a>
-<li><a name="toc_GNU-Free-Documentation-License" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">Appendix A GNU Free Documentation License</a>
-</li></ul>
-</div>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+<h1 class="settitle" align="center">GNU remotecontrol</h1>
 
 
 
-<div class="node">
-<a name="Top"></a>
-<p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Overview.html#Overview">Overview</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
-<hr>
-</div>
+<a name="SEC_Contents"></a>
+<h2 class="contents-heading">Table of Contents</h2>
 
-<h2 class="unnumbered">GNU remotecontrol</h2>
+<div class="contents">
 
-<p>This manual is for GNU remotecontrol (version 1.00, 17 December 2012).
-
-<ul class="menu">
-<li><a accesskey="1" href="Overview.html#Overview">Overview</a>:   An overview of GNU remotecontrol. 
-<li><a accesskey="2" href="Scope.html#Scope">Scope</a>:   The scope of this document. 
-<li><a accesskey="3" href="Key-Principles.html#Key-Principles">Key Principles</a>:   Key principles of GNU remotecontrol, described. 
-<li><a accesskey="4" href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">GNU remotecontrol &amp; BACnet</a>:   How they work together. 
-<li><a accesskey="5" href="Tax-Benefit.html#Tax-Benefit">Tax Benefit</a>:   Tax benefits of using GNU remotecontrol. 
-<li><a accesskey="6" href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">System Architecture and Concepts</a>:   The architecture of the system. 
-<li><a accesskey="7" href="Usage-Instructions.html#Usage-Instructions">Usage Instructions</a>:   How to use it. 
-<li><a accesskey="8" href="Usage-Recommendations.html#Usage-Recommendations">Usage Recommendations</a>:   Tips to use it. 
-<li><a accesskey="9" href="Use-Case-Scenarios.html#Use-Case-Scenarios">Use Case Scenarios</a>:   How you might want to use it. 
-<li><a href="Implementation-Cost.html#Implementation-Cost">Implementation Cost</a>:   The cost to get started. 
-<li><a href="Roadmap.html#Roadmap">Roadmap</a>:   Where we're going. 
-<li><a href="REFERENCE.html#REFERENCE">REFERENCE</a>:   Reference materials for cabling and power. 
-<li><a href="Contributors.html#Contributors">Contributors</a>:   Who made this? 
-<li><a href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">GNU Free Documentation License</a>:  The license covering this document. 
-<!-- * Index::  Complete index. -->
+<ul class="no-bullet">
+  <li><a name="toc-Overview-1" href="Overview.html#Overview">1 Overview</a></li>
+  <li><a name="toc-Scope-1" href="Scope.html#Scope">2 Scope</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Information-Technology" href="Scope.html#Information-Technology">2.1 Information Technology</a></li>
+    <li><a name="toc-Energy-Management" href="Scope.html#Energy-Management">2.2 Energy Management</a></li>
+    <li><a name="toc-End-User" href="Scope.html#End-User">2.3 End User</a></li>
+    <li><a name="toc-Financial-Management" href="Scope.html#Financial-Management">2.4 Financial Management</a></li>
+  </ul></li>
+  <li><a name="toc-Key-Principles-1" href="Key-Principles.html#Key-Principles">3 Key Principles</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Present-Capabilities" href="Key-Principles.html#Present-Capabilities">3.1 Present Capabilities</a></li>
+    <li><a name="toc-HVAC-Thermostat" href="Key-Principles.html#HVAC-Thermostat">3.2 HVAC Thermostat</a></li>
+    <li><a name="toc-Choosing-Decision-Makers" href="Key-Principles.html#Choosing-Decision-Makers">3.3 Choosing Decision Makers</a>
+    <ul class="no-bullet">
+      <li><a name="toc-HVAC" href="Key-Principles.html#HVAC">3.3.1 HVAC</a></li>
+      <li><a name="toc-Information-Technology-1" href="Key-Principles.html#Information-Technology-1">3.3.2 Information Technology</a></li>
+      <li><a name="toc-Conclusion" href="Key-Principles.html#Conclusion">3.3.3 Conclusion</a></li>
+    </ul></li>
+    <li><a name="toc-Security-Considerations" href="Key-Principles.html#Security-Considerations">3.4 Security Considerations</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Supervisory-Control-And-Data-Acquisition" href="Key-Principles.html#Supervisory-Control-And-Data-Acquisition">3.4.1 Supervisory Control And Data Acquisition</a></li>
+      <li><a name="toc-Industrial-Control-System" href="Key-Principles.html#Industrial-Control-System">3.4.2 Industrial Control System</a></li>
+      <li><a name="toc-System-Administration_002dAudit_002dNetwork-Security" href="Key-Principles.html#System-Administration_002dAudit_002dNetwork-Security">3.4.3 System Administration-Audit-Network Security</a></li>
+    </ul></li>
+    <li><a name="toc-Frequently-Asked-Questions" href="Key-Principles.html#Frequently-Asked-Questions">3.5 Frequently Asked Questions</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Why-do-we-call-it-GNU-remotecontrol_003f" href="Key-Principles.html#Why-do-we-call-it-GNU-remotecontrol_003f">3.5.1 Why do we call it GNU remotecontrol?</a></li>
+      <li><a name="toc-Why-do-I-need-GNU-remotecontrol_003f" href="Key-Principles.html#Why-do-I-need-GNU-remotecontrol_003f">3.5.2 Why do I need GNU remotecontrol?</a></li>
+      <li><a name="toc-How-do-I-know-who-changed-what_003f" href="Key-Principles.html#How-do-I-know-who-changed-what_003f">3.5.3 How do I know who changed what?</a></li>
+      <li><a name="toc-What-will-GNU-remotecontrol-do-for-me_003f" href="Key-Principles.html#What-will-GNU-remotecontrol-do-for-me_003f">3.5.4 What will GNU remotecontrol do for me?</a></li>
+      <li><a name="toc-Can-I-figure-my-energy-usage-for-my-HVAC-units_003f" href="Key-Principles.html#Can-I-figure-my-energy-usage-for-my-HVAC-units_003f">3.5.5 Can I figure my energy usage for my HVAC units?</a></li>
+      <li><a name="toc-How-do-I-use-GNU-remotecontrol_003f" href="Key-Principles.html#How-do-I-use-GNU-remotecontrol_003f">3.5.6 How do I use GNU remotecontrol?</a></li>
+      <li><a name="toc-Can-I-use-GNU-remotecontrol-and-Remote-Monitoring-Server-together_003f" href="Key-Principles.html#Can-I-use-GNU-remotecontrol-and-Remote-Monitoring-Server-together_003f">3.5.7 Can I use GNU remotecontrol and Remote Monitoring Server together?</a></li>
+      <li><a name="toc-What-about-the-weather_002c-can-I-tie-weather-related-data-into-GNU-remotecontrol-and-Remote-Monitoring-Server_003f" href="Key-Principles.html#What-about-the-weather_002c-can-I-tie-weather-related-data-into-GNU-remotecontrol-and-Remote-Monitoring-Server_003f">3.5.8 What about the weather, can I tie weather related data into GNU remotecontrol and Remote Monitoring Server?</a></li>
+      <li><a name="toc-Mobile-access-for-GNU-remotecontrol_003f" href="Key-Principles.html#Mobile-access-for-GNU-remotecontrol_003f">3.5.9 Mobile access for GNU remotecontrol?</a></li>
+      <li><a name="toc-Do-I-need-to-install-anything-to-my-computer_003f" href="Key-Principles.html#Do-I-need-to-install-anything-to-my-computer_003f">3.5.10 Do I need to install anything to my computer?</a></li>
+      <li><a name="toc-How-many-different-users-will-be-able-to-use-GNU-remotecontrol_003f" href="Key-Principles.html#How-many-different-users-will-be-able-to-use-GNU-remotecontrol_003f">3.5.11 How many different users will be able to use GNU remotecontrol?</a></li>
+      <li><a name="toc-Encryption_002e_002e_002e_002e_002eis-GNU-remotecontrol-safe-to-use-with-my-network_003f" href="Key-Principles.html#Encryption_002e_002e_002e_002e_002eis-GNU-remotecontrol-safe-to-use-with-my-network_003f">3.5.12 Encryption.....is GNU remotecontrol safe to use with my network?</a></li>
+      <li><a name="toc-Is-GNU-remotecontrol-compatible-with-BACnet_003f" href="Key-Principles.html#Is-GNU-remotecontrol-compatible-with-BACnet_003f">3.5.13 Is GNU remotecontrol compatible with BACnet?</a></li>
+      <li><a name="toc-Can-I-use-GNU-remotecontrol-to-help-Test-_0026-Balance-my-HVAC-system_003f" href="Key-Principles.html#Can-I-use-GNU-remotecontrol-to-help-Test-_0026-Balance-my-HVAC-system_003f">3.5.14 Can I use GNU remotecontrol to help Test &amp; Balance my HVAC system?</a></li>
+    </ul></li>
+    <li><a name="toc-Future-Capabilities" href="Key-Principles.html#Future-Capabilities">3.6 Future Capabilities</a></li>
+  </ul></li>
+  <li><a name="toc-GNU-remotecontrol-_0026-BACnet-1" href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet">4 GNU remotecontrol &amp; BACnet</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Introduction" href="GNU-remotecontrol-_0026-BACnet.html#Introduction">4.1 Introduction</a></li>
+    <li><a name="toc-Associated-Specifications" href="GNU-remotecontrol-_0026-BACnet.html#Associated-Specifications">4.2 Associated Specifications</a></li>
+    <li><a name="toc-Going-Forward" href="GNU-remotecontrol-_0026-BACnet.html#Going-Forward">4.3 Going Forward</a></li>
+  </ul></li>
+  <li><a name="toc-Tax-Benefit-1" href="Tax-Benefit.html#Tax-Benefit">5 Tax Benefit</a></li>
+  <li><a name="toc-System-Architecture-and-Concepts-1" href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">6 System Architecture and Concepts</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Web-Server" href="System-Architecture-and-Concepts.html#Web-Server">6.1 Web Server</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Security-Model" href="System-Architecture-and-Concepts.html#Security-Model">6.1.1 Security Model</a></li>
+      <li><a name="toc-Requirements" href="System-Architecture-and-Concepts.html#Requirements">6.1.2 Requirements</a></li>
+      <li><a name="toc-Configuration" href="System-Architecture-and-Concepts.html#Configuration">6.1.3 Configuration</a></li>
+    </ul></li>
+    <li><a name="toc-Database-Server" href="System-Architecture-and-Concepts.html#Database-Server">6.2 Database Server</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Security-Model-1" href="System-Architecture-and-Concepts.html#Security-Model-1">6.2.1 Security Model</a></li>
+      <li><a name="toc-Requirements-1" href="System-Architecture-and-Concepts.html#Requirements-1">6.2.2 Requirements</a></li>
+      <li><a name="toc-Configuration-1" href="System-Architecture-and-Concepts.html#Configuration-1">6.2.3 Configuration</a></li>
+      <li><a name="toc-Translations" href="System-Architecture-and-Concepts.html#Translations">6.2.4 Translations</a></li>
+    </ul></li>
+    <li><a name="toc-Remote-Monitoring-Server" href="System-Architecture-and-Concepts.html#Remote-Monitoring-Server">6.3 Remote Monitoring Server</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Security-Model-2" href="System-Architecture-and-Concepts.html#Security-Model-2">6.3.1 Security Model</a></li>
+      <li><a name="toc-Options" href="System-Architecture-and-Concepts.html#Options">6.3.2 Options</a></li>
+      <li><a name="toc-Requirements-2" href="System-Architecture-and-Concepts.html#Requirements-2">6.3.3 Requirements</a></li>
+      <li><a name="toc-Configuration-2" href="System-Architecture-and-Concepts.html#Configuration-2">6.3.4 Configuration</a></li>
+    </ul></li>
+    <li><a name="toc-Nagios-Plugins" href="System-Architecture-and-Concepts.html#Nagios-Plugins">6.4 Nagios Plugins</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Proliphix-Alarms" href="System-Architecture-and-Concepts.html#Proliphix-Alarms">6.4.1 Proliphix Alarms</a></li>
+      <li><a name="toc-Thermostat-Plugin-_002d-check_005fubicom" href="System-Architecture-and-Concepts.html#Thermostat-Plugin-_002d-check_005fubicom">6.4.2 Thermostat Plugin - check_ubicom</a>
+      <ul class="no-bullet">
+        <li><a name="toc-Syntax-Example-_002d-IMPERIAL" href="System-Architecture-and-Concepts.html#Syntax-Example-_002d-IMPERIAL">6.4.2.1 Syntax Example - IMPERIAL</a></li>
+        <li><a name="toc-Result-Example-_002d-IMPERIAL" href="System-Architecture-and-Concepts.html#Result-Example-_002d-IMPERIAL">6.4.2.2 Result Example - IMPERIAL</a></li>
+        <li><a name="toc-Syntax-Example-_002d-METRIC" href="System-Architecture-and-Concepts.html#Syntax-Example-_002d-METRIC">6.4.2.3 Syntax Example - METRIC</a></li>
+        <li><a name="toc-Result-Example-_002d-METRIC" href="System-Architecture-and-Concepts.html#Result-Example-_002d-METRIC">6.4.2.4 Result Example - METRIC</a></li>
+        <li><a name="toc-Syntax-Example-_002d-Macro" href="System-Architecture-and-Concepts.html#Syntax-Example-_002d-Macro">6.4.2.5 Syntax Example - Macro</a></li>
+      </ul></li>
+      <li><a name="toc-Weather-Plugin-_002d-check_005fweather" href="System-Architecture-and-Concepts.html#Weather-Plugin-_002d-check_005fweather">6.4.3 Weather Plugin - check_weather</a>
+      <ul class="no-bullet">
+        <li><a name="toc-Syntax-Example-_002d-IMPERIAL-1" href="System-Architecture-and-Concepts.html#Syntax-Example-_002d-IMPERIAL-1">6.4.3.1 Syntax Example - IMPERIAL</a></li>
+        <li><a name="toc-Result-Example-_002d-IMPERIAL-1" href="System-Architecture-and-Concepts.html#Result-Example-_002d-IMPERIAL-1">6.4.3.2 Result Example - IMPERIAL</a></li>
+        <li><a name="toc-Syntax-Example-_002d-METRIC-1" href="System-Architecture-and-Concepts.html#Syntax-Example-_002d-METRIC-1">6.4.3.3 Syntax Example - METRIC</a></li>
+        <li><a name="toc-Result-Example-_002d-METRIC-1" href="System-Architecture-and-Concepts.html#Result-Example-_002d-METRIC-1">6.4.3.4 Result Example - METRIC</a></li>
+        <li><a name="toc-Syntax-Example-_002d-Macro-1" href="System-Architecture-and-Concepts.html#Syntax-Example-_002d-Macro-1">6.4.3.5 Syntax Example - Macro</a></li>
+      </ul></li>
+    </ul></li>
+    <li><a name="toc-Email-Server" href="System-Architecture-and-Concepts.html#Email-Server">6.5 Email Server</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Security-Model-3" href="System-Architecture-and-Concepts.html#Security-Model-3">6.5.1 Security Model</a></li>
+      <li><a name="toc-Options-1" href="System-Architecture-and-Concepts.html#Options-1">6.5.2 Options</a></li>
+      <li><a name="toc-Requirements-3" href="System-Architecture-and-Concepts.html#Requirements-3">6.5.3 Requirements</a></li>
+      <li><a name="toc-Configuration-3" href="System-Architecture-and-Concepts.html#Configuration-3">6.5.4 Configuration</a></li>
+    </ul></li>
+    <li><a name="toc-Frequently-Asked-Questions-1" href="System-Architecture-and-Concepts.html#Frequently-Asked-Questions-1">6.6 Frequently Asked Questions</a>
+    <ul class="no-bullet">
+      <li><a name="toc-What-is-RMS_003f" href="System-Architecture-and-Concepts.html#What-is-RMS_003f">6.6.1 What is RMS?</a></li>
+      <li><a name="toc-What-is-Remote-Monitoring-Server_003f" href="System-Architecture-and-Concepts.html#What-is-Remote-Monitoring-Server_003f">6.6.2 What is Remote Monitoring Server?</a></li>
+      <li><a name="toc-Why-do-I-need-RMS_003f" href="System-Architecture-and-Concepts.html#Why-do-I-need-RMS_003f">6.6.3 Why do I need RMS?</a></li>
+      <li><a name="toc-What-will-RMS-do-for-me_003f" href="System-Architecture-and-Concepts.html#What-will-RMS-do-for-me_003f">6.6.4 What will RMS do for me?</a></li>
+      <li><a name="toc-How-do-I-use-RMS_003f" href="System-Architecture-and-Concepts.html#How-do-I-use-RMS_003f">6.6.5 How do I use RMS?</a></li>
+      <li><a name="toc-Does-a-Remote-Monitoring-Server-do-graphing_003f" href="System-Architecture-and-Concepts.html#Does-a-Remote-Monitoring-Server-do-graphing_003f">6.6.6 Does a Remote Monitoring Server do graphing?</a></li>
+      <li><a name="toc-Mobile-access-for-RMS_003f" href="System-Architecture-and-Concepts.html#Mobile-access-for-RMS_003f">6.6.7 Mobile access for RMS?</a></li>
+      <li><a name="toc-Is-it-difficult-to-use-RMS_003f" href="System-Architecture-and-Concepts.html#Is-it-difficult-to-use-RMS_003f">6.6.8 Is it difficult to use RMS?</a></li>
+      <li><a name="toc-How-many-emails_002fSMS-messages-will-I-get_003f" href="System-Architecture-and-Concepts.html#How-many-emails_002fSMS-messages-will-I-get_003f">6.6.9 How many emails/SMS messages will I get?</a></li>
+      <li><a name="toc-How-many-different-email-addresses-will-you-send-me-notifications-to_003f" href="System-Architecture-and-Concepts.html#How-many-different-email-addresses-will-you-send-me-notifications-to_003f">6.6.10 How many different email addresses will you send me notifications to?</a></li>
+      <li><a name="toc-Can-I-use-RMS-to-help-Test-_0026-Balance-my-HVAC-system_003f" href="System-Architecture-and-Concepts.html#Can-I-use-RMS-to-help-Test-_0026-Balance-my-HVAC-system_003f">6.6.11 Can I use RMS to help Test &amp; Balance my HVAC system?</a></li>
+      <li><a name="toc-Do-I-need-RMS_003f" href="System-Architecture-and-Concepts.html#Do-I-need-RMS_003f">6.6.12 Do I need RMS?</a></li>
+      <li><a name="toc-Really_002c-how-do-I-know-that-I-need-RMS_003f" href="System-Architecture-and-Concepts.html#Really_002c-how-do-I-know-that-I-need-RMS_003f">6.6.13 Really, how do I know that I need RMS?</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Usage-Instructions-1" href="Usage-Instructions.html#Usage-Instructions">7 Usage Instructions</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Browser-Selection" href="Usage-Instructions.html#Browser-Selection">7.1 Browser Selection</a></li>
+    <li><a name="toc-Time" href="Usage-Instructions.html#Time">7.2 Time</a></li>
+    <li><a name="toc-admin_002ephp" href="Usage-Instructions.html#admin_002ephp">7.3 admin.php</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Purpose" href="Usage-Instructions.html#Purpose">7.3.1 Purpose</a></li>
+      <li><a name="toc-Fields" href="Usage-Instructions.html#Fields">7.3.2 Fields</a></li>
+      <li><a name="toc-Usage" href="Usage-Instructions.html#Usage">7.3.3 Usage</a></li>
+    </ul></li>
+    <li><a name="toc-index_002ephp" href="Usage-Instructions.html#index_002ephp">7.4 index.php</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Purpose-1" href="Usage-Instructions.html#Purpose-1">7.4.1 Purpose</a></li>
+      <li><a name="toc-Fields-1" href="Usage-Instructions.html#Fields-1">7.4.2 Fields</a></li>
+      <li><a name="toc-Usage-1" href="Usage-Instructions.html#Usage-1">7.4.3 Usage</a>
+      <ul class="no-bullet">
+        <li><a name="toc-Adding-a-Thermostat" href="Usage-Instructions.html#Adding-a-Thermostat">7.4.3.1 Adding a Thermostat</a></li>
+        <li><a name="toc-View-Settings" href="Usage-Instructions.html#View-Settings">7.4.3.2 View Settings</a></li>
+        <li><a name="toc-Write-to-a-Thermostat-_002d-Date-and-Time" href="Usage-Instructions.html#Write-to-a-Thermostat-_002d-Date-and-Time">7.4.3.3 Write to a Thermostat - Date and Time</a></li>
+        <li><a name="toc-Write-to-a-Thermostat-_002d-HVAC-Settings" href="Usage-Instructions.html#Write-to-a-Thermostat-_002d-HVAC-Settings">7.4.3.4 Write to a Thermostat - HVAC Settings</a></li>
+        <li><a name="toc-Object-Parameters" href="Usage-Instructions.html#Object-Parameters">7.4.3.5 Object Parameters</a></li>
+      </ul></li>
+    </ul></li>
+    <li><a name="toc-transactionhistory_002ephp" href="Usage-Instructions.html#transactionhistory_002ephp">7.5 transactionhistory.php</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Purpose-2" href="Usage-Instructions.html#Purpose-2">7.5.1 Purpose</a></li>
+      <li><a name="toc-Fields-2" href="Usage-Instructions.html#Fields-2">7.5.2 Fields</a></li>
+      <li><a name="toc-Usage-2" href="Usage-Instructions.html#Usage-2">7.5.3 Usage</a></li>
+    </ul></li>
+    <li><a name="toc-Troubleshooting" href="Usage-Instructions.html#Troubleshooting">7.6 Troubleshooting</a></li>
+  </ul></li>
+  <li><a name="toc-Usage-Recommendations-1" href="Usage-Recommendations.html#Usage-Recommendations">8 Usage Recommendations</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Start-Small" href="Usage-Recommendations.html#Start-Small">8.1 Start Small</a></li>
+    <li><a name="toc-Strongly-Encouraged" href="Usage-Recommendations.html#Strongly-Encouraged">8.2 Strongly Encouraged</a></li>
+    <li><a name="toc-Food-for-Thought" href="Usage-Recommendations.html#Food-for-Thought">8.3 Food for Thought</a></li>
+  </ul></li>
+  <li><a name="toc-Use-Case-Scenarios-1" href="Use-Case-Scenarios.html#Use-Case-Scenarios">9 Use Case Scenarios</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Scenario-1-_002d-Building-Maintenance" href="Use-Case-Scenarios.html#Scenario-1-_002d-Building-Maintenance">9.1 Scenario 1 - Building Maintenance</a></li>
+    <li><a name="toc-Scenario-2-_002d-Office-Worker" href="Use-Case-Scenarios.html#Scenario-2-_002d-Office-Worker">9.2 Scenario 2 - Office Worker</a></li>
+    <li><a name="toc-Scenario-3-_002d-Property-Manager" href="Use-Case-Scenarios.html#Scenario-3-_002d-Property-Manager">9.3 Scenario 3 - Property Manager</a></li>
+    <li><a name="toc-Scenario-4-_002d-Restaurant-Operations" href="Use-Case-Scenarios.html#Scenario-4-_002d-Restaurant-Operations">9.4 Scenario 4 - Restaurant Operations</a></li>
+    <li><a name="toc-Scenario-5-_002d-Certified-Energy-Manager" href="Use-Case-Scenarios.html#Scenario-5-_002d-Certified-Energy-Manager">9.5 Scenario 5 - Certified Energy Manager</a></li>
+    <li><a name="toc-Scenario-6-_002d-Industrial-Manufacturing-Facility" href="Use-Case-Scenarios.html#Scenario-6-_002d-Industrial-Manufacturing-Facility">9.6 Scenario 6 - Industrial Manufacturing Facility</a></li>
+    <li><a name="toc-Scenario-7-_002d-Facility-Manager" href="Use-Case-Scenarios.html#Scenario-7-_002d-Facility-Manager">9.7 Scenario 7 - Facility Manager</a></li>
+    <li><a name="toc-Scenario-8-_002d-External-Information" href="Use-Case-Scenarios.html#Scenario-8-_002d-External-Information">9.8 Scenario 8 - External Information</a></li>
+    <li><a name="toc-Scenario-9-_002d-Financial-Manager" href="Use-Case-Scenarios.html#Scenario-9-_002d-Financial-Manager">9.9 Scenario 9 - Financial Manager</a></li>
+    <li><a name="toc-Scenario-10-_002d-Automated-Meter-Reading" href="Use-Case-Scenarios.html#Scenario-10-_002d-Automated-Meter-Reading">9.10 Scenario 10 - Automated Meter Reading</a></li>
+    <li><a name="toc-Scenario-11-_002d-Smart-Metering" href="Use-Case-Scenarios.html#Scenario-11-_002d-Smart-Metering">9.11 Scenario 11 - Smart Metering</a></li>
+    <li><a name="toc-Scenario-12-_002d-Utility-Providers" href="Use-Case-Scenarios.html#Scenario-12-_002d-Utility-Providers">9.12 Scenario 12 - Utility Providers</a></li>
+    <li><a name="toc-Summary" href="Use-Case-Scenarios.html#Summary">9.13 Summary</a></li>
+  </ul></li>
+  <li><a name="toc-Implementation-Cost-1" href="Implementation-Cost.html#Implementation-Cost">10 Implementation Cost</a></li>
+  <li><a name="toc-Roadmap-1" href="Roadmap.html#Roadmap">11 Roadmap</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Interoperability" href="Roadmap.html#Interoperability">11.1 Interoperability</a></li>
+    <li><a name="toc-HVAC-Original-Equipment-Manufacturer-_002d-Feature-Addition" href="Roadmap.html#HVAC-Original-Equipment-Manufacturer-_002d-Feature-Addition">11.2 HVAC Original Equipment Manufacturer - Feature Addition</a></li>
+    <li><a name="toc-HVAC-Aftermarket-Equipment-Manufacturer-_002d-Feature-Addition" href="Roadmap.html#HVAC-Aftermarket-Equipment-Manufacturer-_002d-Feature-Addition">11.3 HVAC Aftermarket Equipment Manufacturer - Feature Addition</a></li>
+    <li><a name="toc-Cost-Benefit-Analysis" href="Roadmap.html#Cost-Benefit-Analysis">11.4 Cost Benefit Analysis</a></li>
+  </ul></li>
+  <li><a name="toc-REFERENCE-1" href="REFERENCE.html#REFERENCE">12 REFERENCE</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Cabling-101" href="REFERENCE.html#Cabling-101">12.1 Cabling 101</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Introduction-1" href="REFERENCE.html#Introduction-1">12.1.1 Introduction</a></li>
+      <li><a name="toc-Cable" href="REFERENCE.html#Cable">12.1.2 Cable</a></li>
+      <li><a name="toc-Grounding" href="REFERENCE.html#Grounding">12.1.3 Grounding</a></li>
+      <li><a name="toc-Installation" href="REFERENCE.html#Installation">12.1.4 Installation</a></li>
+      <li><a name="toc-Termination" href="REFERENCE.html#Termination">12.1.5 Termination</a></li>
+      <li><a name="toc-Testing" href="REFERENCE.html#Testing">12.1.6 Testing</a></li>
+      <li><a name="toc-Usage-Notes" href="REFERENCE.html#Usage-Notes">12.1.7 Usage Notes</a></li>
+      <li><a name="toc-Cautionary" href="REFERENCE.html#Cautionary">12.1.8 Cautionary</a></li>
+    </ul></li>
+    <li><a name="toc-Power-over-Ethernet-_0028PoE_0029-101" href="REFERENCE.html#Power-over-Ethernet-_0028PoE_0029-101">12.2 Power over Ethernet (PoE) 101</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Introduction-2" href="REFERENCE.html#Introduction-2">12.2.1 Introduction</a></li>
+      <li><a name="toc-Power-Sourcing-Equipment-_0028PSE_0029" href="REFERENCE.html#Power-Sourcing-Equipment-_0028PSE_0029">12.2.2 Power Sourcing Equipment (PSE)</a></li>
+      <li><a name="toc-Powered-Device-_0028PD_0029" href="REFERENCE.html#Powered-Device-_0028PD_0029">12.2.3 Powered Device (PD)</a></li>
+      <li><a name="toc-Midspan" href="REFERENCE.html#Midspan">12.2.4 Midspan</a></li>
+      <li><a name="toc-Endspan" href="REFERENCE.html#Endspan">12.2.5 Endspan</a></li>
+      <li><a name="toc-Usage-Notes-1" href="REFERENCE.html#Usage-Notes-1">12.2.6 Usage Notes</a></li>
+      <li><a name="toc-Cautionary-1" href="REFERENCE.html#Cautionary-1">12.2.7 Cautionary</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Contributors-1" href="Contributors.html#Contributors">13 Contributors</a></li>
+  <li><a name="toc-GNU-Free-Documentation-License-1" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">Appendix A GNU Free Documentation License</a></li>
 </ul>
+</div>
 
-   </body></html>
 
+<a name="Top"></a>
+<div class="header">
+<p>
+Next: <a href="Overview.html#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<a name="GNU-remotecontrol"></a>
+<h1 class="top">GNU remotecontrol</h1>
+
+<p>This manual is for GNU remotecontrol (version 1.0, 7 January 2013).
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="Overview.html#Overview" accesskey="1">Overview</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">An overview of GNU remotecontrol.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Scope.html#Scope" accesskey="2">Scope</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The scope of this document. 
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Key-Principles.html#Key-Principles" accesskey="3">Key Principles</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Key principles of GNU remotecontrol, described.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="GNU-remotecontrol-_0026-BACnet.html#GNU-remotecontrol-_0026-BACnet" accesskey="4">GNU remotecontrol &amp; BACnet</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How they work together.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Tax-Benefit.html#Tax-Benefit" accesskey="5">Tax Benefit</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Tax benefits of using GNU remotecontrol.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts" accesskey="6">System Architecture and Concepts</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The architecture of the system.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Usage-Instructions.html#Usage-Instructions" accesskey="7">Usage Instructions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to use it.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Usage-Recommendations.html#Usage-Recommendations" accesskey="8">Usage Recommendations</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Tips to use it.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Use-Case-Scenarios.html#Use-Case-Scenarios" accesskey="9">Use Case Scenarios</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How you might want to use it.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Implementation-Cost.html#Implementation-Cost">Implementation Cost</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The cost to get started.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Roadmap.html#Roadmap">Roadmap</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Where we&rsquo;re going.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="REFERENCE.html#REFERENCE">REFERENCE</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Reference materials for cabling and power.
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Contributors.html#Contributors">Contributors</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Who made this?
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">GNU Free Documentation License</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The license covering this document.
+</td></tr>
+</table>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Overview.html#Overview" accesskey="n" rel="next">Overview</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

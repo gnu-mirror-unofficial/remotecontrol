@@ -1,404 +1,417 @@
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for GNU remotecontrol (version 1.0, 7 January 2013), which is an example in the Texinfo documentation.
+
+Copyright (C) 2013 GNU remotecontrol authors.
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
+
+(a) The FSF's Back-Cover Text is: "You have the freedom to copy and modify this GNU manual. Buying copies from the FSF supports it in developing GNU and promoting software freedom." -->
+<!-- Created by Texinfo 4.13.93+dev, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>Usage Instructions - GNU remotecontrol 1.00</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="GNU remotecontrol 1.00">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts" title="System Architecture and Concepts">
-<link rel="next" href="Usage-Recommendations.html#Usage-Recommendations" title="Usage Recommendations">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<title>GNU remotecontrol: Usage Instructions</title>
+
+<meta name="description" content="GNU remotecontrol: Usage Instructions">
+<meta name="keywords" content="GNU remotecontrol: Usage Instructions">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html#Top" rel="up" title="Top">
+<link href="Usage-Recommendations.html#Usage-Recommendations" rel="next" title="Usage Recommendations">
+<link href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts" rel="previous" title="System Architecture and Concepts">
+<style type="text/css">
 <!--
-This manual is for GNU remotecontrol (version 1.00, 17 December 2012), which is an example in the Texinfo documentation.
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
 
-Copyright (C) 2012 GNU remotecontrol authors.
 
-     Permission is granted to copy, distribute and/or modify this
-     document under the terms of the GNU Free Documentation License,
-     Version 1.3 or any later version published by the Free Software
-     Foundation; with no Invariant Sections, with the Front-Cover Texts
-     being ``A GNU Manual,'' and with the Back-Cover Texts as in (a)
-     below. A copy of the license is included in the section entitled
-     ``GNU Free Documentation License.''
-
-     (a) The FSF's Back-Cover Text is: ``You have the freedom to copy
-     and modify this GNU manual. Buying copies from the FSF supports it
-     in developing GNU and promoting software freedom.''
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
 </head>
-<body>
-<div class="node">
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
 <a name="Usage-Instructions"></a>
+<div class="header">
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Usage-Recommendations.html#Usage-Recommendations">Usage Recommendations</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts">System Architecture and Concepts</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+Next: <a href="Usage-Recommendations.html#Usage-Recommendations" accesskey="n" rel="next">Usage Recommendations</a>, Previous: <a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts" accesskey="p" rel="previous">System Architecture and Concepts</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
 <hr>
+<a name="Usage-Instructions-1"></a>
+<h2 class="chapter">7 Usage Instructions</h2>
+<p>It is our hope the preceding chapters have given you the opportunity to gain a high-level understanding of all the technologies associated with GNU remotecontrol. You are now ready to learn how to use GNU remotecontrol.
+</p>
+<p><a href="http://en.wikipedia.org/wiki/Tooltip">Tool Tips</a> are present on a few of the form controls in GNU remotecontrol. Most GUI web browsers require <a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> to display Tool Tips. The encoding of the GNU remotecontrol database is ISO-8859-1 (Latin 1). Therefore, some characters of some display languages may not properly render in the Tool Tips. There are 2 ways to resolve this problem.
+</p>
+<ul>
+<li> Change the word in the database for the said Tool Tip to either another word, an abbreviation of the word, or an acronym of the word.
+     </li><li> Change the encoding of all of the GNU remotecontrol web pages and the GNU remotecontrol database to the encoding used by your GUI web browser.
+	 </li></ul>
+
+<p>Please see the section below for more information regarding <strong>Browser Selection</strong>.
+</p>
+<a name="Browser-Selection"></a>
+<h3 class="section">7.1 Browser Selection</h3>
+<p>GNU remotecontrol is designed for usage with either <a href="http://www.mozilla.org/">Mozilla Firefox</a>, or with <a href="http://www.konqueror.org/">Konqueror</a>. Microsoft <a href="http://en.wikipedia.org/wiki/Internet_Explorer">Internet Explorer</a> (IE), though one of the worlds first <a href="http://en.wikipedia.org/wiki/History_of_the_web_browser">graphical</a> options for a <a href="http://en.wikipedia.org/wiki/Web_browser">web browser</a> and is credited with helping to grow the Internet past <a href="http://en.wikipedia.org/wiki/Timeline_of_web_browsers">text browsing</a>, the application <a href="http://www.microsoft.com/ie">IE</a> simply changes too much and too often to deal with all of the inconsistencies of the browser not being compliant with <a href="http://www.w3.org/standards/agents/browsers">International Standards</a> of the World Wide Web. In addition, IE only runs on the Windows operating system whereas GNU remotecontrol runs on any server that can run <a href="http://php.net/downloads.php">PHP</a>.....of which there are many.
+</p>
+<p>Please review the various <strong>Use Case Scenarios</strong> prior to reading how to go about using GNU remotecontrol. These examples will greatly help you to see the value of using GNU remotecontrol.
+</p>
+<a name="Time"></a>
+<h3 class="section">7.2 Time</h3>
+<p>This section is quite important, perhaps the most important of all. The absence of all devices being set to the same time often results in many problems, problems which are often catastrophic in nature. We have written this section to try to eliminate <a href="http://en.wikipedia.org/wiki/Clock_synchronization">Clock Synchronization</a> errors from hindering the efficiency of your energy management strategy.
+</p>
+<p>The definition of Time can mean many things to many people. We define <a href="http://en.wikipedia.org/wiki/Time">Time</a> as <em>a dimension in which events can be ordered from the past through the present into the future, and the measure of durations of events and the intervals between them</em>. Date is a collection of time. <a href="http://en.wikipedia.org/wiki/Daylight_saving_time">Daylight Savings Time</a> is the most common occurrence of <a href="http://en.wikipedia.org/wiki/Time_change">Time Change</a>. <a href="http://en.wikipedia.org/wiki/Time_dilation">Time Dilation</a> is not a problem with HVAC operation, nor is the <a href="http://en.wikipedia.org/wiki/Hafele%E2%80%93Keating_experiment">Hafele Keating Effect</a>, as the facility is not traveling.
+</p>
+<p>The biggest problem with having multiple clocks is <a href="http://en.wikipedia.org/wiki/Clock_drift">Clock Drift</a> and the necessary correction for <a href="http://en.wikipedia.org/wiki/Delta-T">Delta T</a> to account for <a href="http://en.wikipedia.org/wiki/Terrestrial_Time">Terrestrial Time</a>. This Clock Drift problem is globally resolved when Daylight Savings Time occurs. The time standard the majority of the world uses is <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated Universal Time</a>, often referred to as <strong>UTC</strong>. This time standard is achieved by the <a href="http://en.wikipedia.org/wiki/Atomic_clock">Atomic Clock</a> delivering <a href="http://en.wikipedia.org/wiki/International_Atomic_Time">International Atomic Time</a>.
+</p>
+<p>Examples of how time differences can cause damage and harm people are in a <a href="http://en.wikipedia.org/wiki/Daylight_saving_time#Complexity">manufacturing facility</a> and while using <a href="http://www.fda.gov/MedicalDevices/Safety/AlertsandNotices/PublicHealthNotifications/ucm062068.htm">medical equipment</a>. Awareness during the Daylight Savings Time change is the easiest way to avert any unforeseen problems. Remember, even if you don&rsquo;t live in a location that observes Daylight Savings Time, there is still a time correction that occurs to resolve Delta T. Finally, you may have newly installed equipment that was incorrectly configured during installation and erroneously activates the hourly time change when Daylight Savings Time occurs.
+</p>
+<p>We decided to align the time of the thermostat to the time of the GNU remotecontrol server, and have the <a href="http://en.wikipedia.org/wiki/Time_zone">Time Zone</a> of each thermostat as a required field in the thermostat profile. The Time Zone information lives in the <strong>timezoneoffset</strong> table in the GNU remotecontrol database, as a <a href="http://en.wikipedia.org/wiki/Gmt">Greenwich Mean Time</a> (GMT) <a href="http://en.wikipedia.org/wiki/List_of_UTC_time_offsets">offset</a>. Please read the sections for <strong>index.php</strong>, explaining the <strong>Time Zone Offset</strong> field, and the section <strong>Write to a Thermostat - Date and Time</strong> for more information about how we have accomplished this action. The capability to use Database Management to manage your thermostats is very much improved by having the Time Zone information as a field in your GNU remotecontrol database.
+</p>
+<p>We originally developed code to enable setting each thermostat to a specifically different time, but decided against using that option. Setting each thermostat to a different time would defeat achieving Clock Synchronization, resulting in loads of confusion when comparing your HVAC logged data with logged data from other sources, such as Weather Services, other Building Automation technologies, and Network Security.
+</p>
+<p><strong>Reference Information</strong>
+</p>
+<ul>
+<li> <a href="http://en.wikipedia.org/wiki/SNTP">Simple Network Time Protocol (SNTP)</a>
+     </li><li> <a href="http://en.wikipedia.org/wiki/Network_Time_Protocol">Network Time Protocol (NTP)</a>
+     </li><li> <a href="http://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse">NTP Server Misuse and Abuse</a>
+     </li><li> <a href="http://www.nist.gov/pml/div688/grp40/auth-ntp.cfm">NIST Authenticated NTP Service</a>
+	 </li></ul>
+
+<p>So, all you have to do is make certain the time on your GNU remotecontrol server is set to the time you prefer. Then, save yourself a lot of hassle and set the time on your devices every month by using GNU remotecontrol. Finally, use GNU remotecontrol to change any IP enabled thermostat during the Daylight Savings Time change. This will make certain all of your thermostats are correct and have all of your logged data match up properly when comparing by time.
+</p>
+<a name="admin_002ephp"></a>
+<h3 class="section">7.3 admin.php</h3>
+<a name="Purpose"></a>
+<h4 class="subsection">7.3.1 Purpose</h4>
+<p>This web page provides User Management in the GNU remotecontrol application.
+</p>
+<a name="Fields"></a>
+<h4 class="subsection">7.3.2 Fields</h4>
+<ul>
+<li> <strong>User Name</strong> - The GNU remotecontrol user account.
+	 </li><li> <strong>Max # Therms</strong> - The maximum number of thermostats allowed for that user account.
+	 </li></ul>
+
+<a name="Usage"></a>
+<h4 class="subsection">7.3.3 Usage</h4>
+<p>Add user accounts with the <strong>exact same name</strong> you setup the user accounts in your Web Server. Edit and Delete user accounts from this web page, as well. Security to access this web page is completely handled by the Web Server and the Operating System running your Web Server. You need to restrict access to this web page to only allow the user accounts you want to be able to add/edit/delete the other user accounts.
+</p>
+<p>We added a management option to this web page, per a request received during our design of GNU remotecontrol. The demand for this feature is the desire to increase awareness of the need to also setup Remote Monitoring for a newly added thermostat. The intent of this feature is to provide a check and balance for all roles that use GNU remotecontrol. You set the total number of thermostats the user account can have to whatever you prefer.
+</p>
+<a name="index_002ephp"></a>
+<h3 class="section">7.4 index.php</h3>
+<a name="Purpose-1"></a>
+<h4 class="subsection">7.4.1 Purpose</h4>
+<p>This web page provides the ability to manage your individual thermostats, all at one time.
+</p>
+<a name="Fields-1"></a>
+<h4 class="subsection">7.4.2 Fields</h4>
+<ul>
+<li> <strong>Display Language</strong> - This form control selects the language you choose to display your GNU remotecontrol session for your GNU remotecontrol user account. The language option you choose to display GNU remotecontrol is saved in your GNU remotecontrol user account profile in the GNU remotecontrol database. This setting is saved for you so you do not have to choose a language option each time you use GNU remotecontrol. Selecting another language option to display GNU remote control will update this setting of your GNU remotecontrol user account in the GNU remotecontrol database. This display information lives in the <strong>language</strong> table in the GNU remotecontrol database. You can edit this information to better suit your liking or add another language to the GNU remotecontrol database. Please see the section <strong>Usage Recommendations</strong> for instruction to achieve either of these options.
+	 </li><li> <strong>Device Name</strong> - This object stores the device name of the thermostat. This object is controlled through the web interface on the General Settings web page of the thermostat.
+	 </li><li> <strong>Site Name</strong> - This object stores the device location of the thermostat. This object is controlled through the web interface on the General Settings web page of the thermostat.
+	 </li><li> <strong>Model #</strong> - This object stores the device model number. It is read-only, and resident in the thermostat device firmware.
+	 </li><li> <strong>Custom Name</strong> - This field is unique to GNU remotecontrol and not on the device. We added this field to supplement the <strong>Device Name</strong> and <strong>Site Name</strong> fields on the device. The intent of this field is to increase capability when you use your Database Management to separate out thermostats for management purposes currently unforeseen. It is always nice to have more capability than necessary. An example of how to use this field is to enter <a href="http://en.wikipedia.org/wiki/Gps">GPS</a> coordinates of where your thermostat is located or further define the <strong>Site Name</strong> field.
+	 </li><li> <strong>Description</strong> - This field is unique to GNU remotecontrol and not on the device. We added this field to supplement the <strong>Device Name</strong> and <strong>Site Name</strong> fields on the device. The intent of this field is to increase capability when you use your Database Management to separate out thermostats for management purposes currently unforeseen. It is always nice to have more capability than necessary. An example of how to use this field is to enter <a href="http://en.wikipedia.org/wiki/Gps">GPS</a> coordinates of where your thermostat is located or further define the <strong>Site Name</strong> field.
+	 </li><li> <strong>Domain Name/IP</strong> - This field is unique to GNU remotecontrol. You must setup your network to access your thermostat inside and/or outside of your local network. This entry is the address necessary for your GNU remotecontrol server to get to your thermostat device. Enter into this field whatever that address is, whether it is a private IP address, a public IP address, or a <a href="http://en.wikipedia.org/wiki/Fqdn">Fully Qualified Domain Name</a> address, as concluded through your <a href="http://en.wikipedia.org/wiki/Domain_Name_System">Domain Name System</a> resolution.
+	 </li><li> <strong>Port</strong> - This is the port your thermostat is set to use for the address it has been assigned. Please see the field <strong>Domain Name/IP</strong> for understanding of how to populate this field. This object is controlled through the web interface on the Network Settings web page of the thermostat.
+	 </li><li> <strong>Time Zone Offset</strong> - This is the Time Zone of where the thermostat is located. This information lives in the <strong>timezoneoffset</strong> table in the GNU remotecontrol database. You may want to use either the <strong>Custom Name</strong> or <strong>Description</strong> fields to record Time Zone as a reminder note to yourself. Also, you will most likely want to use Database Management to update this field in the GNU remotecontrol database when Daylight Savings Time occurs. Please read the section <strong>Time</strong> for more information on this recommendation.
+	 </li><li> <strong>Login </strong> - This field contains the <strong>admin</strong> user account of the thermostat. Click <strong>Set</strong> after you have added the thermostat. You are prompted to enter and save the password for the admin user account of the thermostat. See the section <strong>Adding a Thermostat</strong> below for more detailed information.
+	 </li></ul>
+
+<a name="Usage-1"></a>
+<h4 class="subsection">7.4.3 Usage</h4>
+<p>You are ready to use index.php web page after you have setup the admin.php user accounts. The detailed sections below address how to use each capability.
+</p>
+<p>Loading index.php causes each attribute of each device to be read. Please see the section <strong>Adding a Thermostat</strong> for more information. The thermostats entered in your GNU remotecontrol database will populate with the current values of the first device in the profile list upon the initial load of index.php. Click the hyperlink <em>View Settings</em> to see the parameters currently set on the device. You only view the settings of a single thermostat device, one at a time. This is listed as <em>Currently Viewing</em>, after clicking the hyperlink <em>View Settings</em>. Please see the section <strong>View Settings</strong> for more information.
+</p>
+<p>The data from a thermostat device is not loaded if the thermostat device cannot be reached or if the thermostat device is unresponsive. Remember, index.php does not populate the values for this thermostat device if this thermostat device is first in your listing,
+</p>
+<p>A status indicator appears next to each selected thermostat device when the submission is complete. This status indicator can render: <em>Done</em>, <em>NoTrans</em>, or <em>Error</em>. A Tool Tip will appear with more information when hovering over this status indicator.
+</p>
+<p>PHP errors are logged to your PHP logging, if you have this feature enabled in your PHP configuration. A logging mechanism for errors returned directly from a thermostat device writes that information to the <em>errorlog</em> table in the GNU remotecontrol database. This logging will occur when the thermostat device is reachable and responsive, but something goes awry with the submission, or if there is something wrong with the device and the device returns an error.
+</p>
+<p>Day in and day out, you will want to know the settings on the different IP enabled thermostats you are charged with caring for. Using GNU remotecontrol will help you see if anyone has changed the settings on an IP enabled thermostat, thereby altering and/or defeating your energy management strategy. Combing into the equation a Remote Monitoring Server with Email Server notification and you are on top of the game for energy management.
+</p>
+<p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
+</p>
+<p>See <strong>Troubleshooting</strong> for more information.
+</p>
+<a name="Adding-a-Thermostat"></a>
+<h4 class="subsubsection">7.4.3.1 Adding a Thermostat</h4>
+<p>Highlighted fields are required.
+</p>
+<p>You must have the password to the <strong>admin</strong> user account for the device you want GNU remotecontrol to write to. This is to ensure that the user of GNU remotecontrol has administrative authority to the device. Mandating usage of the admin user account further assures that writing to the device occurs by a user with complete authority to that device. Complete the highlighted fields, click <strong>Add</strong>, and click <strong>Set</strong> to enter the admin user account password for that thermostat. You have now completely added your first thermostat to GNU remotecontrol.
+</p>
+<p>Repeat the above paragraph for all remaining thermostats you wish to add to GNU remotecontrol.
+</p>
+<p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
+</p>
+<p>See <strong>Troubleshooting</strong> for more information.
+</p>
+<a name="View-Settings"></a>
+<h4 class="subsubsection">7.4.3.2 View Settings</h4>
+<p>Click <em>View Settings</em> to load the parameters of that specific thermostat into the <strong>HVAC Settings</strong>, <strong>Setback Scheduling</strong>, and <strong>Sensor Settings</strong>. <em>View Settings</em> will toggle to display as <strong>Currently Viewing</strong>. This capability allows you to easily see what each thermostat is set to once you load index.php, versus having to go to each individual thermostat to review this information. This is a <strong>very</strong> powerful time and bandwidth saving capability.
+</p>
+<p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
+</p>
+<p>See <strong>Troubleshooting</strong> for more information.
+</p>
+<a name="Write-to-a-Thermostat-_002d-Date-and-Time"></a>
+<h4 class="subsubsection">7.4.3.3 Write to a Thermostat - Date and Time</h4>
+<p>Our research during the development of GNU remotecontrol found users want 2 separate buttons to operate GNU remotecontrol. They want a button to set the time on a thermostat and another button to set the rest of the HVAC settings on the thermostat. Here are the steps when using GNU remotecontrol for writing Date and Time to any device:
+	 </p><ol>
+<li> Select the device you want to write to by way of the check-box.
+	 </li><li> Click <strong>Set Time on Selected Thermostats</strong>.
+	 </li></ol>
+
+<p>The Date and Time of the GNU remotecontrol server is displayed to the right of this button. The time of the GNU remotecontrol server is not necessarily the same time of the computer you are using. When you click <strong>Set Time on Selected Thermostats</strong>, the following is achieved:
+	 </p><ol>
+<li> The exact current Date and Time of Greenwich Mean Time is captured in a memory variable.
+	 </li><li> The Date and Time for each selected thermostat is calculated in comparison to Greenwich Mean Time and the GMT offset stored in the profile of each thermostat.
+	 </li><li> Writing that calculated Date and Time to each selected thermostat device.
+	 </li><li> The Transaction Log is updated with the OLD and NEW Date and Time of each thermostat device.
+	 </li></ol>
+
+<p>This capability enables you to then use transactionhistory.php and/or Database Management to see if any thermostat device is gaining or losing time, identifying if you need to investigate a particular thermostat device. Please review the section above called <strong>Time</strong> for more information as to why this functionality has been designed.
+</p>
+<p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
+</p>
+<p>See <strong>Troubleshooting</strong> for more information.
+</p>
+<a name="Write-to-a-Thermostat-_002d-HVAC-Settings"></a>
+<h4 class="subsubsection">7.4.3.4 Write to a Thermostat - HVAC Settings</h4>
+<p>Our research during the development of GNU remotecontrol found users want 2 separate buttons to operate GNU remotecontrol. They want a button to set the time on a thermostat and another button to set the rest of the HVAC settings on the thermostat. Here are the steps when using GNU remotecontrol for writing HVAC Settings to any device:
+	 </p><ol>
+<li> Select the device you want to write to by way of the check-box.
+	 </li><li> Change the attributes and parameters as you prefer.
+	 </li><li> Click <strong>Submit</strong>.
+	 </li></ol>
+	 
+<p>Once you click the <strong>Submit</strong> button, GNU remotecontrol goes to each device, makes the changes, and populates the Transaction Log in the GNU remotecontrol database. This capability enables you to then use transactionhistory.php and/or Database Management to see if any thermostat device is changing settings, identifying if you need to investigate who is doing this or if the device is problematic. Finally, index.php is refreshed and <strong>only</strong> the attributes that were changed are reflected with their new values. The benefit of this automation is the entire list of device attributes are not polled again. This is a very powerful time and bandwidth saving capability.
+</p>
+<p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
+</p>
+<p>See <strong>Troubleshooting</strong> for more information.
+</p>
+<a name="Object-Parameters"></a>
+<h4 class="subsubsection">7.4.3.5 Object Parameters</h4>
+<p>The list of objects and parameters available for you to select is listed below.
+</p>
+<p><strong>&ndash;HVAC Settings&ndash;</strong>
+</p>
+<p><strong>HVAC Mode:</strong>
+     </p><ul>
+<li> Off
+     </li><li> Heat
+     </li><li> Cool
+     </li><li> Auto
+	 </li></ul>
+	
+<p><strong>Fan Mode:</strong>
+     </p><ul>
+<li> Auto
+     </li><li> On
+     </li><li> Schedule
+	 </li></ul>
+
+<p><strong>Setback Status:</strong>
+     </p><ul>
+<li> Normal
+     </li><li> Hold
+     </li><li> Override
+	 </li></ul>
+
+<p><strong>Setback Heat:</strong>
+     </p><ul>
+<li> Degree Setting
+	 </li></ul>
+
+<p><strong>Setback Cool:</strong>
+</p>
+<ul>
+<li> Degree Setting
+	 </li></ul>
+
+<p><strong>&ndash;Setback Scheduling&ndash;</strong>
+</p>
+<p><strong>Period</strong>
+     </p><ul>
+<li> Morning
+     </li><li> Day
+     </li><li> Evening
+     </li><li> Night
+	 </li></ul>
+
+<p><strong>Time</strong>
+     </p><ul>
+<li> Hour
+     </li><li> Minute
+     </li><li> AM/PM
+	 </li></ul>
+
+<p><strong>Day Class Schedules</strong>
+     </p><ul>
+<li> Occupied
+     </li><li> Unoccupied
+     </li><li> Other
+	 </li></ul>
+
+<p><strong>Heat</strong>
+     </p><ul>
+<li> Degree Setting
+	 </li></ul>
+
+<p><strong>Cool</strong>
+     </p><ul>
+<li> Degree Setting
+	 </li></ul>
+
+<p><strong>Fan</strong>
+     </p><ul>
+<li> Off
+     </li><li> On
+     </li><li> 15, 30, 45 minutes
+	 </li></ul>
+
+<p><strong>Default Weekly Schedule - Days</strong>
+     </p><ul>
+<li> Sunday
+     </li><li> Monday
+     </li><li> Tuesday
+     </li><li> Wednesday
+     </li><li> Thursday
+     </li><li> Friday
+     </li><li> Saturday
+	 </li></ul>
+
+<p><strong>Default Weekly Schedule - Setback Scheduling</strong>
+     </p><ul>
+<li> Occupied
+     </li><li> Unoccupied
+     </li><li> Other
+	 </li></ul>
+
+<p><strong>&ndash;Sensor Settings&ndash;</strong>
+</p>
+<p><strong>Local Sensor - State</strong>
+     </p><ul>
+<li> Disabled
+     </li><li> Enabled
+	 </li></ul>
+
+<p><strong>Local Sensor - Averaging</strong>
+     </p><ul>
+<li> Disabled
+     </li><li> Enabled
+	 </li></ul>
+
+<p><strong>Local Sensor - Correction</strong>
+     </p><ul>
+<li> Degree Setting Correction
+	 </li></ul>
+
+<p><strong>Remote Sensor 1 - State</strong>
+     </p><ul>
+<li> Disabled
+     </li><li> Enabled
+	 </li></ul>
+
+<p><strong>Remote Sensor 1 - Averaging</strong>
+     </p><ul>
+<li> Disabled
+     </li><li> Enabled
+	 </li></ul>
+
+<p><strong>Remote Sensor 1 - Correction</strong>
+     </p><ul>
+<li> Degree Setting Correction
+	 </li></ul>
+
+<p><strong>Remote Sensor 2 - State</strong>
+     </p><ul>
+<li> Disabled
+     </li><li> Enabled
+	 </li></ul>
+
+<p><strong>Remote Sensor 2 - Averaging</strong>
+     </p><ul>
+<li> Disabled
+     </li><li> Enabled
+	 </li></ul>
+
+<p><strong>Remote Sensor 2 - Correction</strong>
+     </p><ul>
+<li> Degree Setting Correction
+	 </li></ul>
+
+<a name="transactionhistory_002ephp"></a>
+<h3 class="section">7.5 transactionhistory.php</h3>
+<a name="Purpose-2"></a>
+<h4 class="subsection">7.5.1 Purpose</h4>
+<p>This web page provides the Transaction Log in the GNU remotecontrol application. This web page is read-only, with search fields to quickly and easily find what you are looking for.
+</p>
+<a name="Fields-2"></a>
+<h4 class="subsection">7.5.2 Fields</h4>
+<ul>
+<li> <strong>Thermostat</strong> - The thermostat that was changed.
+	 </li><li> <strong>Field</strong> - The device attribute that was changed.
+	 </li><li> <strong>Old Value</strong> - The previous parameter of the attribute that was changed.
+	 </li><li> <strong>New Value</strong> - The current parameter of the attribute that was changed.
+	 </li><li> <strong>Timestamp</strong> - The Date/Time the device attribute was changed.
+     </li></ul>
+
+<a name="Usage-2"></a>
+<h4 class="subsection">7.5.3 Usage</h4>
+<p>Enter search values in the respective fields to quickly filter and display the rows you are looking for.
+</p>
+<p>The field headers of this web page are rendered in the display language you choose, but the field data of this web page is not translated into another display language. The field data is only rendered in English. This is because the Proliphix thermostat device only renders in English. This provides you confidence the information you are looking at transactionhistory.php can be easily compared to the information rendered in the web server of the Proliphix thermostat device.
+</p>
+<a name="Troubleshooting"></a>
+<h3 class="section">7.6 Troubleshooting</h3>
+<ul>
+<li> Go to your error log for your Web Server any time you find a problem where you are not receiving an error directly from GNU remotecontrol.
+	 </li><li> Review the <em>errorlog</em> table to read the information transmitted by the thermostat device to learn why the thermostat device failed to properly respond.
+	 </li><li> If the IP enabled thermostat is not available because it is powered off or the data network that contains the IP enabled thermostat has problems, here is what is achieved:
+		<ol>
+<li> During load of index.php, as it reads the device (IP enabled thermostat) list from the grid at the top to go and get their current settings, should any device be unavailable, GNU remotecontrol will proceed on after a few seconds of no response to look for the next device instead of halting the process.
+		</li><li> Look to the status indicator next to each selected thermostat device when the submission is complete. This status indicator can render: <em>Done</em>, <em>NoTrans</em>, or <em>Error</em>. A Tool Tip will appear with more information when hovering over this status indicator.
+		</li></ol>
+</li></ul>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Usage-Recommendations.html#Usage-Recommendations" accesskey="n" rel="next">Usage Recommendations</a>, Previous: <a href="System-Architecture-and-Concepts.html#System-Architecture-and-Concepts" accesskey="p" rel="previous">System Architecture and Concepts</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 
-<h2 class="chapter">7 Usage Instructions</h2>
 
-<p>It is our hope the preceding chapters have given you the opportunity to gain a high-level understanding of all the technologies associated with GNU remotecontrol. You are now ready to learn how to use GNU remotecontrol.
 
-   <p><a href="http://en.wikipedia.org/wiki/Tooltip">Tool Tips</a> are present on a few of the form controls in GNU remotecontrol. Most GUI web browsers require <a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a> to display Tool Tips. The encoding of the GNU remotecontrol database is ISO-8859-1 (Latin 1). Therefore, some characters of some display languages may not properly render in the Tool Tips. There are 2 ways to resolve this problem.
-
-     <ul>
-     <li>	 Change the word in the database for the said Tool Tip to either another word, an abbreviation of the word, or an acronym of the word. 
-     <li>	 Change the encoding of all of the GNU remotecontrol web pages and the GNU remotecontrol database to the encoding used by your GUI web browser. 
-	 </ul>
-
-   <p>Please see the section below for more information regarding <strong>Browser Selection</strong>.
-
-<h3 class="section">7.1 Browser Selection</h3>
-
-<p>GNU remotecontrol is designed for usage with either <a href="http://www.mozilla.org/">Mozilla Firefox</a>, or with <a href="http://www.konqueror.org/">Konqueror</a>. Microsoft <a href="http://en.wikipedia.org/wiki/Internet_Explorer">Internet Explorer</a> (IE), though one of the worlds first <a href="http://en.wikipedia.org/wiki/History_of_the_web_browser">graphical</a> options for a <a href="http://en.wikipedia.org/wiki/Web_browser">web browser</a> and is credited with helping to grow the Internet past <a href="http://en.wikipedia.org/wiki/Timeline_of_web_browsers">text browsing</a>, the application <a href="http://www.microsoft.com/ie">IE</a> simply changes too much and too often to deal with all of the inconsistencies of the browser not being compliant with <a href="http://www.w3.org/standards/agents/browsers">International Standards</a> of the World Wide Web. In addition, IE only runs on the Windows operating system whereas GNU remotecontrol runs on any server that can run <a href="http://php.net/downloads.php">PHP</a>.....of which there are many.
-
-   <p>Please review the various <strong>Use Case Scenarios</strong> prior to reading how to go about using GNU remotecontrol. These examples will greatly help you to see the value of using GNU remotecontrol.
-
-<h3 class="section">7.2 Time</h3>
-
-<p>This section is quite important, perhaps the most important of all. The absence of all devices being set to the same time often results in many problems, problems which are often catastrophic in nature. We have written this section to try to eliminate <a href="http://en.wikipedia.org/wiki/Clock_synchronization">Clock Synchronization</a> errors from hindering the efficiency of your energy management strategy.
-
-   <p>The definition of Time can mean many things to many people. We define <a href="http://en.wikipedia.org/wiki/Time">Time</a> as <em>a dimension in which events can be ordered from the past through the present into the future, and the measure of durations of events and the intervals between them</em>. Date is a collection of time. <a href="http://en.wikipedia.org/wiki/Daylight_saving_time">Daylight Savings Time</a> is the most common occurrence of <a href="http://en.wikipedia.org/wiki/Time_change">Time Change</a>. <a href="http://en.wikipedia.org/wiki/Time_dilation">Time Dilation</a> is not a problem with HVAC operation, nor is the <a href="http://en.wikipedia.org/wiki/Hafele%E2%80%93Keating_experiment">Hafele Keating Effect</a>, as the facility is not traveling.
-
-   <p>The biggest problem with having multiple clocks is <a href="http://en.wikipedia.org/wiki/Clock_drift">Clock Drift</a> and the necessary correction for <a href="http://en.wikipedia.org/wiki/Delta-T">Delta T</a> to account for <a href="http://en.wikipedia.org/wiki/Terrestrial_Time">Terrestrial Time</a>. This Clock Drift problem is globally resolved when Daylight Savings Time occurs. The time standard the majority of the world uses is <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time">Coordinated Universal Time</a>, often referred to as <strong>UTC</strong>. This time standard is achieved by the <a href="http://en.wikipedia.org/wiki/Atomic_clock">Atomic Clock</a> delivering <a href="http://en.wikipedia.org/wiki/International_Atomic_Time">International Atomic Time</a>.
-
-   <p>Examples of how time differences can cause damage and harm people are in a <a href="http://en.wikipedia.org/wiki/Daylight_saving_time#Complexity">manufacturing facility</a> and while using <a href="http://www.fda.gov/MedicalDevices/Safety/AlertsandNotices/PublicHealthNotifications/ucm062068.htm">medical equipment</a>. Awareness during the Daylight Savings Time change is the easiest way to avert any unforeseen problems. Remember, even if you don't live in a location that observes Daylight Savings Time, there is still a time correction that occurs to resolve Delta T. Finally, you may have newly installed equipment that was incorrectly configured during installation and erroneously activates the hourly time change when Daylight Savings Time occurs.
-
-   <p>We decided to align the time of the thermostat to the time of the GNU remotecontrol server, and have the <a href="http://en.wikipedia.org/wiki/Time_zone">Time Zone</a> of each thermostat as a required field in the thermostat profile. The Time Zone information lives in the <strong>timezoneoffset</strong> table in the GNU remotecontrol database, as a <a href="http://en.wikipedia.org/wiki/Gmt">Greenwich Mean Time</a> (GMT) <a href="http://en.wikipedia.org/wiki/List_of_UTC_time_offsets">offset</a>. Please read the sections for <strong>index.php</strong>, explaining the <strong>Time Zone Offset</strong> field, and the section <strong>Write to a Thermostat - Date and Time</strong> for more information about how we have accomplished this action. The capability to use Database Management to manage your thermostats is very much improved by having the Time Zone information as a field in your GNU remotecontrol database.
-
-   <p>We originally developed code to enable setting each thermostat to a specifically different time, but decided against using that option. Setting each thermostat to a different time would defeat achieving Clock Synchronization, resulting in loads of confusion when comparing your HVAC logged data with logged data from other sources, such as Weather Services, other Building Automation technologies, and Network Security.
-
-   <p><strong>Reference Information</strong>
-
-     <ul>
-     <li>	 <a href="http://en.wikipedia.org/wiki/SNTP">Simple Network Time Protocol (SNTP)</a>
-     <li>	 <a href="http://en.wikipedia.org/wiki/Network_Time_Protocol">Network Time Protocol (NTP)</a>
-     <li>	 <a href="http://en.wikipedia.org/wiki/NTP_server_misuse_and_abuse">NTP Server Misuse and Abuse</a>
-     <li>	 <a href="http://www.nist.gov/pml/div688/grp40/auth-ntp.cfm">NIST Authenticated NTP Service</a>
-	 </ul>
-
-   <p>So, all you have to do is make certain the time on your GNU remotecontrol server is set to the time you prefer. Then, save yourself a lot of hassle and set the time on your devices every month by using GNU remotecontrol. Finally, use GNU remotecontrol to change any IP enabled thermostat during the Daylight Savings Time change. This will make certain all of your thermostats are correct and have all of your logged data match up properly when comparing by time.
-
-<h3 class="section">7.3 admin.php</h3>
-
-<h4 class="subsection">7.3.1 Purpose</h4>
-
-<p>This web page provides User Management in the GNU remotecontrol application.
-
-<h4 class="subsection">7.3.2 Fields</h4>
-
-     <ul>
-	 <li>	 <strong>User Name</strong> - The GNU remotecontrol user account. 
-	 <li>	 <strong>Max # Therms</strong> - The maximum number of thermostats allowed for that user account. 
-	 </ul>
-
-<h4 class="subsection">7.3.3 Usage</h4>
-
-<p>Add user accounts with the <strong>exact same name</strong> you setup the user accounts in your Web Server. Edit and Delete user accounts from this web page, as well. Security to access this web page is completely handled by the Web Server and the Operating System running your Web Server. You need to restrict access to this web page to only allow the user accounts you want to be able to add/edit/delete the other user accounts.
-
-   <p>We added a management option to this web page, per a request received during our design of GNU remotecontrol. The demand for this feature is the desire to increase awareness of the need to also setup Remote Monitoring for a newly added thermostat. The intent of this feature is to provide a check and balance for all roles that use GNU remotecontrol. You set the total number of thermostats the user account can have to whatever you prefer.
-
-<h3 class="section">7.4 index.php</h3>
-
-<h4 class="subsection">7.4.1 Purpose</h4>
-
-<p>This web page provides the ability to manage your individual thermostats, all at one time.
-
-<h4 class="subsection">7.4.2 Fields</h4>
-
-     <ul>
-	 <li>	 <strong>Display Language</strong> - This form control selects the language you choose to display your GNU remotecontrol session for your GNU remotecontrol user account. The language option you choose to display GNU remotecontrol is saved in your GNU remotecontrol user account profile in the GNU remotecontrol database. This setting is saved for you so you do not have to choose a language option each time you use GNU remotecontrol. Selecting another language option to display GNU remote control will update this setting of your GNU remotecontrol user account in the GNU remotecontrol database. This display information lives in the <strong>language</strong> table in the GNU remotecontrol database. You can edit this information to better suit your liking or add another language to the GNU remotecontrol database. Please see the section <strong>Usage Recommendations</strong> for instruction to achieve either of these options. 
-	 <li>	 <strong>Device Name</strong> - This object stores the device name of the thermostat. This object is controlled through the web interface on the General Settings web page of the thermostat. 
-	 <li>	 <strong>Site Name</strong> - This object stores the device location of the thermostat. This object is controlled through the web interface on the General Settings web page of the thermostat. 
-	 <li>	 <strong>Model #</strong> - This object stores the device model number. It is read-only, and resident in the thermostat device firmware. 
-	 <li>	 <strong>Custom Name</strong> - This field is unique to GNU remotecontrol and not on the device. We added this field to supplement the <strong>Device Name</strong> and <strong>Site Name</strong> fields on the device. The intent of this field is to increase capability when you use your Database Management to separate out thermostats for management purposes currently unforeseen. It is always nice to have more capability than necessary. An example of how to use this field is to enter <a href="http://en.wikipedia.org/wiki/Gps">GPS</a> coordinates of where your thermostat is located or further define the <strong>Site Name</strong> field. 
-	 <li>	 <strong>Description</strong> - This field is unique to GNU remotecontrol and not on the device. We added this field to supplement the <strong>Device Name</strong> and <strong>Site Name</strong> fields on the device. The intent of this field is to increase capability when you use your Database Management to separate out thermostats for management purposes currently unforeseen. It is always nice to have more capability than necessary. An example of how to use this field is to enter <a href="http://en.wikipedia.org/wiki/Gps">GPS</a> coordinates of where your thermostat is located or further define the <strong>Site Name</strong> field. 
-	 <li>	 <strong>Domain Name/IP</strong> - This field is unique to GNU remotecontrol. You must setup your network to access your thermostat inside and/or outside of your local network. This entry is the address necessary for your GNU remotecontrol server to get to your thermostat device. Enter into this field whatever that address is, whether it is a private IP address, a public IP address, or a <a href="http://en.wikipedia.org/wiki/Fqdn">Fully Qualified Domain Name</a> address, as concluded through your <a href="http://en.wikipedia.org/wiki/Domain_Name_System">Domain Name System</a> resolution. 
-	 <li>	 <strong>Port</strong> - This is the port your thermostat is set to use for the address it has been assigned. Please see the field <strong>Domain Name/IP</strong> for understanding of how to populate this field. This object is controlled through the web interface on the Network Settings web page of the thermostat. 
-	 <li>	 <strong>Time Zone Offset</strong> - This is the Time Zone of where the thermostat is located. This information lives in the <strong>timezoneoffset</strong> table in the GNU remotecontrol database. You may want to use either the <strong>Custom Name</strong> or <strong>Description</strong> fields to record Time Zone as a reminder note to yourself. Also, you will most likely want to use Database Management to update this field in the GNU remotecontrol database when Daylight Savings Time occurs. Please read the section <strong>Time</strong> for more information on this recommendation. 
-	 <li>	 <strong>Login </strong> - This field contains the <strong>admin</strong> user account of the thermostat. Click <strong>Set</strong> after you have added the thermostat. You are prompted to enter and save the password for the admin user account of the thermostat. See the section <strong>Adding a Thermostat</strong> below for more detailed information. 
-	 </ul>
-
-<h4 class="subsection">7.4.3 Usage</h4>
-
-<p>You are ready to use index.php web page after you have setup the admin.php user accounts. The detailed sections below address how to use each capability.
-
-   <p>Loading index.php causes each attribute of each device to be read. Please see the section <strong>Adding a Thermostat</strong> for more information. The thermostats entered in your GNU remotecontrol database will populate with the current values of the first device in the profile list upon the initial load of index.php. Click the hyperlink <em>View Settings</em> to see the parameters currently set on the device. You only view the settings of a single thermostat device, one at a time. This is listed as <em>Currently Viewing</em>, after clicking the hyperlink <em>View Settings</em>. Please see the section <strong>View Settings</strong> for more information.
-
-   <p>The data from a thermostat device is not loaded if the thermostat device cannot be reached or if the thermostat device is unresponsive. Remember, index.php does not populate the values for this thermostat device if this thermostat device is first in your listing,
-
-   <p>A status indicator appears next to each selected thermostat device when the submission is complete. This status indicator can render: <em>Done</em>, <em>NoTrans</em>, or <em>Error</em>. A Tool Tip will appear with more information when hovering over this status indicator.
-
-   <p>PHP errors are logged to your PHP logging, if you have this feature enabled in your PHP configuration. A logging mechanism for errors returned directly from a thermostat device writes that information to the <em>errorlog</em> table in the GNU remotecontrol database. This logging will occur when the thermostat device is reachable and responsive, but something goes awry with the submission, or if there is something wrong with the device and the device returns an error.
-
-   <p>Day in and day out, you will want to know the settings on the different IP enabled thermostats you are charged with caring for. Using GNU remotecontrol will help you see if anyone has changed the settings on an IP enabled thermostat, thereby altering and/or defeating your energy management strategy. Combing into the equation a Remote Monitoring Server with Email Server notification and you are on top of the game for energy management.
-
-   <p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
-
-   <p>See <strong>Troubleshooting</strong> for more information.
-
-<h5 class="subsubsection">7.4.3.1 Adding a Thermostat</h5>
-
-<p>Highlighted fields are required.
-
-   <p>You must have the password to the <strong>admin</strong> user account for the device you want GNU remotecontrol to write to. This is to ensure that the user of GNU remotecontrol has administrative authority to the device. Mandating usage of the admin user account further assures that writing to the device occurs by a user with complete authority to that device. Complete the highlighted fields, click <strong>Add</strong>, and click <strong>Set</strong> to enter the admin user account password for that thermostat. You have now completely added your first thermostat to GNU remotecontrol.
-
-   <p>Repeat the above paragraph for all remaining thermostats you wish to add to GNU remotecontrol.
-
-   <p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
-
-   <p>See <strong>Troubleshooting</strong> for more information.
-
-<h5 class="subsubsection">7.4.3.2 View Settings</h5>
-
-<p>Click <em>View Settings</em> to load the parameters of that specific thermostat into the <strong>HVAC Settings</strong>, <strong>Setback Scheduling</strong>, and <strong>Sensor Settings</strong>. <em>View Settings</em> will toggle to display as <strong>Currently Viewing</strong>. This capability allows you to easily see what each thermostat is set to once you load index.php, versus having to go to each individual thermostat to review this information. This is a <strong>very</strong> powerful time and bandwidth saving capability.
-
-   <p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
-
-   <p>See <strong>Troubleshooting</strong> for more information.
-
-<h5 class="subsubsection">7.4.3.3 Write to a Thermostat - Date and Time</h5>
-
-<p>Our research during the development of GNU remotecontrol found users want 2 separate buttons to operate GNU remotecontrol. They want a button to set the time on a thermostat and another button to set the rest of the HVAC settings on the thermostat. Here are the steps when using GNU remotecontrol for writing Date and Time to any device:
-	
-     <ol type=1 start=1>
-	 <li>	 Select the device you want to write to by way of the check-box. 
-	 <li>	 Click <strong>Set Time on Selected Thermostats</strong>. 
-	
-        </ol>
-
-   <p>The Date and Time of the GNU remotecontrol server is displayed to the right of this button. The time of the GNU remotecontrol server is not necessarily the same time of the computer you are using. When you click <strong>Set Time on Selected Thermostats</strong>, the following is achieved:
-	
-     <ol type=1 start=1>
-	 <li>	 The exact current Date and Time of Greenwich Mean Time is captured in a memory variable. 
-	 <li>	 The Date and Time for each selected thermostat is calculated in comparison to Greenwich Mean Time and the GMT offset stored in the profile of each thermostat. 
-	 <li>	 Writing that calculated Date and Time to each selected thermostat device. 
-	 <li>	 The Transaction Log is updated with the OLD and NEW Date and Time of each thermostat device. 
-	
-        </ol>
-
-   <p>This capability enables you to then use transactionhistory.php and/or Database Management to see if any thermostat device is gaining or losing time, identifying if you need to investigate a particular thermostat device. Please review the section above called <strong>Time</strong> for more information as to why this functionality has been designed.
-
-   <p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
-
-   <p>See <strong>Troubleshooting</strong> for more information.
-
-<h5 class="subsubsection">7.4.3.4 Write to a Thermostat - HVAC Settings</h5>
-
-<p>Our research during the development of GNU remotecontrol found users want 2 separate buttons to operate GNU remotecontrol. They want a button to set the time on a thermostat and another button to set the rest of the HVAC settings on the thermostat. Here are the steps when using GNU remotecontrol for writing HVAC Settings to any device:
-	
-     <ol type=1 start=1>
-	 <li>	 Select the device you want to write to by way of the check-box. 
-	 <li>	 Change the attributes and parameters as you prefer. 
-	 <li>	 Click <strong>Submit</strong>. 
-	
-        </ol>
-
-   <p>Once you click the <strong>Submit</strong> button, GNU remotecontrol goes to each device, makes the changes, and populates the Transaction Log in the GNU remotecontrol database. This capability enables you to then use transactionhistory.php and/or Database Management to see if any thermostat device is changing settings, identifying if you need to investigate who is doing this or if the device is problematic. Finally, index.php is refreshed and <strong>only</strong> the attributes that were changed are reflected with their new values. The benefit of this automation is the entire list of device attributes are not polled again. This is a very powerful time and bandwidth saving capability.
-
-   <p><strong>Reload</strong> index.php at any time you prefer to poll each device and read the current parameters of the attributes for all device entries.
-
-   <p>See <strong>Troubleshooting</strong> for more information.
-
-<h5 class="subsubsection">7.4.3.5 Object Parameters</h5>
-
-<p>The list of objects and parameters available for you to select is listed below.
-
-   <p><strong>&ndash;HVAC Settings&ndash;</strong>
-
-   <p><strong>HVAC Mode:</strong>
-     <ul>
-     <li>	 Off
-     <li>	 Heat
-     <li>	 Cool
-     <li>	 Auto
-	 </ul>
-
-   <p><strong>Fan Mode:</strong>
-     <ul>
-     <li>	 Auto
-     <li>	 On
-     <li>	 Schedule
-	 </ul>
-
-   <p><strong>Setback Status:</strong>
-     <ul>
-     <li>	 Normal
-     <li>	 Hold
-     <li>	 Override
-	 </ul>
-
-   <p><strong>Setback Heat:</strong>
-     <ul>
-     <li>	 Degree Setting
-	 </ul>
-
-   <p><strong>Setback Cool:</strong>
-
-     <ul>
-     <li>	 Degree Setting
-	 </ul>
-
-   <p><strong>&ndash;Setback Scheduling&ndash;</strong>
-
-   <p><strong>Period</strong>
-     <ul>
-     <li>	 Morning
-     <li>	 Day
-     <li>	 Evening
-     <li>	 Night
-	 </ul>
-
-   <p><strong>Time</strong>
-     <ul>
-     <li>	 Hour
-     <li>	 Minute
-     <li>	 AM/PM
-	 </ul>
-
-   <p><strong>Day Class Schedules</strong>
-     <ul>
-     <li>	 Occupied
-     <li>	 Unoccupied
-     <li>	 Other
-	 </ul>
-
-   <p><strong>Heat</strong>
-     <ul>
-     <li>	 Degree Setting
-	 </ul>
-
-   <p><strong>Cool</strong>
-     <ul>
-     <li>	 Degree Setting
-	 </ul>
-
-   <p><strong>Fan</strong>
-     <ul>
-     <li>	 Off
-     <li>	 On
-     <li>	 15, 30, 45 minutes
-	 </ul>
-
-   <p><strong>Default Weekly Schedule - Days</strong>
-     <ul>
-     <li>	 Sunday
-     <li>	 Monday
-     <li>	 Tuesday
-     <li>	 Wednesday
-     <li>	 Thursday
-     <li>	 Friday
-     <li>	 Saturday
-	 </ul>
-
-   <p><strong>Default Weekly Schedule - Setback Scheduling</strong>
-     <ul>
-     <li>	 Occupied
-     <li>	 Unoccupied
-     <li>	 Other
-	 </ul>
-
-   <p><strong>&ndash;Sensor Settings&ndash;</strong>
-
-   <p><strong>Local Sensor - State</strong>
-     <ul>
-     <li>	 Disabled
-     <li>	 Enabled
-	 </ul>
-
-   <p><strong>Local Sensor - Averaging</strong>
-     <ul>
-     <li>	 Disabled
-     <li>	 Enabled
-	 </ul>
-
-   <p><strong>Local Sensor - Correction</strong>
-     <ul>
-     <li>	 Degree Setting Correction
-	 </ul>
-
-   <p><strong>Remote Sensor 1 - State</strong>
-     <ul>
-     <li>	 Disabled
-     <li>	 Enabled
-	 </ul>
-
-   <p><strong>Remote Sensor 1 - Averaging</strong>
-     <ul>
-     <li>	 Disabled
-     <li>	 Enabled
-	 </ul>
-
-   <p><strong>Remote Sensor 1 - Correction</strong>
-     <ul>
-     <li>	 Degree Setting Correction
-	 </ul>
-
-   <p><strong>Remote Sensor 2 - State</strong>
-     <ul>
-     <li>	 Disabled
-     <li>	 Enabled
-	 </ul>
-
-   <p><strong>Remote Sensor 2 - Averaging</strong>
-     <ul>
-     <li>	 Disabled
-     <li>	 Enabled
-	 </ul>
-
-   <p><strong>Remote Sensor 2 - Correction</strong>
-     <ul>
-     <li>	 Degree Setting Correction
-	 </ul>
-
-<h3 class="section">7.5 transactionhistory.php</h3>
-
-<h4 class="subsection">7.5.1 Purpose</h4>
-
-<p>This web page provides the Transaction Log in the GNU remotecontrol application. This web page is read-only, with search fields to quickly and easily find what you are looking for.
-
-<h4 class="subsection">7.5.2 Fields</h4>
-
-     <ul>
-	 <li>	 <strong>Thermostat</strong> - The thermostat that was changed. 
-	 <li>	 <strong>Field</strong> - The device attribute that was changed. 
-	 <li>	 <strong>Old Value</strong> - The previous parameter of the attribute that was changed. 
-	 <li>	 <strong>New Value</strong> - The current parameter of the attribute that was changed. 
-	 <li>	 <strong>Timestamp</strong> - The Date/Time the device attribute was changed. 
-     </ul>
-
-<h4 class="subsection">7.5.3 Usage</h4>
-
-<p>Enter search values in the respective fields to quickly filter and display the rows you are looking for.
-
-   <p>The field headers of this web page are rendered in the display language you choose, but the field data of this web page is not translated into another display language. The field data is only rendered in English. This is because the Proliphix thermostat device only renders in English. This provides you confidence the information you are looking at transactionhistory.php can be easily compared to the information rendered in the web server of the Proliphix thermostat device.
-
-<h3 class="section">7.6 Troubleshooting</h3>
-
-     <ul>
-	 <li>	 Go to your error log for your Web Server any time you find a problem where you are not receiving an error directly from GNU remotecontrol. 
-	 <li>	 Review the <em>errorlog</em> table to read the information transmitted by the thermostat device to learn why the thermostat device failed to properly respond. 
-	 <li>	 If the IP enabled thermostat is not available because it is powered off or the data network that contains the IP enabled thermostat has problems, here is what is achieved:
-		
-          <ol type=1 start=1>
-		<li>		During load of index.php, as it reads the device (IP enabled thermostat) list from the grid at the top to go and get their current settings, should any device be unavailable, GNU remotecontrol will proceed on after a few seconds of no response to look for the next device instead of halting the process. 
-		<li>		Look to the status indicator next to each selected thermostat device when the submission is complete. This status indicator can render: <em>Done</em>, <em>NoTrans</em>, or <em>Error</em>. A Tool Tip will appear with more information when hovering over this status indicator. 
-		
-          </ol>
-     </ul>
-
-   </body></html>
-
+</body>
+</html>

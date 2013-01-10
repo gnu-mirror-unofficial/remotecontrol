@@ -1,92 +1,114 @@
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for GNU remotecontrol (version 1.0, 7 January 2013), which is an example in the Texinfo documentation.
+
+Copyright (C) 2013 GNU remotecontrol authors.
+
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
+
+(a) The FSF's Back-Cover Text is: "You have the freedom to copy and modify this GNU manual. Buying copies from the FSF supports it in developing GNU and promoting software freedom." -->
+<!-- Created by Texinfo 4.13.93+dev, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GNU remotecontrol &amp; BACnet - GNU remotecontrol 1.00</title>
-<meta http-equiv="Content-Type" content="text/html">
-<meta name="description" content="GNU remotecontrol 1.00">
-<meta name="generator" content="makeinfo 4.13">
-<link title="Top" rel="start" href="index.html#Top">
-<link rel="prev" href="Key-Principles.html#Key-Principles" title="Key Principles">
-<link rel="next" href="Tax-Benefit.html#Tax-Benefit" title="Tax Benefit">
-<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<title>GNU remotecontrol: GNU remotecontrol &amp; BACnet</title>
+
+<meta name="description" content="GNU remotecontrol: GNU remotecontrol &amp; BACnet">
+<meta name="keywords" content="GNU remotecontrol: GNU remotecontrol &amp; BACnet">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html#Top" rel="up" title="Top">
+<link href="Tax-Benefit.html#Tax-Benefit" rel="next" title="Tax Benefit">
+<link href="Key-Principles.html#Key-Principles" rel="previous" title="Key Principles">
+<style type="text/css">
 <!--
-This manual is for GNU remotecontrol (version 1.00, 17 December 2012), which is an example in the Texinfo documentation.
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
 
-Copyright (C) 2012 GNU remotecontrol authors.
 
-     Permission is granted to copy, distribute and/or modify this
-     document under the terms of the GNU Free Documentation License,
-     Version 1.3 or any later version published by the Free Software
-     Foundation; with no Invariant Sections, with the Front-Cover Texts
-     being ``A GNU Manual,'' and with the Back-Cover Texts as in (a)
-     below. A copy of the license is included in the section entitled
-     ``GNU Free Documentation License.''
-
-     (a) The FSF's Back-Cover Text is: ``You have the freedom to copy
-     and modify this GNU manual. Buying copies from the FSF supports it
-     in developing GNU and promoting software freedom.''
-   -->
-<meta http-equiv="Content-Style-Type" content="text/css">
-<style type="text/css"><!--
-  pre.display { font-family:inherit }
-  pre.format  { font-family:inherit }
-  pre.smalldisplay { font-family:inherit; font-size:smaller }
-  pre.smallformat  { font-family:inherit; font-size:smaller }
-  pre.smallexample { font-size:smaller }
-  pre.smalllisp    { font-size:smaller }
-  span.sc    { font-variant:small-caps }
-  span.roman { font-family:serif; font-weight:normal; } 
-  span.sansserif { font-family:sans-serif; font-weight:normal; } 
---></style>
 </head>
-<body>
-<div class="node">
-<a name="GNU-remotecontrol-%26-BACnet"></a>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
 <a name="GNU-remotecontrol-_0026-BACnet"></a>
+<div class="header">
 <p>
-Next:&nbsp;<a rel="next" accesskey="n" href="Tax-Benefit.html#Tax-Benefit">Tax Benefit</a>,
-Previous:&nbsp;<a rel="previous" accesskey="p" href="Key-Principles.html#Key-Principles">Key Principles</a>,
-Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
+Next: <a href="Tax-Benefit.html#Tax-Benefit" accesskey="n" rel="next">Tax Benefit</a>, Previous: <a href="Key-Principles.html#Key-Principles" accesskey="p" rel="previous">Key Principles</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
 <hr>
+<a name="GNU-remotecontrol-_0026-BACnet-1"></a>
+<h2 class="chapter">4 GNU remotecontrol &amp; BACnet</h2>
+<a name="Introduction"></a>
+<h3 class="section">4.1 Introduction</h3>
+<p>The <a href="http://www.bacnet.org/">BACnet</a> data communication protocol of <a href="http://www.ashrae.org/">ASHRAE</a> provides the <a href="http://www.bacnet.org/WG/XML/index.html">BACnet XML Working Group</a>. 
+</p>
+<a name="Associated-Specifications"></a>
+<h3 class="section">4.2 Associated Specifications</h3>
+<p>The following is a list of information that will greatly help you plan for the usage of the data captured in your energy management strategy.
+</p>
+<ul>
+<li> <strong>Extensible Markup Language</strong> - <a href="http://en.wikipedia.org/wiki/XML">XML</a>
+	 
+<p><em>&quot;The design goals of XML emphasize simplicity, generality, and usability over the Internet. It is a textual data format with strong support via Unicode for the languages of the world. Although the design of XML focuses on documents, it is widely used for the representation of arbitrary data structures, for example in web services.&quot;</em>
+</p>	 
+	 
+<p><em>&quot;XML documents consist entirely of characters from the Unicode repertoire. Except for a small number of specifically excluded control characters, any character defined by Unicode may appear within the content of an XML document.&quot;</em>
+</p>	 
+	 
+</li><li> <strong>Representational State Transfer</strong> - <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
+	 
+<p><em>&quot;Unlike SOAP-based web services, there is no &quot;official&quot; standard for RESTful web services. This is because REST is an architecture, unlike SOAP, which is a protocol. Even though REST is not a standard, a RESTful implementation such as the Web can use standards like HTTP, URI, XML, etc.&quot;</em>
+</p>	 
+	 
+</li><li> <strong>BACnet</strong> <a href="http://www.bacnet.org/Addenda/index.html">ADDENDA AND COMPANION STANDARDS</a>
+	 
+<ul>
+<li> <a href="http://www.bacnet.org/Addenda/Add-135-2010al-PPR3-Draft-4_chair_approved.pdf">Addendum 135-2008al</a>
+		
+</li><li> <a href="http://www.bacnet.org/Addenda/Add-2004-135c.pdf">Addendum 2004-135c</a>
+		
+</li><li> <a href="http://www.bacnet.org/Addenda/Add-135-2010am-APR1-1_chair-approved.pdf">Addendum 135-2010am</a>
+		</li></ul>
+	 
+</li><li> <strong>The Native PHP</strong> <a href="http://www.php.net/manual/en/book.xml.php">XML Parser</a>
+	 </li></ul>
+
+<a name="Going-Forward"></a>
+<h3 class="section">4.3 Going Forward</h3>
+<p>The roadmap of GNU remotecontrol is a commitment to International standards and protocols for Information Technology to provide availability, relevance, transparency, and maintenance of the GNU remotecontrol framework. (See <a href="Roadmap.html#Roadmap">Roadmap</a>.)  The BACnet XML Working Group is an excellent example of these attributes.
+</p>
+<hr>
+<div class="header">
+<p>
+Next: <a href="Tax-Benefit.html#Tax-Benefit" accesskey="n" rel="next">Tax Benefit</a>, Previous: <a href="Key-Principles.html#Key-Principles" accesskey="p" rel="previous">Key Principles</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 
-<h2 class="chapter">4 GNU remotecontrol &amp; BACnet</h2>
 
-<h3 class="section">4.1 Introduction</h3>
 
-<p>The <a href="http://www.bacnet.org/">BACnet</a> data communication protocol of <a href="http://www.ashrae.org/">ASHRAE</a> provides the <a href="http://www.bacnet.org/WG/XML/index.html">BACnet XML Working Group</a>.
-
-<h3 class="section">4.2 Associated Specifications</h3>
-
-<p>The following is a list of information that will greatly help you plan for the usage of the data captured in your energy management strategy.
-
-     <ul>
-	 <li>	 <strong>Extensible Markup Language</strong> - <a href="http://en.wikipedia.org/wiki/XML">XML</a>
-
-     <p>	 <em>"The design goals of XML emphasize simplicity, generality, and usability over the Internet. It is a textual data format with strong support via Unicode for the languages of the world. Although the design of XML focuses on documents, it is widely used for the representation of arbitrary data structures, for example in web services."</em>
-
-     <p>	 <em>"XML documents consist entirely of characters from the Unicode repertoire. Except for a small number of specifically excluded control characters, any character defined by Unicode may appear within the content of an XML document."</em>
-
-     <p>	 <li>	 <strong>Representational State Transfer</strong> - <a href="http://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>
-
-     <p>	 <em>"Unlike SOAP-based web services, there is no "official" standard for RESTful web services. This is because REST is an architecture, unlike SOAP, which is a protocol. Even though REST is not a standard, a RESTful implementation such as the Web can use standards like HTTP, URI, XML, etc."</em>
-
-     <p>	 <li>	 <strong>BACnet</strong> <a href="http://www.bacnet.org/Addenda/index.html">ADDENDA AND COMPANION STANDARDS</a>
-
-     <p>		
-          <ul>
-		<li>		<a href="http://www.bacnet.org/Addenda/Add-135-2010al-PPR3-Draft-4_chair_approved.pdf">Addendum 135-2008al</a>
-
-          <p>		<li>		<a href="http://www.bacnet.org/Addenda/Add-2004-135c.pdf">Addendum 2004-135c</a>
-
-          <p>		<li>		<a href="http://www.bacnet.org/Addenda/Add-135-2010am-APR1-1_chair-approved.pdf">Addendum 135-2010am</a>
-		</ul>
-
-     <p>	 <li>	 <strong>The Native PHP</strong> <a href="http://www.php.net/manual/en/book.xml.php">XML Parser</a>
-	 </ul>
-
-<h3 class="section">4.3 Going Forward</h3>
-
-<p>The roadmap of GNU remotecontrol is a commitment to International standards and protocols for Information Technology to provide availability, relevance, transparency, and maintenance of the GNU remotecontrol framework. (See <a href="Roadmap.html#Roadmap">Roadmap</a>.)  The BACnet XML Working Group is an excellent example of these attributes.
-
-   </body></html>
-
+</body>
+</html>
