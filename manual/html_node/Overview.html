@@ -1,18 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for GNU remotecontrol (version 1.0, 7 January 2013), which is an example in the Texinfo documentation.
+<!-- This manual is for GNU remotecontrol (version 1.1, 29 September 2013), which is an example in the Texinfo documentation.
 
 Copyright (C) 2013 GNU remotecontrol authors.
 
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
 
 (a) The FSF's Back-Cover Text is: "You have the freedom to copy and modify this GNU manual. Buying copies from the FSF supports it in developing GNU and promoting software freedom." -->
-<!-- Created by Texinfo 4.13.93+dev, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by Texinfo 5.1.90+dev, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GNU remotecontrol: Overview</title>
+<title>GNU remotecontrol 1.1: Overview</title>
 
-<meta name="description" content="GNU remotecontrol: Overview">
-<meta name="keywords" content="GNU remotecontrol: Overview">
+<meta name="description" content="GNU remotecontrol 1.1: Overview">
+<meta name="keywords" content="GNU remotecontrol 1.1: Overview">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="texi2any">
@@ -21,7 +21,7 @@ Permission is granted to copy, distribute and/or modify this document under the 
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
 <link href="index.html#Top" rel="up" title="Top">
 <link href="Scope.html#Scope" rel="next" title="Scope">
-<link href="index.html#Top" rel="previous" title="Top">
+<link href="index.html#Top" rel="prev" title="Top">
 <style type="text/css">
 <!--
 a.summary-letter {text-decoration: none}
@@ -58,23 +58,23 @@ ul.no-bullet {list-style: none}
 <a name="Overview"></a>
 <div class="header">
 <p>
-Next: <a href="Scope.html#Scope" accesskey="n" rel="next">Scope</a>, Previous: <a href="index.html#Top" accesskey="p" rel="previous">Top</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="Scope.html#Scope" accesskey="n" rel="next">Scope</a>, Previous: <a href="index.html#Top" accesskey="p" rel="prev">Top</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <hr>
 <a name="Overview-1"></a>
 <h2 class="chapter">1 Overview</h2>
 <p>GNU remotecontrol is a web application serving as a management tool for multiple IP enabled HVAC thermostats (device), and other Building Automation devices. The purpose of GNU remotecontrol is to read from and write to multiple IP enabled thermostats all at one time.
 </p>
-<p>The GNU remotecontrol framework is designed to work with any IP enabled HVAC thermostat, but can be easily developed to operate any number of networked devices. This framework is built with <a href="http://en.wikipedia.org/wiki/CURL">cURL</a>, <a href="http://en.wikipedia.org/wiki/PHP">PHP</a>, and <a href="http://en.wikipedia.org/wiki/MySQL">MySQL</a>. Its system architecture is enabled on a server-client principle, where users can login to the server using a web browser to manage multiple remote devices from a single web interface. The GNU remotecontrol framework was developed to work in combination with a Remote Monitoring Server, which monitors configurable device parameters and can generate automatic system responses and alerts. If required, the GNU remotecontrol is both scalable and distributable over multiple computers serving different roles in the HVAC or remote device management framework. The <a href="http://www.proliphix.com/">Proliphix</a> IP thermostat (currently the only true IP enabled HVAC thermostat on the market) was used to develop the GNU remotecontrol web application. The <a href="http://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a> (API) <strong>Proliphix IP Devices HTTP API, Revision 1.8</strong> is used to read from and write to the Object Identification (OID) numbers defined in the API for the thermostat device.
+<p>The GNU remotecontrol framework is designed to work with any IP enabled HVAC thermostat, but can be easily developed to operate any number of networked devices. This framework is built with <a href="http://en.wikipedia.org/wiki/CURL">cURL</a>, <a href="http://en.wikipedia.org/wiki/PHP">PHP</a>, and <a href="http://en.wikipedia.org/wiki/MySQL">MySQL</a>. Its system architecture is enabled on a server-client principle, where users can login to the server using a web browser to manage multiple remote devices from a single web interface. The GNU remotecontrol framework was developed to work in combination with a Remote Monitoring Server, which monitors configurable device parameters and can generate automatic system responses and alerts. If required, the GNU remotecontrol is both scalable and distributable over multiple computers serving different roles in the HVAC or remote device management framework. The <a href="http://www.proliphix.com/">Proliphix</a> IP thermostat (currently the only true IP enabled HVAC thermostat on the market) was used to develop the GNU remotecontrol web application. The <a href="http://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a> (API) <strong>Proliphix IP Devices HTTP API, Revision 1.8</strong> is used to read from and write to the Object Identification (OID) numbers defined in the Proliphix API for the Proliphix HVAC thermostat device.
 </p>
-<p>The intended structure of this documentation is to provide as much assistance as possible to understanding <strong>why</strong> you need/want to use GNU remotecontrol and instruction for <strong>how</strong> to use GNU remotecontrol. Our research during the development of GNU remotecontrol found users operated best when they were given the opportunity to gain a high-level understanding of all the technologies associated with GNU remotecontrol. This documentation is written as a combined reference manual and technical manual for GNU remotecontrol. The <strong>Scope</strong> section contains a listing of the minimum recommended chapter reading, per role. Each section in <strong>System Architecture and Concepts</strong> contains instructions for <strong>Security Model</strong>, any <strong>Options</strong> that are recommended, <strong>Requirements</strong> to run that technology, and <strong>Configuration</strong> of that technology.
+<p>The intended structure of this documentation is to help you achieve an understanding of <strong>why</strong> you need/want to use GNU remotecontrol and instruction for <strong>how</strong> to use GNU remotecontrol. Our research during the development of GNU remotecontrol found users operated best when they were given the opportunity to gain a high-level understanding of all the technologies associated with GNU remotecontrol. This documentation is written as a combined reference manual and technical manual for GNU remotecontrol. The <strong>Scope</strong> section contains a listing of the minimum recommended chapter reading, per user role. Each section in <strong>System Architecture and Concepts</strong> contains instructions for <strong>Security Model</strong>, any <strong>Options</strong> that are recommended, <strong>Requirements</strong> to run that technology, and <strong>Configuration</strong> of that technology.
 </p>
-<p>We recognize this documentation contains a lot of material. The documentation is segmented for you to select what you need to read to get going with GNU remotecontrol. We have done all we know how to structure this documentation in a Table of Contents that helps you easily find what you are looking for, obtain a complete understanding of each role, and master the minimum recommended chapter reading as simply and quickly as possible. It is our hope you find this documentation contains all of the information you need to successfully and effortlessly use GNU remotecontrol. With that said, we give you GNU remotecontrol.
+<p>We recognize this documentation contains a lot of material. The documentation is segmented for you to select what you need to read to quickly and easily learn about and start using GNU remotecontrol. It is our hope you find this documentation contains all of the information you need to successfully and effortlessly use GNU remotecontrol. With that said, we give you GNU remotecontrol.
 </p>
 <hr>
 <div class="header">
 <p>
-Next: <a href="Scope.html#Scope" accesskey="n" rel="next">Scope</a>, Previous: <a href="index.html#Top" accesskey="p" rel="previous">Top</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="Scope.html#Scope" accesskey="n" rel="next">Scope</a>, Previous: <a href="index.html#Top" accesskey="p" rel="prev">Top</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 
 

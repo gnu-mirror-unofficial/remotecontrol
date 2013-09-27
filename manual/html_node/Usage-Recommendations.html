@@ -1,18 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for GNU remotecontrol (version 1.0, 7 January 2013), which is an example in the Texinfo documentation.
+<!-- This manual is for GNU remotecontrol (version 1.1, 29 September 2013), which is an example in the Texinfo documentation.
 
 Copyright (C) 2013 GNU remotecontrol authors.
 
 Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
 
 (a) The FSF's Back-Cover Text is: "You have the freedom to copy and modify this GNU manual. Buying copies from the FSF supports it in developing GNU and promoting software freedom." -->
-<!-- Created by Texinfo 4.13.93+dev, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by Texinfo 5.1.90+dev, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GNU remotecontrol: Usage Recommendations</title>
+<title>GNU remotecontrol 1.1: Usage Recommendations</title>
 
-<meta name="description" content="GNU remotecontrol: Usage Recommendations">
-<meta name="keywords" content="GNU remotecontrol: Usage Recommendations">
+<meta name="description" content="GNU remotecontrol 1.1: Usage Recommendations">
+<meta name="keywords" content="GNU remotecontrol 1.1: Usage Recommendations">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
 <meta name="Generator" content="texi2any">
@@ -21,7 +21,7 @@ Permission is granted to copy, distribute and/or modify this document under the 
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
 <link href="index.html#Top" rel="up" title="Top">
 <link href="Use-Case-Scenarios.html#Use-Case-Scenarios" rel="next" title="Use Case Scenarios">
-<link href="Usage-Instructions.html#Usage-Instructions" rel="previous" title="Usage Instructions">
+<link href="Usage-Instructions.html#Usage-Instructions" rel="prev" title="Usage Instructions">
 <style type="text/css">
 <!--
 a.summary-letter {text-decoration: none}
@@ -58,7 +58,7 @@ ul.no-bullet {list-style: none}
 <a name="Usage-Recommendations"></a>
 <div class="header">
 <p>
-Next: <a href="Use-Case-Scenarios.html#Use-Case-Scenarios" accesskey="n" rel="next">Use Case Scenarios</a>, Previous: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="p" rel="previous">Usage Instructions</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="Use-Case-Scenarios.html#Use-Case-Scenarios" accesskey="n" rel="next">Use Case Scenarios</a>, Previous: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="p" rel="prev">Usage Instructions</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 <hr>
 <a name="Usage-Recommendations-1"></a>
@@ -82,14 +82,15 @@ Next: <a href="Use-Case-Scenarios.html#Use-Case-Scenarios" accesskey="n" rel="ne
 <li> Restrict your data network to only allow a few network addresses to connect to the IP enabled thermostats. This makes sure the IP enabled thermostat does not get overloaded from too many users trying to access it where it fails to respond, possibly requiring the IP enabled thermostat to be power cycled. Use, instead, the logged data of by minute and by quarter hour to run your monitoring and reporting. (Please continue reading for more information to accomplish this recommendation.)
 	 </li><li> Setup your Remote Monitoring Server to log sensor readings every minute. Do this for 15 concurrent minutes. Delete previous records so you only have the 15 readings in this record set at any given time. Then, you have a granular recording of data in combination with your Remote Monitoring Server recording the same information in 15-minute intervals. It takes about a minute for a change to register on a sensor, shy of an extreme combination of circumstances. This sensor reading approach provides you with all of the monitoring and reporting data you could ever hope for.
 	 </li><li> Script setting the time on your IP enabled thermostats. Recommend setting the time every month, at a minimum. Clocks of all kinds are always gaining or losing a few seconds here and there, to the point that it adds up to a few minutes here and there. Setting the time on a regular monthly basis avoids the whole gaining and losing problem.
-	 </li><li> Roaming <a href="http://en.wikipedia.org/wiki/Brownout_%28electricity%29">Brown Outs</a> and Natural Disasters in the vicinity of your thermostat devices cause for your thermostat devices to have all kinds of power supply problems. Your thermostat device may very well  have a weak on-board battery. That means the Date and Time on your thermostat has a poor chance of being correct and any Setback Scheduling on the device has little to no chance of being properly executed. Set the Date and Time every hour on your thermostat device, at the very minimum. The fact that a Natural Disaster has occurred means your energy management strategy will most likely not be able to occur, anyway. Plan some type of HVAC Settings for dealing with a Natural Disaster. Perhaps a plan for the Winter months and a plan for the Summer months. Perhaps turning on the fan for <a href="http://en.wikipedia.org/wiki/Ventilation_%28architecture%29">Architecture Ventilation</a> is the best course of action, promoting health and safety in the facility. Perhaps activating heating or cooling is also in the best course of action. Use scripting to help you meet this need.
-	 </li><li> Use Database Management to change the Time Zone field in the thermostat profile when Daylight Savings Time occurs. For example, Database Management will convert North America Eastern Standard Time, with a GMT offset of -5, to North America Eastern Daylight Time, with a GMT offset of -4. Remember, there is Australian Eastern Time and North American Eastern Time, each with Daylight and Standard options. Clearly, Database management will help you keep all of your settings correct in your GNU remotecontrol database. Using Database Management will also save you the time and effort of using index.php to manually change each thermostat you have setup in GNU remotecontrol. Set it up as a SQL script to change the Time Zone entry in the thermostat profile. Run the script when Daylight Savings Time occurs.
+	 </li><li> Roaming <a href="http://en.wikipedia.org/wiki/Brownout_%28electricity%29">Brown Outs</a> and Natural Disasters in the vicinity of your thermostat devices cause for your thermostat devices to have all kinds of power supply problems. Your thermostat device may very well have a weak on-board battery. That means the Date and Time on your thermostat has a poor chance of being correct and any Setback Scheduling on the device has little to no chance of being properly executed. Set the Date and Time every hour on your thermostat device, at the very minimum. The fact that a Natural Disaster has occurred means your Energy Management strategy will be unable to occur, anyway. Plan some type of HVAC Settings for dealing with a Natural Disaster. Perhaps a plan for the Winter months and a plan for the Summer months. Perhaps turning on the fan for <a href="http://en.wikipedia.org/wiki/Ventilation_%28architecture%29">Architecture Ventilation</a> is the best course of action, promoting health and safety in the facility. Perhaps activating heating or cooling is also in the best course of action. Use scripting to help you meet this need.
+	 </li><li> Use Database Management to change the Time Zone field in the thermostat profile when Daylight Savings Time occurs. For example, Database Management will convert North America Eastern Standard Time, with a GMT offset of -5, to North America Eastern Daylight Time, with a GMT offset of -4. Remember, there is Australian Eastern Time and North American Eastern Time, each with Daylight and Standard options. Clearly, the database aspect of GNU remotecontrol will help you keep all of your time settings correct. Using Database Management will also save you the time and effort of using <strong>index.php</strong> to manually change each thermostat you have setup in GNU remotecontrol. Set it up as a SQL script to change the Time Zone entry in the thermostat profile. Run the script when Daylight Savings Time occurs.
 	 </li><li> Script setting your heating/cooling/ventilation levels as a comparison of outdoors conditions. Say so many degrees difference between outside and inside, same for a difference in percentage of relative humidity.
 	 </li><li> Use the Remote Monitoring of your location to change a <a href="http://css-tricks.com/using-weather-data-to-change-your-websites-apperance-through-php-and-css/">website appearance</a>.
 	 </li><li> Use the Remote Monitoring of your location to build <a href="http://en.wikipedia.org/wiki/Software_widget">Software Widgets</a> and/or <a href="http://en.wikipedia.org/wiki/Web_widget">Web Widgets</a>.
 	 </li><li> Setup a simple web page that will fit the temperature and humidity readings of both the thermostats and the weather conditions you care about onto the screen of your <a href="http://en.wikipedia.org/wiki/Microbrowser">cell phone</a>. You then can easily see, <a href="http://en.wikipedia.org/wiki/Mobile_Web">in a single viewing</a>, what you care to know.
-	 </li><li> Editing of a Display Language in GNU remotecontrol mandates editing the contents of the <em>language</em> table and the <em>resource</em> table in the GNU remotecontrol database. Edit these tables with the entries you prefer. Reload index.php in your browser. The changes you made to the <em>language</em> table and the <em>resource</em> table in the GNU remotecontrol database are then displayed in all GNU remotecontrol user account sessions of GNU remotecontrol.
-	 </li><li> Adding a Display Language to the GNU remotecontrol database mandates adding data to the <em>language</em> table and the <em>resource</em> table in the GNU remotecontrol database. Add the new fields and data with the entries you prefer. Reload index.php in your browser. The changes you made to the <em>language</em> table and the <em>resource</em> table in the GNU remotecontrol database are then displayed in all GNU remotecontrol user account sessions of GNU remotecontrol.
+	 </li><li> Editing of a Display Language in GNU remotecontrol mandates editing the contents of the GNU remotecontrol database, the <strong>language</strong> table and the <strong>resource</strong> table. Edit these tables with the entries you prefer. Reload <strong>index.php</strong> in your browser. The changes you made to the <strong>language</strong> table and the <strong>resource</strong> table in the GNU remotecontrol database are then displayed in all GNU remotecontrol user account sessions of GNU remotecontrol.
+	 </li><li> Adding a Display Language to the GNU remotecontrol database mandates adding data to the <strong>language</strong> table and the <strong>resource</strong> table in the GNU remotecontrol database. Add the new fields and data with the entries you prefer. Reload <strong>index.php</strong> in your browser. The changes you made to the <strong>language</strong> table and the <strong>resource</strong> table in the GNU remotecontrol database are then displayed in all GNU remotecontrol user account sessions of GNU remotecontrol.
+	 </li><li> Use <strong>admin.php</strong> to see the preferred Display Language of your end-users. This tells you a lot about what training needs they have that you need to prepare for them.
 	 </li></ul>
 
 <a name="Food-for-Thought"></a>
@@ -106,7 +107,7 @@ Next: <a href="Use-Case-Scenarios.html#Use-Case-Scenarios" accesskey="n" rel="ne
 <hr>
 <div class="header">
 <p>
-Next: <a href="Use-Case-Scenarios.html#Use-Case-Scenarios" accesskey="n" rel="next">Use Case Scenarios</a>, Previous: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="p" rel="previous">Usage Instructions</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+Next: <a href="Use-Case-Scenarios.html#Use-Case-Scenarios" accesskey="n" rel="next">Use Case Scenarios</a>, Previous: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="p" rel="prev">Usage Instructions</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
 </div>
 
 
