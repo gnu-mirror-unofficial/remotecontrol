@@ -1,21 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for GNU remotecontrol (version 1.1, 29 September 2013), which is an example in the Texinfo documentation.
+<!-- This manual is for GNU remotecontrol (version 2.0, 22 April 2016), which is an example in the Texinfo documentation.
 
-Copyright (C) 2013 GNU remotecontrol authors.
+Copyright (C) 2016 GNU remotecontrol authors.
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
+Permission is granted to copy, distribute or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
 
 (a) The FSF's Back-Cover Text is: "You have the freedom to copy and modify this GNU manual. Buying copies from the FSF supports it in developing GNU and promoting software freedom." -->
-<!-- Created by Texinfo 5.1.90+dev, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by GNU Texinfo 5.2, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GNU remotecontrol 1.1: System Architecture and Concepts</title>
+<title>GNU remotecontrol 2.0: System Architecture and Concepts</title>
 
-<meta name="description" content="GNU remotecontrol 1.1: System Architecture and Concepts">
-<meta name="keywords" content="GNU remotecontrol 1.1: System Architecture and Concepts">
+<meta name="description" content="GNU remotecontrol 2.0: System Architecture and Concepts">
+<meta name="keywords" content="GNU remotecontrol 2.0: System Architecture and Concepts">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
-<meta name="Generator" content="texi2any">
+<meta name="Generator" content="makeinfo">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="index.html#Top" rel="start" title="Top">
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
@@ -50,6 +50,7 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
+<link rel="stylesheet" type="text/css" href="/software/gnulib/manual.css">
 
 
 </head>
@@ -65,26 +66,27 @@ Next: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="n" rel="ne
 <h2 class="chapter">6 System Architecture and Concepts</h2>
 
 <p>The following pieces of the GNU remotecontrol architecture are <strong>necessary</strong>:
-     </p><ul>
+	</p><ul>
 <li> Web Server
-	 </li><li> Database Server
-	 </li></ul>
+	</li><li> Database Server
+	</li></ul>
 
 <p>The following pieces of the GNU remotecontrol architecture are <strong>optional</strong>:
-     </p><ul>
+	</p><ul>
 <li> Remote Monitoring Server
-	 </li><li> Email Server
-	 </li></ul>
+	</li><li> Email Server
+	</li></ul>
 
 <p>The following versions for the GNU remotecontrol architecture are <strong>required</strong>:
-     </p><ul>
+	</p><ul>
 <li> PHP 5.3.10
-	 </li><li> php5-curl 5.3.10
-	 </li><li> php5-mysqlnd 5.3.10
-	 </li><li> MySQL-server 5.5.32
-	 </li></ul>
+	</li><li> php5-curl 5.3.10
+	</li><li> php5-mysql 5.3.10
+	</li><li> MySQL-server 5.5.46
+	</li><li> <a href="http://dev.mysql.com/doc/refman/5.5/en/mysql-tzinfo-to-sql.html">mysql_tzinfo_to_sql</a> - The mysql_tzinfo_to_sql command is installed along with mysql. It is necessary to run this command to use GNU remotecontrol, even if your mysql database schema already has the time zone tables.
+	</li></ul>
 
-<p>GNU remotecontrol runs without difficulty on either Linux or Windows.
+<p>An abbreviated set of installation instructions for GNU remotecontrol as a whole is available in the <strong>INSTALL.md</strong> file, located in the <code>/PATH-TO-YOUR-SVN/remotecontrol/doc/</code> directory.
 </p>
 <a name="Web-Server"></a>
 <h3 class="section">6.1 Web Server</h3>
@@ -94,79 +96,46 @@ Next: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="n" rel="ne
 <h4 class="subsection">6.1.1 Security Model</h4>
 <p>GNU remotecontrol is configured with the minimum level of security necessary for a <a href="http://en.wikipedia.org/wiki/Web_server">Web Server</a>. You are responsible for setting up your security on your Web Server.
 </p>
-<a name="Access-Control-_002d-File-System"></a>
-<h4 class="subsubsection">6.1.1.1 Access Control - File System</h4>
-<p>It is <strong>STRONGLY RECOMMENDED</strong> you edit your GNU remotecontrol file system <a href="http://en.wikipedia.org/wiki/Filesystem_permissions#Classes">ownership</a> and <a href="http://en.wikipedia.org/wiki/File_system_permissions#Permissions">permissions</a>. This editing occurs with the file system.
-</p>
-<p>The necessary changes for both <a href="http://en.wikipedia.org/wiki/User_identifier_(Unix)">USER</a> and <a href="http://en.wikipedia.org/wiki/Group_ID">GROUP</a> ownership of the GNU remotecontrol file system achieve a good level of security and protection from inadvertent file changes.
-</p>
-<blockquote>
-<p><b>Note:</b> The group <strong>apache</strong> is used here to denote the group account that your Web Server (apache in this example) is running under. You must use the corresponding Web Server group name for your particular installation and operating system, e.g. apache, httpd, nobody, www-data, etc.
-</p></blockquote>
-
-<p>We recommended the following changes, as illustrated with both <a href="http://en.wikipedia.org/wiki/File_permissions#Numeric_notation">numeric-notation</a> and <a href="http://en.wikipedia.org/wiki/Filesystem_permissions#Symbolic_notation">symbolic notation</a>:
-</p>
-<ul>
-<li> GNU remotecontrol web directories <strong>ownership</strong> can be <strong>root:root</strong>, with <strong>permissions</strong> set at <strong>0755</strong> (- r w x r - x r - x).
-	</li><li> GNU remotecontrol files <strong>ownership</strong> can be <strong>root:root</strong>, with <strong>permissions</strong> set at <strong>0644</strong> (- r w - r - - r - -).
-	</li><li> GNU remotecontrol file <strong>Common.php</strong> must have <strong>ownership</strong> by <strong>root:apache</strong>, with <strong>permissions</strong> set at <strong>0640</strong> (- r w - r - - - - -).
-	</li></ul>
-
-<a name="Access-Control-_002d-Web-Server"></a>
-<h4 class="subsubsection">6.1.1.2 Access Control - Web Server</h4>
-<p>The Web Server is configured with authentication restrictions for all files in the GNU remotecontrol DocumentRoot. This restricts access to the files of your GNU remotecontrol website to authenticated website account users only. It is <strong>STRONGLY RECOMMENDED</strong> that connections to Internet facing servers, or through any untrusted networks, are further secured with SSL encryption.
-</p>
-<p>It is also <strong>STRONGLY RECOMMENDED</strong> to completely prohibit access to the GNU remotecontrol file <strong>Common.php</strong> through your Web Server, to further protect your GNU remotecontrol Database login credentials. This can be accomplished in either the Web Server configuration file or by adding the following directive in an <a href="http://en.wikipedia.org/wiki/Htaccess">.htaccess</a> file in the GNU remotecontrol DocumentRoot:
-</p>
-<pre class="verbatim">	&lt;Files &quot;Common.php&quot;&gt;
-	order allow,deny
-	deny from all
-	&lt;/Files&gt;
-</pre>
 <a name="Requirements"></a>
 <h4 class="subsection">6.1.2 Requirements</h4>
-<p>GNU remotecontrol can operate on any platform that can run PHP with cURL and MySQL.
+<p>GNU remotecontrol can operate on any platform capable of running PHP with cURL and MySQL. GNU remotecontrol works with either <a href="http://en.wikipedia.org/wiki/Basic_access_authentication">Basic</a> or <a href="http://en.wikipedia.org/wiki/Digest_access_authentication">Digest</a> authentication. GNU remotecontrol works with either <a href="http://en.wikipedia.org/wiki/List_of_Apache_modules">Apache mod_PHP</a> or <a href="http://en.wikipedia.org/wiki/PHP#PHPFPM">FastCGI Process Manager</a>. Follow the requirements stated by the Web Server you so choose to use.
 </p>
 <a name="Options"></a>
 <h4 class="subsection">6.1.3 Options</h4>
-<p>GNU remotecontrol runs without any known problems on <a href="http://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache</a> and <a href="http://en.wikipedia.org/wiki/Internet_Information_Services">IIS</a>. Running GNU remotecontrol on a <a href="http://en.wikipedia.org/wiki/Comparison_of_lightweight_web_servers">lightweight</a> Web Server versus a <a href="http://en.wikipedia.org/wiki/Comparison_of_web_servers">complete</a> Web Server is possible, but not recommended. This is due to the security benefits of a complete Web Server. Again, you are responsible for setting up your security on your Web Server.
+<p>GNU remotecontrol runs without any known problems on <a href="http://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache</a>, <a href="http://en.wikipedia.org/wiki/Nginx">Nginx</a>, and <a href="http://en.wikipedia.org/wiki/Internet_Information_Services">IIS</a>. Running GNU remotecontrol on a <a href="http://en.wikipedia.org/wiki/Comparison_of_lightweight_web_servers">lightweight</a> Web Server versus a <a href="http://en.wikipedia.org/wiki/Comparison_of_web_servers">complete</a> Web Server is possible, but not recommended. This is due to the security benefits of a complete Web Server. Again, you are responsible for setting up your security on your Web Server.
 </p>
 <a name="Configuration"></a>
 <h4 class="subsection">6.1.4 Configuration</h4>
-<p>GNU remotecontrol will not work with anonymous users. This is because of how GNU remotecontrol is designed and for security purposes. You must add at least a single user in your GNU remotecontrol database using the <strong>admin.php</strong> web page, which is checked against an identically named user account that is configured in your website. GNU remotecontrol authentication is aligned with Web Server authentication, by keeping user names between the two identical. Please review the section for the <strong>admin.php</strong> web page, for more information on this requirement. Follow the configuration stated by the Web Server you so choose to use.
+<p>GNU remotecontrol is configured within the <strong>config.example.php</strong> file. This file is located in the <code>/PATH-TO-YOUR-SVN/remotecontrol/</code> directory. Copy <strong>config.example.php</strong> to <strong>config.php</strong>. This file contains all necessary parameters to connect your Web Server to your Database Server, after you have initially installed and configured each server.
 </p>
-<p>Here is what you need to run GNU remotecontrol on Apache, <strong>after</strong> you setup your security on your Web Server. This example Web Server configuration provides an administrator user called tstat_admin having access to <strong>admin.php</strong> and <strong>all</strong> other pages of the website. The remaining users, tstat_test_user_1 <strong>and</strong> tstat_test_user_2, <strong>cannot</strong> get to <strong>admin.php</strong>, though they can get to all other pages of the website.
+<p>GNU remotecontrol will not work with anonymous users. This is because of how GNU remotecontrol is designed and for security purposes. You must add at least a single user in your GNU remotecontrol database, which is checked against an identically named user account configured in your website. GNU remotecontrol authentication is aligned with Web Server authentication, by keeping user names between the two identical. Follow the requirements stated by the Web Server you so choose to use.
+</p>
+<p>Here is what you need to run GNU remotecontrol on Apache, <strong>after</strong> you setup your security on your Web Server.
 </p>
 <ul>
 <li> <strong>Apache sites-configuration:</strong>
 
-<pre class="verbatim">    DocumentRoot /var/www/remotecontrol
-    &lt;Directory /var/www/remotecontrol&gt;
-        Options FollowSymLinks -Indexes
-        AllowOverride None
-        Order allow,deny
-        allow from all
-    &lt;/Directory&gt;
+<pre class="verbatim">	DocumentRoot /var/www/remotecontrol
+	&lt;Directory /var/www/remotecontrol&gt;
+		Options FollowSymLinks -Indexes
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	&lt;/Directory&gt;
 
-    &lt;Location /&gt;
-        AuthType Basic
-        AuthName &quot;GNU remotecontrol - User authentication required&quot;
-        AuthUserFile  /etc/apache2/.remotecontrol_passwd
-        Require user tstat_admin tstat_test_user_1 tstat_test_user_2
-    &lt;/Location&gt;
-    &lt;Location /admin.php&gt;
-    Require user tstat_admin
-    &lt;/Location&gt;
-</pre>	
-
+	&lt;Location /&gt;
+		AuthType Basic
+		AuthName &quot;GNU remotecontrol v2.0 - USER AUTHENTICATION REQUIRED&quot;
+		AuthUserFile /etc/apache2/.remotecontrol_passwd
+		Require user tstat_admin tstat_test_user_1 tstat_test_user_2
+	&lt;/Location&gt;
+</pre>
 </li><li> <strong>Settings necessary in your PHP configuration (php.ini):</strong>
 <pre class="verbatim">	register_globals = Off
 	
 	auto_globals_jit = On
 
-	date.timezone = [THE TIMEZONE YOU PREFER]
 </pre></li></ul>
-
 
 <a name="Database-Server"></a>
 <h3 class="section">6.2 Database Server</h3>
@@ -176,32 +145,34 @@ Next: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="n" rel="ne
 <h4 class="subsection">6.2.1 Security Model</h4>
 <p>GNU remotecontrol is configured with the minimum level of security necessary for a <a href="http://en.wikipedia.org/wiki/Database_system">Database System</a>. You are responsible for setting up your security on your Database Server.
 </p>
-<p>It is not necessary to leave the file <samp>/src/dbscripts/iptstat.sql</samp> on your Database Server file system, after you initially run it to setup your GNU remotecontrol database.
-</p>
 <a name="Requirements-1"></a>
 <h4 class="subsection">6.2.2 Requirements</h4>
-<p>Follow the configuration requirements stated by the Database System you so choose to use.
-</p>
-<p>GNU remotecontrol runs without any known problems on MySQL. Running GNU remotecontrol on a <a href="http://en.wikipedia.org/wiki/Back-end_database#Small_Database_Systems">lightweight</a> Database Server versus a <a href="http://en.wikipedia.org/wiki/Comparison_of_relational_database_management_systems">complete</a> Database Server is possible, but not recommended. This is due to the security benefits of a complete Database Server. Again, you are responsible for setting up your security on your Database Server.
-</p>
-<a name="Options-1"></a>
-<h4 class="subsection">6.2.3 Options</h4>
-<p>It is important to consider the option of a <a href="http://en.wikipedia.org/wiki/Federated_database_system">Federated Database System</a> in environments where GNU remotecontrol will operate with legacy databases and existing datasets. This option provides the benefit of reducing implementation costs and shortening deployment timescales, by leveraging existing Database Systems to work with your GNU remotecontrol database. You are not bound to only use MySQL for your GNU remotecontrol. Thinking outside of the box here can help you find innovative ways of implementing your GNU remotecontrol.
+<p>GNU remotecontrol runs without any known problems on MySQL. Running GNU remotecontrol on a <a href="http://en.wikipedia.org/wiki/Back-end_database#Small_Database_Systems">lightweight</a> Database Server versus a <a href="http://en.wikipedia.org/wiki/Comparison_of_relational_database_management_systems">complete</a> Database Server is possible, but not recommended. This is due to the security benefits of a complete Database Server. Again, you are responsible for setting up your security on your Database Server. Follow the requirements stated by the Database System you so choose to use.
 </p>
 <a name="Configuration-1"></a>
-<h4 class="subsection">6.2.4 Configuration</h4>
-<p>Follow the requirements stated by the Database System you so choose to use.
+<h4 class="subsection">6.2.3 Configuration</h4>
+<p>There are both complete and partial automation options available to setup your GNU remotecontrol database. The files for these options are located in the <code>/PATH-TO-YOUR-SVN/remotecontrol/dbscripts/</code> directory. The complete automation option is an all-inclusive interactive script called <strong>make-db.sh</strong>. The partial automation option is the same all-inclusive script broken into individual <strong>SQL</strong> scripts. Follow the requirements stated by the Database System you so choose to use.
 </p>
-<p>There is a single database script, <samp>/dbscripts/iptstat.sql</samp>. This script builds the GNU remotecontrol database. From there, you apply your security model as you see fit.
+<p>Command-line arguments for the <strong>make-db.sh</strong> file are sequential:
 </p>
-<p>Configure the file <strong>Common.php</strong> with the password you wish to setup for your PHP to authenticate to your MySQL server. Edit the string accordingly:
-</p><div align="center"><code>const ConnectionString = 'Host=localhost;DB=iptstat;UN=tstatuser;PW=Yell0w';</code>
-</div>
-<a name="Translations"></a>
-<h4 class="subsection">6.2.5 Translations</h4>
-<p>All databases have a character set and collation setting that can be configured to handle languages with special characters. The <a href="http://dev.mysql.com/doc/refman/5.5/en/charset-charsets.html">Character Sets and Collations</a> specify what you can add to your tables. This does not have to be a global setting. This can be table-specific or even field-specific.
+<ol>
+<li> The database name.
+	</li><li> The database user.
+	</li><li> The database user password.
+	</li><li> The option to load the test data? &rsquo;y&rsquo; for yes, &rsquo;n&rsquo; for no
+	</li><li> The password for the root account of your MySQL installation.
+	</li></ol>
+
+<p>Execute the individual SQL scripts in the following order:
 </p>
-<p>GNU remotecontrol is built to display in any language you can get into the database. You can also edit the contents, as you prefer, with wording that is more appropriate for your end-users. This will help ease your usage of GNU remotecontrol in multilingual environments.
+<ol>
+<li> <strong>gnurc-db.sql</strong>, to create a default database called <strong>gnurc</strong>.
+	</li><li> <strong>gnurc-schema.sql</strong>, to create the database schema.
+	</li><li> <strong>gnurc-data.sql</strong>, to load global/default data.
+	</li><li> <strong>gnurc-test.sql</strong>, to load test data.
+	</li></ol>
+
+<p>The <strong>README.md</strong> file in this same directory contains abbreviated instructions to setup your GNU remotecontrol database. Again, an abbreviated set of installation instructions for GNU remotecontrol as a whole is available in the <strong>INSTALL.md</strong> file, located in the <code>/PATH-TO-YOUR-SVN/remotecontrol/doc/</code> directory.
 </p>
 <a name="Remote-Monitoring-Server"></a>
 <h3 class="section">6.3 Remote Monitoring Server</h3>
@@ -209,184 +180,284 @@ Next: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="n" rel="ne
 </p>
 <a name="Security-Model-2"></a>
 <h4 class="subsection">6.3.1 Security Model</h4>
-<p>GNU remotecontrol is configured with the minimum level of security necessary for a <a href="http://en.wikipedia.org/wiki/Remote_monitoring">Remote Monitoring</a> application. You are responsible for setting up your security on your Remote Monitoring Server. 
+<p>GNU remotecontrol is configured with the minimum level of security necessary for a <a href="http://en.wikipedia.org/wiki/Remote_monitoring">Remote Monitoring</a> application. You are responsible for setting up your security on your Remote Monitoring Server.
 </p>
 <a name="Requirements-2"></a>
 <h4 class="subsection">6.3.2 Requirements</h4>
 <p>Follow the requirements stated by the Remote Monitoring application you so choose to use.
 </p>
-<a name="Options-2"></a>
+<a name="Options-1"></a>
 <h4 class="subsection">6.3.3 Options</h4>
-<p>The question must be answered.....<strong>why would you not monitor your systems</strong>? This is not a judgemental question, simply framing the context of this section. This section has a list of <strong>Frequently Asked Questions</strong>, at the end. If your answer contents you to not have a Remote Monitoring Server, so be it. Perhaps you trust the decisions and work of others enough to not bother with setting up a Remote Monitoring Server. That is often a poor choice.
+<p>The question must be answered.....<strong>why would you not monitor your systems</strong>? This is not a judgemental question, simply framing the context of this section. This section has a list of <strong>Frequently Asked Questions</strong>, at the end. If your answer brings you peace of mind to not have a Remote Monitoring Server, so be it. Perhaps you trust the decisions and work of others enough to not bother with setting up a Remote Monitoring Server. That is often a poor choice.
 </p>
-<p>Running a Remote Monitoring Server is the easy part of having a Remote Monitoring Server. The biggest decision you have to make is.....<strong> are you going to run it, or is someone else</strong>? Then, and only then, choose the technology combination you want to have for your Remote Monitoring Server. Do not let your skill set alone decide what is best for meeting your needs. Determine what you needs are, count the cost, and then choose your technology.
+<p>Running a Remote Monitoring Server is the easy part of having a Remote Monitoring Server. The biggest decision you have to make is.....<strong>are you going to run it, or is someone else</strong>? Then, and only then, choose the technology combination you want to have for your Remote Monitoring Server. Do not let your skill set alone decide what is best for meeting your needs. Determine what you needs are, count the cost, and then choose your technology.
 </p>
 <p><strong>Popular Options</strong>
-</p>	 
+</p>	
 <ul>
 <li> <a href="http://www.nagios.org/">Nagios</a>
-	 </li><li> <a href="http://www.solarwinds.com/">Solar Winds</a>
-	 </li><li> <a href="http://www.mmonit.com/">M/Monit</a>
-	 </li></ul>
+	</li><li> <a href="http://www.solarwinds.com/">Solar Winds</a>
+	</li><li> <a href="http://www.mmonit.com/">M/Monit</a>
+	</li></ul>
 
 <blockquote>
 <p><b>Note:</b> There are many, many other options to choose.
 </p></blockquote>
 
-<p>We have developed plugins for Nagios that quite nicely round out the Energy Management strategy. Check out the <strong>Nagios Plugins</strong>.
+<p>We have developed plugins for Nagios to round out the Energy Management strategy. Check out the <strong>Nagios Plugins</strong>.
 </p>
 <a name="Configuration-2"></a>
 <h4 class="subsection">6.3.4 Configuration</h4>
-<p>Follow the configuration stated by the Remote Monitoring application you so choose to use
+<p>Follow the requirements stated by the Remote Monitoring application you so choose to use.
 </p>
 <a name="Nagios-Plugins"></a>
 <h3 class="section">6.4 Nagios Plugins</h3>
-<p>We have developed 2 plugins to round out the GNU remotecontrol Architecture. The function of these plugins is to capture and process numerical characters from data obtained from your IP enabled thermostat and RSS feeds for weather information out of doors. The measurements of <a href="http://en.wikipedia.org/wiki/Temperature">Temperature</a>, <a href="http://en.wikipedia.org/wiki/Humidity">Humidity</a>, <a href="http://en.wikipedia.org/wiki/Wind_speed">Wind-Speed</a>, <a href="http://en.wikipedia.org/wiki/Wind_chill">Wind-Chill</a>, and <a href="http://en.wikipedia.org/wiki/Barometric_pressure">Atmospheric (Barometric) Pressure</a> help to analyze your entire HVAC system and determine if your Energy Management strategy is working for you. Other measurements can be added in as preferred, as shared below.
+<p>We developed a complementary set of <a href="http://en.wikipedia.org/wiki/Plug-in_%28computing%29">plugins</a> to round out the GNU remotecontrol Architecture. The plugins can be implemented either individually or collectively. We developed our plugins in accordance with the <a href="https://nagios-plugins.org/doc/guidelines.html">Nagios Plugin Development Guidelines</a>. The function of these plugins is to capture and process numerical characters from data obtained from your IP enabled thermostat device and <a href="http://en.wikipedia.org/wiki/RSS">RSS</a> or <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> feeds for weather information out of doors. The measurements of <a href="http://en.wikipedia.org/wiki/Temperature">Temperature</a>, <a href="http://en.wikipedia.org/wiki/Humidity">Humidity</a>, <a href="http://en.wikipedia.org/wiki/Wind_speed">Wind-Speed</a>, <a href="http://en.wikipedia.org/wiki/Wind_chill">Wind-Chill</a>, and <a href="http://en.wikipedia.org/wiki/Barometric_pressure">Atmospheric (Barometric) Pressure</a> help to analyze your entire HVAC system and determine if your Energy Management strategy is working for you. Other measurements can be added in as preferred, as shared below.
 </p>
 <a name="Proliphix-Alarms"></a>
 <h4 class="subsection">6.4.1 Proliphix Alarms</h4>
-<p>The need for the <strong>Thermostat Plugin - check_ubicom</strong> is better understood when the limitations of the native Proliphix alarms are examined. The Proliphix thermostat device has 4 alarms.
-	 </p><ul>
+<p>The need for the <strong>Thermostat Plugin - check_ubicom</strong> is better understood when the limitations of the native Proliphix alarms are examined. The Proliphix thermostat device has four alarms.
+	</p><ul>
 <li> Low Temperature
-	 </li><li> High Temperature
-	 </li><li> High Humidity
-	 </li><li> Filter Change
-	 </li></ul>
+	</li><li> High Temperature
+	</li><li> High Humidity
+	</li><li> Filter Change
+	</li></ul>
 
-<p>Alarms in the thermostat device were considered for displaying in GNU remotecontrol <strong>index.php</strong> or another web page not yet developed (perhaps something like a GNU remotecontrol alarms.php web page). Feedback from users during development of GNU remotecontrol showed their preference is to be informed of alarms from a Remote Monitoring Server notification. This approach also provides logging of all monitored information, a feature not available in the thermostat device itself.
+<p>Alarms in the thermostat device were considered for displaying in GNU remotecontrol <strong>home.php</strong> or another web page not yet developed (perhaps something like a GNU remotecontrol alarms.php web page). Feedback from users during development of GNU remotecontrol showed their preference is to be informed of alarms from a Remote Monitoring Server notification. This approach also provides logging of all monitored information, a feature not available in the thermostat device itself.
 </p>
-<p>The Temperature and Humidity alarms are already provided for in the Nagios checks we have developed. The Filter Change alarm has various pre-determined options to select; 10, 30, 60, 90, 120, 240, 365 Runtime Days. This does not account for dust accumulating on a filter, should the power be off to the thermostat device. This logic combination is determined as insufficient to use for monitoring when to change the filter of an HVAC system. Reasoning for this determination includes:
-	 </p><ul>
+<p>The Temperature and Humidity alarms are already provided for in the Nagios checks we have developed. The Filter Change alarm has various pre-determined options to select; 10, 30, 60, 90, 120, 240, 365 Runtime Days. This does not account for dust accumulating on a filter, should the power be turned off to the thermostat device. This logic combination is determined as insufficient to use for monitoring when to change the filter of any HVAC system. Reasoning for this determination includes:
+	</p><ul>
 <li> Various pollutants enter filters at different times in different ways.
-	 </li><li> Allergens are more prevalent in the Spring compared to the other seasons of the year.
-	 </li><li> Dust is more common if a manufacturing facility has dust as a by-product of manufacturing.
-	 </li><li> Dust is generated from Wood Stoves and Fire Places. Heating needs often change throughout the year.
-	 </li><li> <a href="http://en.wikipedia.org/wiki/Dust_storm">Dust Storms</a> are common in arid and semi-arid regions. Dust Storms require additional filter inspections to make sure equipment will not be damaged from improper ventilation.
-	 </li><li> An end-user is the best person to determine when to change a filter based upon the environmental conditions that may or may not change.
-	 </li></ul>
+	</li><li> Allergens are more prevalent in the Spring compared to the other seasons of the year.
+	</li><li> Dust is more common if a manufacturing facility has dust as a by-product of manufacturing.
+	</li><li> Dust is generated from Wood Stoves and Fire Places. Heating needs often change throughout the year.
+	</li><li> <a href="http://en.wikipedia.org/wiki/Dust_storm">Dust Storms</a> are common in arid and semi-arid regions. Dust Storms require additional filter inspections to make sure equipment will not be damaged from improper ventilation.
+	</li><li> An end-user is the best person to determine when to change a filter based upon the environmental conditions which may or may not change.
+	</li></ul>
 
 <p>The Proliphix API only supports reading these alarms, not setting an alarm threshold or resetting an alarm event. The user must go to the web page within the Proliphix thermostat device for setting an alarm threshold or resetting an alarm event. Also, there is only a single alarm issued per alarm type until the alarm type event is reset in the thermostat device. This logic combination means a threshold may be exceeded, return to an acceptable level for the user, and then be exceeded again. This example is an excellent illustration of the value gained by having a Remote Motoring Server, with its fully configurable and flexible alarm functionality, watching your network, your devices, and anything else you can monitor.
 </p>
 <p>Finally, since the thermostat device has a threshold of how many read events the unit can support per minute, we did not want to overwhelm the device with multiple read events. An example of this overwhelming of the device is:
-	 </p><ul>
-<li> Having a separate web page, some where, for viewing these alarms, after they are read from the thermostat device.
-	 </li><li> Then, returning to the GNU remotecontrol <strong>index.php</strong> web page, to see those alarms.....again.
-	 </li><li> Then, going into the device web page, to clear the alarm and/or adjust thresholds.
-	 </li><li> Then, going back to the GNU remotecontrol <strong>index.php</strong> web page, to see what an alarm reads.
-	 </li><li> Then, going back into the separate web page, some where, to see what an alarm reads.
-	 </li></ul>
+	</p><ol>
+<li> Having a separate web page, somewhere, for viewing these alarms, after they are read from the thermostat device.
+	</li><li> Then, returning to the GNU remotecontrol <strong>home.php</strong> web page, to see those alarms.....again.
+	</li><li> Then, going into the thermostat device web page, to clear the alarm or adjust thresholds.
+	</li><li> Then, going back to the GNU remotecontrol <strong>home.php</strong> web page, to see what an alarm reads.
+	</li><li> Then, going back into the separate web page, somewhere, to see what an alarm reads.
+	</li></ol>
 
-<p>The Proliphix API is quite distinct about this cautioning of too many read events per minute through the Proliphix API. The combination of the web server of the thermostat device and GNU remotecontrol <strong>index.php</strong> is a proper approach to use and not overwhelm the thermostat device. This approach caches the data and avoids repeated Proliphix API calls to the Proliphix HVAC thermostat device.
+<p>The Proliphix API is quite distinct about this cautioning of too many read events per minute through the Proliphix API. The combination of the web server of the thermostat device and GNU remotecontrol <strong>home.php</strong> is a proper approach to use and not overwhelm the thermostat device. This approach caches the data and avoids repeated Proliphix API calls to the Proliphix HVAC thermostat device.
 </p>
 <a name="Thermostat-Plugin-_002d-check_005fubicom"></a>
 <h4 class="subsection">6.4.2 Thermostat Plugin - check_ubicom</h4>
-<p>Please review the documentation provided with the source code for the plugin for detailed usage instructions. The following is an outline of the detailed instruction.
+<p>Please review the documentation provided with the plugin source code for detailed usage instructions. The following is an outline of the detailed instruction.
 </p>
-<p>This plugin will attempt to read temperature and humidity from an IP thermostat. Successful reads initially set the response to <code>STATE_OK</code>. If the temperature or humidity falls outside the range set by the <code>warn-temperature</code> or the <code>warn-humidity</code> arguments, then the response is upgraded to <code>STATE_WARNING</code>. If the temperature or humidity falls outside the range set by the <code>critical-temperature</code> or the <code>critical-humidity</code> arguments, then the response is further upgraded to <code>STATE_CRITICAL</code>. Failure to read both values (due to timeout or parsing failure) results in a <code>STATE_UNKNOWN</code> response.
+<p>This plugin will attempt to read temperature and humidity from a thermostat device. Successful reads initially set the response to <code>STATE_OK</code>. If the temperature or humidity falls outside the range set by the <code>warn-temperature</code> or the <code>warn-humidity</code> arguments, then the response is upgraded to <code>STATE_WARNING</code>. If the temperature or humidity falls outside the range set by the <code>critical-temperature</code> or the <code>critical-humidity</code> arguments, then the response is further upgraded to <code>STATE_CRITICAL</code>. Failure to read both values, due to either a timeout or parsing failure, results in a <code>STATE_UNKNOWN</code> response.
 </p>
-<p>Temperature and humidity arguments may specify a minimum, a maximum, or both. A &rsquo;:&rsquo; character must be used to follow a minimum or precede a maximum. For example.....
-</p>
-
 <a name="Syntax-Example-_002d-IMPERIAL"></a>
 <h4 class="subsubsection">6.4.2.1 Syntax Example - IMPERIAL</h4>
 
-<p><code>check_ubicom -wt :70 -ct :90 -wh 10: -ch 5: -t 60 -I example.remote-mon.com -u /status.shtml</code>
+<p><code>check_ubicom! -wt :70 -ct :90 -wh 10: -ch 5: -t 60 -I example.remote-mon.com -u /status.shtml</code>
 </p>
+<ul>
+<li> [-H &lt;HOSTNAME|HOSTNAME:PORT&gt;] = [&ndash;hostname=&lt;HOSTNAME|HOSTNAME:PORT&gt;] = Hostname for virtual-hosting or shared hosting servers. Append the port number to include it in the header (e.g.: example.remote-mon.com:80).
+	</li><li> [-I &lt;IP ADDRESS|HOSTNAME&gt;] = [&ndash;IP-address=&lt;IP ADDRESS|HOSTNAME&gt;] = IP address or hostname to use for TCP socket connection.
+	</li><li> [-S] = [&ndash;ssl] = Connect via SSL. The port defaults to 443.
+	</li><li> [-p &lt;PORT&gt;] = [&ndash;port=&lt;PORT&gt;] = Numeric port number to use for TCP socket connection.
+	</li><li> [-u &lt;PATH&gt;] = [&ndash;url=&lt;PATH&gt;] = URL to GET (/status.shtml)
+	</li><li> [-a &lt;USER:PASS&gt;] = [&ndash;authorization=&lt;USER:PASS&gt;] = username and password pair for sites with basic authentication.
+	</li><li> [-A &lt;STRING&gt;] = [&ndash;useragent=&lt;STRING&gt;] = User-Agent header string. (&quot;check_ubicom/v1&quot;)
+	</li><li> [-t &lt;SECONDS&gt;] = [&ndash;timeout &lt;SECONDS&gt;] = Maximum connect time in seconds. The default is 10.
+	</li><li> [-m] = [&ndash;metric] = Use metric (Celsius) units for temperature ranges.
+	</li><li> [-wt &lt;min&gt;:&lt;max&gt;] = [&ndash;warn-temperature=&lt;min&gt;:&lt;max&gt;] = Normal temperature range in decimal degrees.
+	</li><li> [-ct &lt;min&gt;:&lt;max&gt;] = [&ndash;critical-temperature=&lt;min&gt;:&lt;max&gt;] = Acceptable temperature range in decimal degrees.
+	</li><li> [-wh &lt;min&gt;:&lt;max&gt;] = [&ndash;warn-humidity=&lt;min&gt;:&lt;max&gt;] = Normal humidity range in decimal percentage points.
+	</li><li> [-ch &lt;min&gt;:&lt;max&gt;] = [&ndash;critical-humidity=&lt;min&gt;:&lt;max&gt;] = Acceptable humidity range in decimal percentage points.
+	</li></ul>
 
 <a name="Result-Example-_002d-IMPERIAL"></a>
 <h4 class="subsubsection">6.4.2.2 Result Example - IMPERIAL</h4>
 
 <ul>
-<li> Returns CRITICAL if temperature is above 90F or humidity is below 10%.
-	 </li><li> Returns WARNING if temperature is above 70F or humidity is below 5.
-	 </li><li> Returns OK if temperature is 70F or below.
-	 </li><li> Returns UNKNOWN if no response received within 60 seconds.
-	 </li></ul>
+<li> Returns WARNING if temperature is above 70F or humidity is below 10%.
+	</li><li> Returns CRITICAL if temperature is above 90F or humidity is below 5%.
+	</li><li> Returns OK if temperature is 70F or below.
+	</li><li> Returns UNKNOWN if no response received within 60 seconds.
+	</li></ul>
 
 <a name="Syntax-Example-_002d-METRIC"></a>
 <h4 class="subsubsection">6.4.2.3 Syntax Example - METRIC</h4>
 
-<p><code>check_ubicom -m -wt 0:30 --critical-temperature=-10:50 -I example.remote-mon.com -u /status.shtml</code>
+<p><code>check_ubicom! -m -wt 0:30 --critical-temperature=-10:50 -I example.remote-mon.com -u /status.shtml</code>
 </p>
 <a name="Result-Example-_002d-METRIC"></a>
 <h4 class="subsubsection">6.4.2.4 Result Example - METRIC</h4>
 
 <ul>
-<li> Returns CRITICAL if temperature is below -10C or above 50C.
-	 </li><li> Returns WARNING if temperature is below 0C or above 30C.
-	 </li><li> Returns OK if temperature is from 0C to 30C.
-	 </li><li> Returns UNKNOWN if no response received within 10 seconds.
-	 </li></ul>
+<li> Returns WARNING if temperature is below 0C or above 30C.
+	</li><li> Returns CRITICAL if temperature is below -10C or above 50C.
+	</li><li> Returns OK if temperature is from 0C to 30C.
+	</li><li> Returns UNKNOWN if no response received within 10 seconds.
+	</li></ul>
 
 <a name="Syntax-Example-_002d-Macro"></a>
 <h4 class="subsubsection">6.4.2.5 Syntax Example - Macro</h4>
-<p>define command{
-</p>
-<p>command_name    check_ubicom_whatever
-</p>		
-<p>command_line    $USER1$/check_ubicom -I 10.10.10.22 -p 8264
-</p>		
-<p>}
-</p>
+<pre class="verbatim">define command{
+		command_name check_ubicom
+
+		command_line $USER1$/check_ubicom -I 10.10.10.22 -p 8264
+		}
+</pre>
 <a name="Weather-Plugin-_002d-check_005fweather"></a>
 <h4 class="subsection">6.4.3 Weather Plugin - check_weather</h4>
-<p>Please review the documentation provided with the source code for the plugin for detailed usage instructions. The following is an outline of the detailed instruction.
+<p>Please review the documentation provided with the plugin source code for detailed usage instructions. The following is an outline of the detailed instruction.
 </p>
-<p>The check_weather plugin checks the wind-chill, wind-speed, humidity, pressure, and temperature received from <a href="http://developer.yahoo.com/weather/">Yahoo! Weather RSS Feed</a> for a single station code. The return value is always OK or UNKNOWN.
+<p>The check_weather plugin checks the wind-chill, wind-speed, humidity, pressure, and temperature received from <a href="http://developer.yahoo.com/weather/">Yahoo! Weather RSS Feed</a> for a single location. The return value is always either OK or UNKNOWN, as the weather feed either is or is not accessible.
 </p>
-<p>You are certainly free to use any other RSS feed you prefer. Examples of this include <a href="http://www.weather.com/">The Weather Channel</a> and <a href="http://www.wunderground.com/weather/api/">Weather Underground</a>. All of these RSS feeds have free and paid options. Please carefully read their provisions if you select to use their RSS feed.
+<p>You are certainly free to use any other feed you prefer. Examples of a feed include <a href="http://www.weather.com/">The Weather Channel</a> and <a href="http://www.wunderground.com/weather/api/">Weather Underground</a>. All of these feeds have free and paid options. Please carefully read their provisions if you select to use their feed.
 </p>
 <p>The performance values returned by the check_weather plugin, <strong>in order</strong>, are:
-</p><ol>
+	</p><ol>
 <li> wind-chill (apparent temperature) in degrees F or degrees C
-</li><li> wind-speed in m.p.h. or km.p.h.
-</li><li> relative humidity in percent
-</li><li> barometric pressure in in.Hg or mm.Hg
-</li><li> current temperature in degrees F or degrees C
-</li></ol>
+	</li><li> wind-speed in m.p.h. or km.p.h.
+	</li><li> relative humidity in percent
+	</li><li> barometric pressure in in.Hg or mm.Hg
+	</li><li> current temperature in degrees F or degrees C
+	</li></ol>
 
 <a name="Syntax-Example-_002d-IMPERIAL-1"></a>
 <h4 class="subsubsection">6.4.3.1 Syntax Example - IMPERIAL</h4>
-<p><code>check_weather -z USTN0268</code>
+<p><code>check_weather! -d 23424748 -m F -w 0 -c 0</code>
 </p>
+<ul>
+<li> -d = woeid of the location
+	</li><li> -m F = imperial unit
+	</li><li> -w 0 = warning limit
+	</li><li> -c 0 = critical limit
+	</li></ul>
+
 <a name="Result-Example-_002d-IMPERIAL-1"></a>
 <h4 class="subsubsection">6.4.3.2 Result Example - IMPERIAL</h4>
-<p>OK|52 8 88 29.68 52
+<p><code>OK|52 8 88 29.68 52</code>
 </p>
 <ol>
 <li> 52 degrees Fahrenheit wind-chill
-</li><li> 8 mph wind-speed
-</li><li> 88% relative humidity
-</li><li> 29.7 in.Hg barometric pressure
-</li><li> 52 degrees Fahrenheit actual temperature
-</li></ol>
+	</li><li> 8 mph wind-speed
+	</li><li> 88% relative humidity
+	</li><li> 29.7 in.Hg barometric pressure
+	</li><li> 52 degrees Fahrenheit actual temperature
+	</li></ol>
 
 <a name="Syntax-Example-_002d-METRIC-1"></a>
 <h4 class="subsubsection">6.4.3.3 Syntax Example - METRIC</h4>
-<p><em>check_weather -z USTN0268 -m</em>
+<p><code>check_weather! -d 23424748 -m C -w 0 -c 0</code>
 </p>
+<ul>
+<li> -d = woeid of the location
+	</li><li> -m C = metric unit
+	</li><li> -w 0 = warning limit
+	</li><li> -c 0 = critical limit
+	</li></ul>
+
 <a name="Result-Example-_002d-METRIC-1"></a>
 <h4 class="subsubsection">6.4.3.4 Result Example - METRIC</h4>
-<p>OK|35 12.8748 88 753.872 35
+<p><code>OK|35 12.8748 88 753.872 35</code>
 </p>
 <ol>
 <li> 35 degrees Celsius wind-chill temperature
-</li><li> 12.8 km/h wind-speed
-</li><li> 88% relative humidity
-</li><li> 758.8 mm.Hg barometric pressure
-</li><li> 35 degrees Celsius actual temperature
-</li></ol>
+	</li><li> 12.8 km/h wind-speed
+	</li><li> 88% relative humidity
+	</li><li> 758.8 mm.Hg barometric pressure
+	</li><li> 35 degrees Celsius actual temperature
+	</li></ol>
 
 <a name="Syntax-Example-_002d-Macro-1"></a>
 <h4 class="subsubsection">6.4.3.5 Syntax Example - Macro</h4>
-<p>define command{
+<pre class="verbatim">define command{
+		command_name check_weather
+
+		command_line $USER1$/check_weather -d 23424748 -m F -w 0 -c 0
+		}
+		
+</pre>
+<a name="Forecast-Plugin-_002d-check_005fforecast"></a>
+<h4 class="subsection">6.4.4 Forecast Plugin - check_forecast</h4>
+<p>Please review the documentation provided with the plugin source code for detailed usage instructions. The following is an outline of the detailed instruction.
 </p>
-<p>command_name    check_weather_knox
-</p>		
-<p>command_line    $USER1$/check_weather -z USTN0268
-</p>		
-<p>}
+<p>The check_forecast plugin checks the wind-chill, wind-speed, humidity, pressure, and temperature received from <a href="http://openweathermap.org/forecast5">Open Weather Map</a> for a single location. The return value is always either OK or UNKNOWN, as the forecast feed either is or is not accessible.
 </p>
+<p>You are certainly free to use any other feed you prefer. Examples of a feed include <a href="http://www.weather.com/">The Weather Channel</a> and <a href="http://www.wunderground.com/weather/api/">Weather Underground</a>. All of these feeds have free and paid options. Please carefully read their provisions if you select to use their feed.
+</p>
+<p>The performance values returned by the check_forecast plugin, <strong>in order</strong>, are:
+</p>
+<ol>
+<li> wind-chill (apparent temperature) in degrees F or degrees C
+	</li><li> wind-speed in m.p.h. or km.p.h.
+	</li><li> relative humidity in percent
+	</li><li> barometric pressure in in.Hg or mm.Hg
+	</li><li> current temperature in degrees F or degrees C
+	</li></ol>
+
+<a name="Syntax-Example-_002d-IMPERIAL-2"></a>
+<h4 class="subsubsection">6.4.4.1 Syntax Example - IMPERIAL</h4>
+<p><code>check_forecast! -t -24.91 -n 133.4 -m F -w 0 -c 0 -a [INSERT YOUR API KEY HERE]</code>
+</p>
+<ul>
+<li> -t = latitude
+	</li><li> -n = longitude
+	</li><li> -m F = imperial unit
+	</li><li> -w 0 = warning limit
+	</li><li> -c 0 = critical limit
+	</li><li> -a = Your API key from <a href="http://openweathermap.org/api">http://openweathermap.org/api</a>
+	</li></ul>
+
+<a name="Result-Example-_002d-IMPERIAL-2"></a>
+<h4 class="subsubsection">6.4.4.2 Result Example - IMPERIAL</h4>
+<p><code>OK|52 8 88 29.68 52</code>
+</p>
+<ol>
+<li> 52 degrees Fahrenheit wind-chill
+	</li><li> 8 mph wind-speed
+	</li><li> 88% relative humidity
+	</li><li> 29.7 in.Hg barometric pressure
+	</li><li> 52 degrees Fahrenheit actual temperature
+	</li></ol>
+
+<a name="Syntax-Example-_002d-METRIC-2"></a>
+<h4 class="subsubsection">6.4.4.3 Syntax Example - METRIC</h4>
+<p><code>check_forecast! -t -24.91 -n 133.4 -m C -w 0 -c 0 -a [INSERT YOUR API KEY HERE]</code>
+</p>
+<ul>
+<li> -t = latitude
+	</li><li> -n = longitude
+	</li><li> -m C = metric unit
+	</li><li> -w 0 = warning limit
+	</li><li> -c 0 = critical limit
+	</li><li> -a = Your API key from <a href="http://openweathermap.org/api">http://openweathermap.org/api</a>
+	</li></ul>
+
+<a name="Result-Example-_002d-METRIC-2"></a>
+<h4 class="subsubsection">6.4.4.4 Result Example - METRIC</h4>
+<p><code>OK|35 12.8748 88 753.872 35</code>
+</p>
+<ol>
+<li> 35 degrees Celsius wind-chill temperature
+	</li><li> 12.8 km/h wind-speed
+	</li><li> 88% relative humidity
+	</li><li> 758.8 mm.Hg barometric pressure
+	</li><li> 35 degrees Celsius actual temperature
+	</li></ol>
+
+<a name="Syntax-Example-_002d-Macro-2"></a>
+<h4 class="subsubsection">6.4.4.5 Syntax Example - Macro</h4>
+<pre class="verbatim">define command{
+		command_name check_forecast
+
+		command_line $USER1$/check_forecast! -t -24.91 -n 133.4 -m F -w 0 -c 0 -a [INSERT YOUR API KEY HERE]
+		}
+		
+</pre>
 <p>These plugins are developed under the Nagios <a href="http://www.nagios.com/legal/">License</a>.
 </p>
 <a name="Email-Server"></a>
@@ -398,45 +469,39 @@ Next: <a href="Usage-Instructions.html#Usage-Instructions" accesskey="n" rel="ne
 </p>
 <a name="Requirements-3"></a>
 <h4 class="subsection">6.5.2 Requirements</h4>
-<p>Follow the requirements stated by the Email Server application you so choose to use with your RMS Server.
+<p>The email send function used in the GNU remotecontrol Architecture is for sending email from your Remote Monitoring Server to you, using <a href="http://en.wikipedia.org/wiki/SMTP">SMTP</a>. The mail send function will use the server&rsquo;s Mail Transfer Agent (<a href="http://en.wikipedia.org/wiki/Mail_transfer_agent">MTA</a>). Requirements for High Availability of mail sending necessitate the configuration of a secondary MTA to provide service redundancy. You will need to have your own registered Domain Name with its <a href="http://en.wikipedia.org/wiki/MX_record">MX record</a>, to be able to send email messages directly to recipients and not be blocked by various Internet Service Providers (ISPs), for fear of spam. Follow the requirements stated by the Email Server application you so choose to use with your Remote Monitoring Server.
 </p>
-<p>The email send function used in the GNU remotecontrol Architecture is for sending email from your Remote Monitoring Server to you, using <a href="http://en.wikipedia.org/wiki/SMTP">SMTP</a>. The mail send function will use the server&rsquo;s Mail Transfer Agent (<a href="http://en.wikipedia.org/wiki/Mail_transfer_agent">MTA</a>). Requirements for High Availability of mail sending necessitate the configuration of a secondary MTA to provide service redundancy. You will need to have your own registered Domain Name with its <a href="http://en.wikipedia.org/wiki/MX_record">MX record</a>, to be able to send email messages directly to recipients and not be blocked by various Internet Service Providers (ISPs), for fear of spam. 
-</p>
-<a name="Options-3"></a>
+<a name="Options-2"></a>
 <h4 class="subsection">6.5.3 Options</h4>
-<p>Many ISPs block outgoing packets through port 25. This occurs as a matter of course to minimize spam. If you ISP is blocking port 25, then you have the option.....and is <strong>STRONGLY RECOMMENDED</strong> for security purposes.....to configure your MTA to use SSL/TLS encryption when sending messages to remote mail servers (<a href="http://en.wikipedia.org/wiki/Smtps">SMTPS</a>). This configuration would normally use a different port to port 25 for outgoing messages, overcoming the problem of blocked port 25. 
-If your server is not operating under a registered Domain Name, then you have no option but to use a 3rd party SMTP service offered by different ISPs (e.g. DynDNS Email, Gmail, etc.) to relay messages from your RMS server to the intended recipients, via your email account on the 3rd party server. 
+<p>Many ISPs block outgoing packets through port 25. This occurs as a matter of course to minimize spam. If you ISP is blocking port 25, then you have the option.....and is <strong>STRONGLY RECOMMENDED</strong> for security purposes.....to configure your MTA to use SSL/TLS encryption when sending messages to remote mail servers (<a href="http://en.wikipedia.org/wiki/Smtps">SMTPS</a>). This configuration would normally use a different port than port 25 for outgoing messages, overcoming the problem of blocked port 25. If your server is not operating under a registered Domain Name, then you have no option but to use a third party SMTP service offered by different ISPs (e.g. DynDNS Email, Gmail, et cetera) to relay messages from your Remote Monitoring Server server to the intended recipients, via your email account on the third party server.
 </p>
-<p>Do yourself a big favor and become very, very clear on these 3 items:
-     </p><ul>
+<p>Do yourself a <strong>big</strong> favor and become clear on these three items:
+	</p><ul>
 <li> <a href="http://en.wikipedia.org/wiki/Mail_Delivery_Agent">Mail Delivery Agent</a>
-	 </li><li> <a href="http://en.wikipedia.org/wiki/Mail_transfer_agent">Mail Transfer Agent</a> (Mail Relay)
-	 </li><li> <a href="http://en.wikipedia.org/wiki/Mail_user_agent">Mail User Agent</a>
-	 </li></ul>
+	</li><li> <a href="http://en.wikipedia.org/wiki/Mail_transfer_agent">Mail Transfer Agent</a> (Mail Relay)
+	</li><li> <a href="http://en.wikipedia.org/wiki/Mail_user_agent">Mail User Agent</a>
+	</li></ul>
 
-<p>Then, do yourself a <strong>very</strong> big favor and become <strong>very</strong> familiar with these 4 items:
-     </p><ul>
+<p>Then, do yourself a <strong>huge</strong> favor and become familiar with these four items:
+	</p><ul>
 <li> <a href="http://en.wikipedia.org/wiki/E-mail_authentication">Email Authentication</a>
-	 </li><li> <a href="http://en.wikipedia.org/wiki/S/MIME">S/MIME</a>
-	 </li><li> <a href="http://en.wikipedia.org/wiki/SMTP_Authentication">SMTP Authentication</a>
-	 </li><li> <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a>
-	 </li></ul>
-	 
+	</li><li> <a href="http://en.wikipedia.org/wiki/S/MIME">S/MIME</a>
+	</li><li> <a href="http://en.wikipedia.org/wiki/SMTP_Authentication">SMTP Authentication</a>
+	</li><li> <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a>
+	</li></ul>
+	
 
-<p>Now, having a familiarity understanding of these items will equip you to have a very successful talk with your Email Administrator, or your Internet Service Provider, or a Mail Relay Provider. That administrator will ask you several questions about how you want email handled for your GNU remotecontrol. Prepare beforehand for that discussion. The discussion will go much better if you are familiar with and understand these items.
+<p>Now, having a familiarity understanding of these items will equip you to have a successful talk with your Email Administrator, or your Internet Service Provider, or a Mail Relay Provider. They will ask you several questions about how you want email handled for your GNU remotecontrol. Prepare beforehand for this discussion. The discussion will go much better if you are familiar with and understand these items.
 </p>
 <a name="Configuration-3"></a>
 <h4 class="subsection">6.5.4 Configuration</h4>
-<p>Follow the configuration stated by the MTA application you so choose to use and the settings provided by any 3rd party SMTP service.
-</p>
-<p>The Remote Monitoring Server can be configured to send notifications to any number of different recipients. It is advisable that you configure the access control list of your Email Server to only allow messages to be sent from the user under which your Remote Monitoring Server is running, as an added security precaution.
+<p>The Remote Monitoring Server can be configured to send notifications to any number of different recipients. It is advisable you configure the access control list of your Email Server to only allow messages to be sent from the user under which your Remote Monitoring Server is running, as an added security precaution. Follow the requirements stated by the MTA application you so choose to use and the settings provided by any third party SMTP service.
 </p>
 <p>The email you probably want to receive is that which will notify you of a condition occurring. You are notified by email messages sent to you by your Remote Monitoring Server. You do not have to keep these email notifications after you are notified, nor do you need to set any reports to be sent to you in more emails. All of the information you would ever need about notifications, alerts and their history, is being stored on your Remote Monitoring Server, either in log files or in a database. The benefit of receiving an email alert is to be notified in real time, when you need to look into an exception event to mitigate its impact. The benefit of this awareness is priceless.
 </p>
 <blockquote>
-<p><b>Note:</b> Don&rsquo;t use an SMS address when sending email to cell phones. Use the cell phone&rsquo;s email address via the <a href="http://www.makeuseof.com/tag/email-to-sms/">Free Email To SMS Gateways</a>. Major United States Carriers offer this to both email and SMS users. Look for the same options of the cell phone provider&rsquo;s of the land in which you live. You will be much happier using the cell phone&rsquo;s email address, as you can easily track if the message went out or not, versus wondering about the SMS system.....in which knowing is often a mystery. Finally, it is 1 less system to work with.
+<p><b>Note:</b> Don&rsquo;t use an <a href="http://en.wikipedia.org/wiki/Short_Message_Service">SMS</a> address when sending email to cell phones. Use the cell phone&rsquo;s email address via the <a href="http://www.makeuseof.com/tag/email-to-sms/">Free Email To SMS Gateways</a>. Major United States Carriers offer this to both email or SMS users. Look for the same options from cell phone providers where you live. You will be much happier using the cell phone&rsquo;s email address, as you can easily track if the message went out or not, versus wondering about the SMS system.....in which knowing is often a mystery. Finally, it is one less system to use.
 </p></blockquote>
-
 
 <a name="Frequently-Asked-Questions-1"></a>
 <h3 class="section">6.6 Frequently Asked Questions</h3>
@@ -446,48 +511,48 @@ If your server is not operating under a registered Domain Name, then you have no
 </p>
 <a name="What-is-Remote-Monitoring-Server_003f"></a>
 <h4 class="subsection">6.6.2 What is Remote Monitoring Server?</h4>
-<p>A Remote Monitoring Server regularly keeps track of your chosen networked device (computers, email servers, web servers, routers, IP thermostats, et cetera) and notifies you with alerts of any problems when they occur.
+<p>A Remote Monitoring Server regularly keeps track of your chosen networked device (computers, email servers, web servers, routers, thermostat devices, et cetera) and notifies you with alerts of any problems when they occur.
 </p>
 <a name="Why-do-I-need-RMS_003f"></a>
 <h4 class="subsection">6.6.3 Why do I need RMS?</h4>
-<p>If you want to know the status of any IP addressable device, you need to monitor it. If you do not have the time/effort available to stand there and watch the device yourself, you need something to automatically monitor it and record the results for you to review at your leisure. Ideally, that Remote Monitoring Server will promptly notify you of anything occurring that you have defined as a problem. An automated technology that remotely monitors your equipment, commonly referred to as.....<em>stuff</em>.....and alerts you when there is a problem. This is RMS.
-</p>	 
+<p>If you want to know the status of any IP addressable device, you need to monitor it. If you do not have the time or effort available to stand there and watch the device yourself, you need something to automatically monitor it and record the results for you to review at your leisure. Ideally, the Remote Monitoring Server will promptly notify you of anything occurring you have defined as a problem. An automated technology which remotely monitors your equipment, commonly referred to as.....<em>stuff</em>.....and alerts you when there is a problem. This is RMS.
+</p>	
 <a name="What-will-RMS-do-for-me_003f"></a>
 <h4 class="subsection">6.6.4 What will RMS do for me?</h4>
-<p>Watch your &ldquo;stuff&rdquo; and tell you when your &ldquo;stuff&rdquo; has a problem. It logs the results of the monitoring of your &ldquo;stuff&rdquo; for you to review in a web page based format. That will help you figure out very quickly if something is wrong and what is wrong with your &ldquo;stuff&rdquo;.
-</p>	 
+<p>Watch your &ldquo;stuff&rdquo; and tell you when your &ldquo;stuff&rdquo; has a problem. It logs the results of the monitoring of your &ldquo;stuff&rdquo; for you to review in a web page based format. This approach will help you quickly figure out if something is wrong and what is wrong with your &ldquo;stuff&rdquo;.
+</p>
 <a name="How-do-I-use-RMS_003f"></a>
 <h4 class="subsection">6.6.5 How do I use RMS?</h4>
-<p>Pretty easy, actually. Setup your Remote Monitoring Server and decide what network and devices you want monitored. From there, you receive an email and/or SMS message to your cell phone when there is a problem.
-</p>	 
+<p>Pretty easy, actually. Setup your Remote Monitoring Server and decide what network and devices you want monitored. From there, you receive an email or SMS message to your cell phone when there is a problem.
+</p>
 <a name="Does-a-Remote-Monitoring-Server-do-graphing_003f"></a>
 <h4 class="subsection">6.6.6 Does a Remote Monitoring Server do graphing?</h4>
 <p>Yes, it produces graphs providing a visual indication of the measurements taken, in configurable scale and units of measurement.
-</p>	 
+</p>
 <a name="Mobile-access-for-RMS_003f"></a>
 <h4 class="subsection">6.6.7 Mobile access for RMS?</h4>
 <p>Yes, you can access your RMS server using your cell phone Internet browser.
-</p>	 
+</p>
 <a name="Is-it-difficult-to-use-RMS_003f"></a>
 <h4 class="subsection">6.6.8 Is it difficult to use RMS?</h4>
-<p>No more difficult than receiving an email or SMS message when an alert occurs. Reports of historical events are available on the RMS served website, which includes a summary dashboard, as well as detailed log tables and graphs.
-</p>	 
-<a name="How-many-emails_002fSMS-messages-will-I-get_003f"></a>
-<h4 class="subsection">6.6.9 How many emails/SMS messages will I get?</h4>
-<p>More than enough for you to know if and when there is a problem. A notification system is almost limitless in how it can be configured for you. A good example is not receiving all SMS message in the middle of the night, but only the SMS messages you conclude you must have &rsquo;round the clock. When you receive a notification, how many times you receive a subsequent notification for the same failure, and who receives that notifications.....all set up as you want.
-</p>	 
+<p>No more difficult than receiving an email or SMS message when an alert occurs. Reports of historical events are available on the RMS served website, which includes a summary dashboard and detailed log tables and graphs.
+</p>
+<a name="How-many-emails-or-SMS-messages-will-I-get_003f"></a>
+<h4 class="subsection">6.6.9 How many emails or SMS messages will I get?</h4>
+<p>More than enough for you to know if and when there is a problem. A notification system is almost limitless in how it can be configured for you. A good example is not receiving all SMS message in the middle of the night, but only the SMS messages you conclude you must have &rsquo;round the clock. When you receive a notification, how many times you receive a subsequent notification for the same failure, and who receives those notifications.....all set up as you want.
+</p>
 <a name="How-many-different-email-addresses-will-you-send-me-notifications-to_003f"></a>
 <h4 class="subsection">6.6.10 How many different email addresses will you send me notifications to?</h4>
-<p>Often, there is a primary and a secondary person in a monitoring notification. Each person has an email address and an SMS address, receiving email and SMS notifications to each address.....as you prefer. Or, it is sent to a Distribution List. The combination of options are plentiful to send email, rest assured.
-</p>	 
-<a name="Can-I-use-RMS-to-help-Test-_0026-Balance-my-HVAC-system_003f"></a>
-<h4 class="subsection">6.6.11 Can I use RMS to help Test &amp; Balance my HVAC system?</h4>
-<p>Yes. RMS &amp; GNU remotecontrol work together to help you do just this. Having recorded data for your system usage and outdoors weather information is priceless for testing &amp; balancing. It offers considerable cost savings, in both time and effort, to review recorded data to optimize your system setup. Additionally, you can reduce the number of people necessary to do the testing and balancing down to 1 person.
-</p>	 
+<p>Often, there is a primary and a secondary person in a monitoring notification. Each person has an email address and an SMS address, receiving email or SMS notifications to each address.....as you prefer. Or, it is sent to a Distribution List. The combination of options are plentiful to send email, rest assured.
+</p>
+<a name="Can-I-use-RMS-to-help-Test-and-Balance-my-HVAC-system_003f"></a>
+<h4 class="subsection">6.6.11 Can I use RMS to help Test and Balance my HVAC system?</h4>
+<p>Yes. RMS and GNU remotecontrol work together to help you do just this. Having recorded data for your system usage and outdoors weather information is priceless for testing and balancing. It offers considerable cost savings, in both time and effort, to review recorded data to optimize your system setup. Additionally, you can reduce the number of people necessary to do the testing and balancing down to one person.
+</p>
 <a name="Do-I-need-RMS_003f"></a>
 <h4 class="subsection">6.6.12 Do I need RMS?</h4>
-<p>Not to sound silly, but RMS prevents a mess. It is impossible to consciously improve anything without first measuring it. You may stumble upon a way to improve it, but is that a pro-active approach to managing anything? Of course not. To help improve things, RMS helps by monitoring the status your resources. The unknown things of life can crop in and cause problems. The faster you know about a problem, the faster you can stop any damage that problem may cause. RMS helps you take advantage of the opportunity to improve how you manage things, so the chance of a problem returning becomes less likely.
-</p>	 
+<p>Not to sound silly, but RMS prevents a mess. It is impossible to consciously improve anything without first measuring it. You may stumble upon a way to improve it, but is that a pro-active approach to managing anything? Of course not. To help improve things, RMS helps by monitoring the status your resources. The unknown things of life can crop in and cause problems. The faster you know about a problem, the faster you can stop any damage the problem may cause. RMS helps you take advantage of the opportunity to improve how you manage things, so the chance of a problem returning becomes less likely.
+</p>
 <a name="Really_002c-how-do-I-know-that-I-need-RMS_003f"></a>
 <h4 class="subsection">6.6.13 Really, how do I know that I need RMS?</h4>
 <p>If you worry about your &ldquo;stuff&rdquo;, and your &ldquo;stuff&rdquo; has an IP address, you need RMS.

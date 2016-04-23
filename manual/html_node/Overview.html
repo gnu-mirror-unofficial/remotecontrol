@@ -1,21 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for GNU remotecontrol (version 1.1, 29 September 2013), which is an example in the Texinfo documentation.
+<!-- This manual is for GNU remotecontrol (version 2.0, 22 April 2016), which is an example in the Texinfo documentation.
 
-Copyright (C) 2013 GNU remotecontrol authors.
+Copyright (C) 2016 GNU remotecontrol authors.
 
-Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
+Permission is granted to copy, distribute or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, with the Front-Cover Texts being "A GNU Manual," and with the Back-Cover Texts as in (a) below. A copy of the license is included in the section entitled "GNU Free Documentation License."
 
 (a) The FSF's Back-Cover Text is: "You have the freedom to copy and modify this GNU manual. Buying copies from the FSF supports it in developing GNU and promoting software freedom." -->
-<!-- Created by Texinfo 5.1.90+dev, http://www.gnu.org/software/texinfo/ -->
+<!-- Created by GNU Texinfo 5.2, http://www.gnu.org/software/texinfo/ -->
 <head>
-<title>GNU remotecontrol 1.1: Overview</title>
+<title>GNU remotecontrol 2.0: Overview</title>
 
-<meta name="description" content="GNU remotecontrol 1.1: Overview">
-<meta name="keywords" content="GNU remotecontrol 1.1: Overview">
+<meta name="description" content="GNU remotecontrol 2.0: Overview">
+<meta name="keywords" content="GNU remotecontrol 2.0: Overview">
 <meta name="resource-type" content="document">
 <meta name="distribution" content="global">
-<meta name="Generator" content="texi2any">
+<meta name="Generator" content="makeinfo">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="index.html#Top" rel="start" title="Top">
 <link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
@@ -50,6 +50,7 @@ span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
 -->
 </style>
+<link rel="stylesheet" type="text/css" href="/software/gnulib/manual.css">
 
 
 </head>
@@ -63,13 +64,21 @@ Next: <a href="Scope.html#Scope" accesskey="n" rel="next">Scope</a>, Previous: <
 <hr>
 <a name="Overview-1"></a>
 <h2 class="chapter">1 Overview</h2>
-<p>GNU remotecontrol is a web application serving as a management tool for multiple IP enabled HVAC thermostats (device), and other Building Automation devices. The purpose of GNU remotecontrol is to read from and write to multiple IP enabled thermostats all at one time.
+<p>GNU remotecontrol is a web application serving as a management tool for multiple IP enabled HVAC thermostat devices and other Building Automation devices. The purpose of GNU remotecontrol is to read from and write to multiple IP enabled thermostat devices all at one time.
 </p>
-<p>The GNU remotecontrol framework is designed to work with any IP enabled HVAC thermostat, but can be easily developed to operate any number of networked devices. This framework is built with <a href="http://en.wikipedia.org/wiki/CURL">cURL</a>, <a href="http://en.wikipedia.org/wiki/PHP">PHP</a>, and <a href="http://en.wikipedia.org/wiki/MySQL">MySQL</a>. Its system architecture is enabled on a server-client principle, where users can login to the server using a web browser to manage multiple remote devices from a single web interface. The GNU remotecontrol framework was developed to work in combination with a Remote Monitoring Server, which monitors configurable device parameters and can generate automatic system responses and alerts. If required, the GNU remotecontrol is both scalable and distributable over multiple computers serving different roles in the HVAC or remote device management framework. The <a href="http://www.proliphix.com/">Proliphix</a> IP thermostat (currently the only true IP enabled HVAC thermostat on the market) was used to develop the GNU remotecontrol web application. The <a href="http://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a> (API) <strong>Proliphix IP Devices HTTP API, Revision 1.8</strong> is used to read from and write to the Object Identification (OID) numbers defined in the Proliphix API for the Proliphix HVAC thermostat device.
+<p>The GNU remotecontrol framework is designed to work with any IP enabled HVAC thermostat, but can be easily developed to operate any number of networked devices. This framework is built with <a href="http://en.wikipedia.org/wiki/CURL">cURL</a>, <a href="http://en.wikipedia.org/wiki/PHP">PHP</a>, and <a href="http://en.wikipedia.org/wiki/MySQL">MySQL</a>. This system architecture is enabled on a server-client principle, where users can login to the server using a web browser to manage multiple remote devices from a single web interface. The GNU remotecontrol framework was developed to work in combination with a Remote Monitoring Server, which monitors configurable device parameters and can generate automatic system responses and alerts. GNU remotecontrol is both scalable and distributable over multiple computers serving different roles in the HVAC or remote device management framework. The <a href="http://www.proliphix.com/">Proliphix</a> thermostat (currently the only true IP enabled HVAC thermostat on the market) was used to develop the GNU remotecontrol web application. The <a href="http://en.wikipedia.org/wiki/Application_programming_interface">Application Programming Interface</a> (API) <strong>Proliphix IP Devices HTTP API, Revision 1.8</strong> is used to read from and write to the Object Identification (OID) numbers defined in the Proliphix API for the Proliphix HVAC thermostat device.
 </p>
-<p>The intended structure of this documentation is to help you achieve an understanding of <strong>why</strong> you need/want to use GNU remotecontrol and instruction for <strong>how</strong> to use GNU remotecontrol. Our research during the development of GNU remotecontrol found users operated best when they were given the opportunity to gain a high-level understanding of all the technologies associated with GNU remotecontrol. This documentation is written as a combined reference manual and technical manual for GNU remotecontrol. The <strong>Scope</strong> section contains a listing of the minimum recommended chapter reading, per user role. Each section in <strong>System Architecture and Concepts</strong> contains instructions for <strong>Security Model</strong>, any <strong>Options</strong> that are recommended, <strong>Requirements</strong> to run that technology, and <strong>Configuration</strong> of that technology.
+<p>We identify anytime we do not adhere to the Proliphix API instructions with the text...<strong>THIS IS A DEVIATION TO THE PROLIPHIX API</strong>...in GNU remotecontrol user manual. The only time we deviate from the Proliphix API is when there is a critical thermostat device firmware deficiency. Otherwise, the Proliphix API instructions are strictly followed by GNU remotecontrol.
 </p>
-<p>We recognize this documentation contains a lot of material. The documentation is segmented for you to select what you need to read to quickly and easily learn about and start using GNU remotecontrol. It is our hope you find this documentation contains all of the information you need to successfully and effortlessly use GNU remotecontrol. With that said, we give you GNU remotecontrol.
+<p>GNU remotecontrol is now designed and built using the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller</a> (MVC) software architectural pattern. The benefit is to provide easier code reusability and pave the way for <strong>U</strong>nattended <strong>S</strong>erver <strong>S</strong>ide <strong>A</strong>utomation (<strong>USSA</strong> or <strong>U-S-S-A</strong>). The automation is intended to replace repetitive actions in your day-to-day usage of GNU remotecontrol. Examples of such repetition are setting the time on all thermostat devices, or interfacing with an external system such as another Energy Management System. The benefit is to free you of most, if not all, human interaction necessary to operate your GNU remotecontrol implementation.
+</p>
+<p>GNU remotecontrol is now designed and built using a standard <a href="http://en.wikipedia.org/wiki/Data_access_layer">Data-Access Layer</a> (DAL) interface via the <a href="http://php.net/manual/en/intro.pdo.php">PHP Data Objects</a> (PDO). This construct supports the GNU remotecontrol MySQL database using the PDO data access components. The DAL can easily mature to support other types of databases or data access components.
+</p>
+<p>There are two significant enhancements to the setup of GNU remotecontrol. First, there is scripting to setup the GNU remotecontrol database. Second, there is a single configuration file to connect your PHP to your MySQL for using GNU remotecontrol along with other settings necessary for GNU remotecontrol. These two enhancements greatly ease GNU remotecontrol configuration and operation.
+</p>
+<p>The intended structure of this documentation is to help you achieve an understanding of <strong>why</strong> you need or want to use GNU remotecontrol and instruction for <strong>how</strong> to use GNU remotecontrol. Our research during the development of GNU remotecontrol found users operated best when they were given the opportunity to gain a high-level understanding of all the technologies associated with GNU remotecontrol. This documentation is written as a combined reference manual and technical manual for GNU remotecontrol. The <strong>Scope</strong> section contains a listing of the minimum recommended chapter reading, per user role. Each section in <strong>System Architecture and Concepts</strong> contains instructions for <strong>Security Model</strong>, any <strong>Options</strong> recommended, <strong>Requirements</strong> to run the technology, and <strong>Configuration</strong> of the technology.
+</p>
+<p>We recognize this documentation contains a lot of material. The documentation is segmented for you to select what you need to read to quickly and easily learn about and start using GNU remotecontrol. It is our hope you find this documentation contains all of the information you need to successfully and effortlessly use GNU remotecontrol. We now gladly give you the latest version of GNU remotecontrol.
 </p>
 <hr>
 <div class="header">
